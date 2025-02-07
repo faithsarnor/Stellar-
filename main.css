@@ -98,12 +98,13 @@ html,body{
 }
 
 #footer{
+
     padding:5px;
     width:100%;
-    position:fixed;
+    position:relative;
     bottom:0; 
     background-color: whitesmoke;
-    text-align: center;
-    
+    text-align: left; 
+     
     
 }
