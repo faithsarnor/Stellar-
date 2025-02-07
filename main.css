@@ -101,7 +101,7 @@ html,body{
 
     padding:5px;
     width:100%;
-    position:relative;
+    position:fixed;
     bottom:0; 
     background-color: whitesmoke;
     text-align: left; 
