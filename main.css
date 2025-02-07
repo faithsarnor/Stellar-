@@ -1,0 +1,109 @@
+
+html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+
+
+.header{
+    text-align: center;
+    font-size: larger;
+    color:rgb(117, 117, 228);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: lightblue;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.head {
+    padding: 20px;
+    margin:  0;
+    list-style: none;
+}
+
+
+.head li {
+    float: left;
+    margin-right: 20px;
+    display: inline;
+    margin-right:10px;
+    
+
+}
+
+.head a{
+    text-decoration: none;
+    color:rgb(180, 134, 134);
+    font-size:medium;
+
+}
+
+.ai {
+    text-decoration: none;
+    color: rgb(180, 134, 134);
+    font-size: medium;
+    margin-right: 3px;
+    display: inline; 
+    line-height:25px;
+  
+  }
+  
+
+.dropdown{
+    position: absolute;
+    right: 15px;
+    top: 17%;
+    margin-right:40px;
+
+}
+
+.dropdown .drop{
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color:rgb(180, 134, 134);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-menu  {
+    display:none;
+    position:absolute;
+    box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    padding:0;
+    list-style: none;
+
+}
+
+.dropdown-menu a{
+    color: black;
+    text-decoration: none;
+    text-align:left;
+    display:block;
+    margin-right: 20px;
+
+}
+
+.dropdown a:hover{
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+#footer{
+    padding:5px;
+    width:100%;
+    position:fixed;
+    bottom:0; 
+    background-color: whitesmoke;
+    text-align: center;
+    
+    
+}
