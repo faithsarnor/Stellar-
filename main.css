@@ -53,6 +53,7 @@ body, html {
   margin-right: 40px;
 }
 
+<<<<<<< HEAD
 .dropdown .drop {
   font-size: 16px;
   border: none;
@@ -101,3 +102,16 @@ body, html {
     text-align: left;
 }
 
+=======
+#footer{
+
+    padding:5px;
+    width:100%;
+    position:fixed;
+    bottom:0; 
+    background-color: whitesmoke;
+    text-align: left; 
+     
+    
+}
+>>>>>>> 7ca7caf9c85b4ce8869d5255671b1902a1b66994
