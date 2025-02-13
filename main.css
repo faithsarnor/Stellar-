@@ -108,3 +108,14 @@ html,body{
      
     
 }
+.about {
+	width: 27%;
+	background-color: lightblue;
+	border-radius: 15px;
+    padding: 2%;
+    margin: 1%;
+    float: left; 
+    height: auto;
+    color: whitesmoke;
+
+}
