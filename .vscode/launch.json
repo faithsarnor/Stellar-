@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "request": "attach",
+            "type": "chrome",
+            "webRoot": "${workspaceFolder}",
+            "timeout": 30000  // Optional: wait longer for Chrome to attach
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}",
+            "runtimeExecutable": "/path/to/chrome",  // Optional: specify Chrome executable path if needed
+            "timeout": 30000  // Optional: wait longer for Chrome to launch
+        }
+    ]
+}
+=======
+>>>>>>> 7ca7caf9c85b4ce8869d5255671b1902a1b66994
