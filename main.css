@@ -53,7 +53,7 @@ body, html {
   margin-right: 40px;
 }
 
-<<<<<<< HEAD
+
 .dropdown .drop {
   font-size: 16px;
   border: none;
@@ -102,7 +102,7 @@ body, html {
     text-align: left;
 }
 
-=======
+
 #footer{
 
     padding:5px;
@@ -123,7 +123,7 @@ body, html {
     margin: 1%;
     float: left; 
     height: auto;
-    color: whitesmoke;
+    color: rgb(180, 134, 134);
 
 }
 
