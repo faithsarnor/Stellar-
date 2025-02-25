@@ -1,73 +1,55 @@
-body, html {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  width: 100%; /* Full width of the viewport */
-  height: 100%; /* Full height of the viewport */
-  overflow: auto; /* Allow scrolling if content overflows */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 body {
-  background-image: url('img/backimg.webp');
-  background-size: cover; /* Ensures the background covers the entire page */
-  background-position: center; /* Keeps the background centered */
-  background-repeat: no-repeat; /* Prevents tiling the image */
+  background-image: url("img/backimg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.rectangle-22,
-.rectangle-22 * {
-  box-sizing: border-box;
-}
-.rectangle-22 {
-  background:#457b9d;
-  height: 50px;
-  position: relative;
-  padding-top:50px;
-}
-.fix {
+/* Header Style */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: "Cormorant Garamond";
-  font-size: 70px;
-  margin-top: -10px;
-  line-height: 105px;
-  color: #926F34;
-  margin-left: 20px;
+  background: lightblue;
+  padding: 10px 20px;
+}
+
+/* Ensure color is applied to .fix class */
+.header .fix {
+  font-family: "Cormorant Garamond";
+  font-size: 50px; /* Increased font size */
+  color: #926f34 !important; /* Use !important to enforce the color */
+  margin-right: 30px;
 }
 
 .fix a {
-  text-decoration: none; /* Removes the underline */
-  color: inherit; /* Makes the link color inherit from the h2 */
-}
-
-
-.header {
-  text-align: center;
-  font-size: larger;
-  color: #15616d;
-  font-family:"Cormorant Garamond";
-  background: lightblue;
-  padding: 10px 0;
-  margin: 0;
+  text-decoration: none;
+  color: #926f34 !important;
+  font-size:60px !important;
 }
 
 .head {
-  padding: 20px;
+  padding: 0;
   margin: 0;
   list-style: none;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .head li {
-  float: left;
   margin-right: 20px;
   display: inline;
-  margin-right: 10px;
-  padding-top: 0px;
-  position: relative;
-  margin-right: 30px;
-  left: 270px;
- 
-
-  
-
 }
 
 .head a {
@@ -75,29 +57,21 @@ body {
   color: #1d2d44;
   font-size: 20px;
   margin-right: 12px;
-  
-
 }
 
 .head .ai {
   text-decoration: none;
-  color: #1d2d44 !important; /* Add !important if needed */
+  color: #1d2d44;
+  font-size: 20px;
   margin-right: 3px;
   display: inline;
   line-height: 25px;
-  font-size: 20px !important; /* Add !important if needed */
-  top:3px;
+  top: 3px;
 }
-
 
 .dropdown {
-  position: absolute;
-  right: 15px;
-  top: 12%;
-  margin-right: 40px;
-  top:79px;
+  position: relative;
 }
-
 
 .dropdown .drop {
   font-size: 20px;
@@ -107,8 +81,8 @@ body {
   padding: 14px 16px;
   background-color: inherit;
   margin: 0;
-  font-weight:200px;
-  font-family:"Cormorant Garamond";
+  font-weight: 200px;
+  font-family: "Cormorant Garamond";
 }
 
 .dropdown-menu {
@@ -137,51 +111,116 @@ body {
 }
 
 .footer {
-    background: lightblue;
-    color: #1d2d44;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;  
-    bottom: 0;        
-    left: 0;          
-    width: 100%;       
-    text-align: left;
-    font-weight:200px;
-}
-
-
-#footer{
-
-    padding:5px;
-    width:100%;
-    position:fixed;
-    bottom:0; 
-    background-color: whitesmoke;
-    text-align: left; 
+  background: lightblue;
+  color: #1d2d44;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  font-weight: 200px;
 }
 
 .about {
-	width: 27%;
-	background-color: #a8dadc;
-	border-radius: 15px;
-    padding: 2%;
-    margin: 1%;
-    float: left; 
-    height: auto;
-    color: whitesmoke;
-
+  width: 27%;
+  background-color: #a8dadc;
+  border-radius: 15px;
+  padding: 2%;
+  margin: 1%;
+  float: left;
+  height: auto;
+  color: whitesmoke;
 }
 
-.container{
-  width: 100%;
-  height: 50px; /* You can adjust the height as needed */
+/* Slideshow CSS */
+.rectangle-22 {
+  background: #457b9d;
+  height: 50px;
   position: relative;
-  overflow: hidden;
-  white-space: nowrap;
+}
 
+.slideshow-container {
+  display: flex;
+  width: auto;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+}
+.slideshow-nav {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+display: flex;
+justify-content: space-between;
+padding: 0 10px;
+box-sizing: border-box;
+align-items: center; /* Center the buttons vertically */
+}
+
+.slideshow-nav button {
+background: none;
+color: white;
+border: none;
+padding: 10px 20px; /* Increase button padding for better spacing */
+cursor: pointer;
+font-size: 18px; /* Adjust button font size */
+width: 40px; /* Set a fixed width to the buttons */
+height: 40px; /* Set a fixed height to the buttons */
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 
+/* Style for Icons */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  color: #1d2d44; /* Adjust the color as needed */
+  font-size: 24px;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.icon:hover {
+  color: #926f34; /* Color on hover */
+}
+
+/* Font Awesome Icons */
+.icon i {
+  font-size: 24px;
+}
+
+/* Specific styles for each icon */
+.icon .fa-search::before {
+  content: "\f002"; /* Search Icon */
+}
+
+.icon .fa-user::before {
+  content: "\f007"; /* User Icon */
+}
+
+.icon .fa-heart::before {
+  content: "\f004"; /* Wishlist Heart Icon */
+}
+
+.icon .fa-bag-shopping::before {
+  content: "\f290"; /* Shopping Bag Icon */
+}
 
 
 
