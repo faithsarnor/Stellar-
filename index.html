@@ -3,55 +3,64 @@
   <head>
     <meta charset="utf-8" />
     <title>Stellar</title>
-    <link rel="stylesheet " href="main.css " />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
-  </head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="java1.js"></script>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  </head>
 
   <body>
     <div class="rectangle-22">
-      <h2 class="fix"><a href="index.html">Stellar</a></h2>
+      <div class="slideshow-container" id="slides">
+        <div class="slide"><span>Free Shipping on Orders $300+</span></div>
+        <div class="slide"><span>Get 40% off Your First Order</span></div>
+        <div class="slide"><span>Discounts & Coupons</span></div>
+      </div>
+      <div class="slideshow-nav">
+        <button id="prev-slide"><</button>
+        <button id="next-slide">></button>
+      </div>
     </div>
+
+    <!-- Header with Stellar and Navigation Links -->
     <div class="header">
-      <div class="header">
-        <ul class="head">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li class="ai">GlamBot</li>
-        </ul>
-      </div>
+      <ul class="head">
+        <li class="fix"><a href="index.html">Stellar</a></li> 
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li class="ai">GlamBot</li>
+       
+        
+      </ul>
+      <!--icons-->
+      <div class="icons">
+        <a href="#" class="icon"><i class="fas fa-search"></i></a>
+        <a href="login.html" class="icon"><i class="fas fa-user"></i></a>
+        <a href="wishlist.html" class="icon"><i class="fas fa-heart"></i></a>
+        <a href="cart.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
-  
-
-
-    <div class="dropdown">
-      <button class="drop">Shop</button>
-
-      <div class="dropdown-menu">
-        <a href="#">Cart</a>
-        <a href="#">Login</a>
-        <a href="#">Wishlist</a>
+    <div class="search-container" id="search-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="What can we help you find?" />
+        <i class="fas fa-times" id="search-close-icon"></i>
       </div>
+      <div id="search-results"></div>
     </div>
+  </div>
 
-      <div class="container">
-        <div class="slide">
-          <span class="pei">Free Shipping on Orders $300+</span>
-          <span class="pei">Get 40% off Your First Order</span>
-          <span class="pei">New Arrivals: Check Out Our Latest Collection</span>
-        </div>
-      </div>
-  
-      
+ 
+
     
 
     <footer class="footer">
       <span> FAQ</span> &nbsp;&nbsp;
       <span>Feedback</span>&nbsp;&nbsp;
       <span>Contact US</span>&nbsp;&nbsp;
-      <span>Customer Support</span>&nbsp;&nbsp;
+      <span>Customer Support</span>
     </footer>
-
 
   
   </body>
