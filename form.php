@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stellar</title>
+    <link rel="stylesheet " href="main.css " />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+    <body>
+  <div class="rectangle-22">
+    <h2 class="fix"><a href="index.html">Stellar</a></h2>
+  </div>
+  <div class="header">
+    <div class="header">
+      <ul class="head">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="ai">GlamBot</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="dropdown">
+    <button class="drop">Shop</button>
+    <div class="dropdown-menu">
+      <a href="#">Cart</a>
+      <a href="#">Login</a>
+      <a href="#">Wishlist</a>
+    </div>
+  </div>
+    <div class="container">
+      <div class="slide">
+        <span class="pei">Free Shipping on Orders $300+</span>
+        <span class="pei">Get 40% off Your First Order</span>
+        <span class="pei">New Arrivals: Check Out Our Latest Collection</span>
+      </div>
+    </div>
+
+    <?php
+if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) { // Check if form data is set
+    $type = $_POST['type'];
+    $problem = $_POST['skin'];
+    $product = $_POST['product'];
+    
+    if ($type == "Dry" && $problem == "Acne" && $product == "Moisturizer") {
+        echo 'Here is a recommended product:<br>';
+        echo '<img src="https://th.bing.com/th/id/OIP.JOgFRUanurAGcghIhE5qhQHaHa?rs=1&pid=ImgDetMain"><br>';
+    } elseif ($type == "Oily") {
+        echo 'You need this item for oily skin.<br>';
+    } elseif ($type == "Acne") {
+        echo 'You need this item for acne-prone skin.<br>';
+    } else {
+        echo 'No skin type or skin concern selected.';
+    }
+} else {
+    echo 'Form not completed.';
+}
+?>
+
+    <footer class="footer">
+      <span> FAQ</span> &nbsp;&nbsp;
+      <span>Feedback</span>&nbsp;&nbsp;
+      <span>Contact US</span>&nbsp;&nbsp;
+      <span>Customer Support</span>&nbsp;&nbsp;
+    </footer>
+
+
+  
+  </body>
+</html>
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
