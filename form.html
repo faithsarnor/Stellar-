@@ -1,83 +1,73 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Stellar</title>
-    <link rel="stylesheet " href="main.css " />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
-    <style>
-      button {
-          display: ruby-base-container;
-          padding: 20px 40px; /* Increase padding for a bigger button */
-          font-size: 24px; /* Increase font size */
-          cursor: pointer;
-          text-align: center;
-          text-decoration: none;
-          color: #baa8a8;
-          background-color: #c2dddd;
-          border: none;
-          border-radius: 5px;
-          
-      }
+    <head>
+      <meta charset="utf-8" />
+      <title>Stellar</title>
+      <link rel="stylesheet" href="main.css" />
+      <script src="java1.js"></script>
+
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" >
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
   
-input[type="checkbox"] {
-    margin-right: 10px;
-}
 
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
+      <style>
+        input[type="checkbox"] {
+        margin-right: 10px;
+        }
 
-  </style>
+        input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        }
 
-
-
+       </style>
   </head>
-
-
   <body>
     <div class="rectangle-22">
-      <h2 class="fix"><a href="index.html">Stellar</a></h2>
-    </div>
-    <div class="header">
-      <div class="header">
-        <ul class="head">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li class="ai">GlamBot</li>
-        </ul>
+      <div class="slideshow-container" id="slides">
+        <div class="slide"><span>Free Shipping on Orders $300+</span></div>
+        <div class="slide"><span>Get 40% off Your First Order</span></div>
+        <div class="slide"><span>Discounts & Coupons</span></div>
+      </div>
+
+      <div class="slideshow-nav">
+        <button id="prev-slide"></button>
+        <button id="next-slide">></button>
       </div>
     </div>
-  
+  <!-- Header with Stellar and Navigation Links -->
+<div class="header">
+  <ul class="head">
+    <li class="fix"><a href="index.html">Stellar</a></li> 
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="Products.html">Products</a></li>
+    <li class="ai">GlamBot</li>
+  </ul>
 
-
-    <div class="dropdown">
-      <button class="drop">Shop</button>
-
-      <div class="dropdown-menu">
-        <a href="#">Cart</a>
-        <a href="#">Login</a>
-        <a href="#">Wishlist</a>
-      </div>
+        <!--icons-->
+      <div class="icons">
+        <a href="#" class="icon"><i class="fas fa-search"></i></a>
+        <a href="login.html" class="icon"><i class="fas fa-user"></i></a>
+        <a href="wishlist.html" class="icon"><i class="fas fa-heart"></i></a>
+        <a href="cart.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
-
-      <div class="container">
-        <div class="slide">
-          <span class="pei">Free Shipping on Orders $300+</span>
-          <span class="pei">Get 40% off Your First Order</span>
-          <span class="pei">New Arrivals: Check Out Our Latest Collection</span>
-        </div>
+    <div class="search-container" id="search-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="What can we help you find?" />
+        <i class="fas fa-times" id="search-close-icon"></i>
       </div>
-      
-      <h1> Take our Skincare Quiz!</h1>
+      <div id="search-results"></div>
+    </div>
+  </div>
       <div class="form-container">
       <form action="form.php" method="post">
+        <h1> Take our skincare quiz!</h1>
         <h2> What type of skin do you have?</h2>
         <input type="radio" name="type" value="Dry"> Dry <br>
         <input type="radio" name="type" value="Oily"> Oily <br>
@@ -98,27 +88,16 @@ input[type="text"] {
         <input type="radio" name="product" value="Oily Skin"> Face Wash <br>
         <input type="radio" name="product" value="Oily Skin"> Cleanser <br>
 
-        <h2> What is your budget?</h2>
-        <input type="text" id="budget"> <br><br>
         <input type="submit">
-
-        
-
-
       </form> 
     </div>
-    <!--<button onclick="window.location.href='about.html'"> Click Here to Take our Skin Care Quiz!</button> -->
-    
-
+  
     <footer class="footer">
       <span> FAQ</span> &nbsp;&nbsp;
       <span>Feedback</span>&nbsp;&nbsp;
       <span>Contact US</span>&nbsp;&nbsp;
       <span>Customer Support</span>&nbsp;&nbsp;
     </footer>
-
-
-  
   </body>
 </html>
 
