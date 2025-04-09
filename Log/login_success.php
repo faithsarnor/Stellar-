@@ -7,3 +7,4 @@ if (!isset($_SESSION['name'])) {
     exit();
 }
 
+?>
