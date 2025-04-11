@@ -8,10 +8,10 @@ html {
 }
 
 body {
-    background-image: url("https://i.pinimg.com/736x/88/d2/87/88d287feebbc82adff180998e79e538f.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%);
+    
+    
+    
 }
 
 /* Header Style */
