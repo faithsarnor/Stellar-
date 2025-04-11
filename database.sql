@@ -1,5 +1,9 @@
+
 CREATE DATABASE my_products;
 USE my_products;
+
+CREATE DATABASE products_page;
+USE products_page;
 
 CREATE TABLE products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
