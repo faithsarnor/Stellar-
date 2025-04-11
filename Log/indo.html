@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Stellar</title>
-    <link rel="stylesheet" href="main.css" />
-    <script src="java1.js"></script>
+    <title>Stellar-login</title>
+    <link rel="stylesheet" href="deep.css" />
+    <script src="log.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -23,7 +23,7 @@
         
       </div>
       <div class="slideshow-nav">
-        <button id="prev-slide"></button>
+        <button id="prev-slide"><</button>
         <button id="next-slide">></button>
       </div>
     </div>
@@ -42,55 +42,21 @@
     <!-- Header with Stellar and Navigation Links -->
     <div class="header">
       <ul class="head">
-        <li class="fix"><a href="index.html">Stellar</a></li> 
+        <li class="fix"><a href="../index.html">Stellar</a></li> 
         <li><a href="about.html">About Us</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li class="dropdown">
-          <a href="Products.html">
-              <button class="drop">Products</button>
-          </a>
-          <div class="dropdown-menu">
-              <div class="submenu">
-                  <a href="#">Cleanser ▸</a>
-                  <div class="submenu-menu">
-                      <a href="#">CeraVe</a>
-                      <a href="#">La Roche-Posay</a>
-                      <a href="#">Aveeno</a>
-                      <a href="#">Vanicream</a>
-                      <a href="#">Cetaphil</a>
-
-                  </div>
-              </div>
-              <div class="submenu">
-                  <a href="#">Moisturizer ▸</a>
-                  <div class="submenu-menu">
-                      <a href="#">Cetaphil</a>
-                      <a href="#">La Roche-Posay</a>
-                      <a href="#">Cerave</a>
-                      <a href="#">Olay</a>
-                      <a href="#">Itk</a>
-
-                  </div>
-                  <div class="submenu">
-                    <a href="#">Toner ▸</a>
-                    <div class="submenu-menu">
-                        <a href="#">First Aid Beauty</a>
-                        <a href="#">Cetaphil</a>
-                        <a href="#">Byoma</a>
-                        <a href="#">Thayers</a>
-                        <a href="#"> Mario Badescu </a>
-                    </div>
-              </div>
-          </div>
-      </li>
+        <li><a href="Products.html">Products</a></li>
         <li class="ai">GlamBot</li>
+
+        
        
         
       </ul>
       <!--icons-->
       <div class="icons">
         <a href="#" class="icon"><i class="fas fa-search"></i></a>
-        <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
+        <a href="indi.html" class="icon"><i class="fas fa-user"></i></a>
+        <a href="indo.html" class="icon"><i class=""></i></a>
         <a href="wishlist.html" class="icon"><i class="fas fa-heart"></i></a>
         <a href="cart.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
@@ -103,17 +69,29 @@
     </div>
   </div>
 
- 
+    <div id="SignupForm" class="form-box">
+        <h2>Signup</h2>
+        <form action="signup_process.php" method="POST">
+            <label for="fullname" id="ee">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required><br><br>
 
-    
+            <label for="email_signup" id="pp">Email:</label>
+            <input type="email" id="email_signup" name="email" required><br><br>
+
+            <label for="password_signup" id="ll">Password:</label>
+            <input type="password" id="password_signup" name="password" required><br><br>
+
+            <button type="submit" class="sub">Sign Up</button><br>
+        </form>
+        <p>Already have an account? <a href="indi.html" id="ToLogin">Login here</a></p>
+    </div>
 
     <footer class="footer">
-      <span> FAQ</span> &nbsp;&nbsp;
-      <span>Feedback</span>&nbsp;&nbsp;
-      <span>Contact US</span>&nbsp;&nbsp;
-      <span>Customer Support</span>
-    </footer>
-
+        <span> FAQ</span> &nbsp;&nbsp;
+        <span>Feedback</span>&nbsp;&nbsp;
+        <span>Contact US</span>&nbsp;&nbsp;
+        <span>Customer Support</span>
+      </footer>
   
-  </body>
+</body>
 </html>
