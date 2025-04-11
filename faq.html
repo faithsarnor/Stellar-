@@ -57,22 +57,78 @@
               <li class="ai">GlamBot</li>
             </ul>
           </div>
-        <h1>Hey StellarDoll!</h1>
-        <p> Welcome to our FAQ section! Here, you'll find answers to common questions about our skincare product recommendations, their ingredients, and how to use them. If you need further assistance, feel free to use our GlamBot!</p>
-
-        <div class="faq-container">
+          <h1>Hey StellarDoll!</h1>
+          <p>Welcome to our FAQ section! Here, you’ll find answers to common questions about our skincare recommendations, product ingredients, and how to use them. We don’t sell directly — we guide, glow, and glam. ✨ Need help? GlamBot’s got you covered!</p>
+          
+          <div class="faq-container">
             <h2>Frequently Asked Questions</h2>
             <label for="faq-category">Select a Topic:</label>
             <select id="faq-category" onchange="showFAQ()">
-                <option value="">-- Choose a category --</option>
-                <option value="general">General Questions</option>
-                <option value="orders">Orders & Shipping</option>
-                <option value="returns">Returns & Refunds</option>
-                <option value="product">Product Information & Usage</option>
-                <option value="support">Contact & Support</option>
+              <option value="">-- Choose a category --</option>
+              <option value="general">General Questions</option>
+              <option value="orders">Orders & Info</option>
+              <option value="returns">Returns & Clarifications</option>
+              <option value="product">Product Information & Usage</option>
+              <option value="support">Contact & Support</option>
             </select>
+          
+            <div id="faq-content">
+              <div id="general" class="faq-section" style="display:none;">
+                <h3>General Questions</h3>
+                <p><strong>Q: What is Stellar?</strong><br>
+                A: Stellar is your virtual skincare concierge, offering curated recommendations of dermatologist-approved products for different skin types and concerns.</p>
+                <p><strong>Q: Are your recommendations safe for all skin types?</strong><br>
+                A: Yes! We suggest products suitable for sensitive, oily, dry, combination, and acne-prone skin. Always double-check the labels and consult a dermatologist if unsure.</p>
+                <p><strong>Q: Are the products you showcase cruelty-free or vegan?</strong><br>
+                A: Many of them are! We highlight cruelty-free or vegan tags where applicable in our recommendations.</p>
+              </div>
+          
+              <div id="orders" class="faq-section" style="display:none;">
+                <h3>Orders & Info</h3>
+                <p><strong>Q: Can I buy products directly from your website?</strong><br>
+                A: Not at the moment. We showcase top-rated products and provide links or guidance on where to find them, along with approximate prices to help you plan your skincare routine.</p>
+                <p><strong>Q: Do you display actual product prices?</strong><br>
+                A: We show <em>estimated prices</em> to give you a sense of affordability. Prices may vary based on location or retailer.</p>
+                <p><strong>Q: Do you ship skincare products?</strong><br>
+                A: Nope! We’re not a store – think of us more like your skincare-savvy bestie pointing you in the right direction.</p>
+              </div>
+          
+              <div id="returns" class="faq-section" style="display:none;">
+                <h3>Returns & Clarifications</h3>
+                <p><strong>Q: What if I have a bad reaction to a product you recommended?</strong><br>
+                A: We always recommend doing a patch test first. While we try to match products to your skin type, we can’t guarantee personal results. Always read full ingredient lists.</p>
+                <p><strong>Q: How do I return a product?</strong><br>
+                A: Returns would be handled through the store or website you purchase the product from. We don’t process purchases or returns directly.</p>
+              </div>
+          
+              <div id="product" class="faq-section" style="display:none;">
+                <h3>Product Information & Usage</h3>
+                <p><strong>Q: How do I know which product is right for me?</strong><br>
+                A: Check our skin-type tags, product reviews, and ingredient breakdowns – or take our skin quiz! GlamBot is always here to help too.</p>
+                <p><strong>Q: Do your recommendations include dermatologist-tested items?</strong><br>
+                A: Yes, we prioritize dermatologist-recommended and tested products wherever possible. That’s part of what makes us Stellar!</p>
+                <p><strong>Q: Do the products contain harmful ingredients?</strong><br>
+                A: Many of the brands we highlight offer clean beauty options free from parabens, sulfates, and artificial fragrances. Always check ingredient lists before use.</p>
+              </div>
+          
+              <div id="support" class="faq-section" style="display:none;">
+                <h3>Contact & Support</h3>
+                <p><strong>Q: How can I contact someone for help?</strong><br>
+                A: Reach out to us at <a href="mailto:support@stellarskin.com">support@stellarskin.com</a> or chat with GlamBot anytime!</p>
+                <p><strong>Q: Do you offer skincare consultations?</strong><br>
+                A: Our AI-powered GlamBot gives quick recommendations, but for serious concerns, we advise speaking with a licensed dermatologist.</p>
+              </div>
+            </div>
           </div>
           
-   
-    </body>
+          <script>
+            function showFAQ() {
+              const sections = document.querySelectorAll('.faq-section');
+              const selected = document.getElementById('faq-category').value;
+              sections.forEach(section => {
+                section.style.display = section.id === selected ? 'block' : 'none';
+              });
+            }
+          </script>
+   </body>       
 </html>
