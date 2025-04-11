@@ -32,6 +32,7 @@
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="Products.html">Products</a></li>
         <li class="ai">GlamBot</li>
+        <li><a href="form.html"> &nbsp; &nbsp; Skincare Quiz</a></li>
        
         
       </ul>
@@ -63,14 +64,71 @@
         echo 'Here is a recommended product: <br>';
         echo '<img src="https://m.media-amazon.com/images/I/61tAp+18-bL._SL1500_.jpg"><br>'; 
     } elseif ($type == "Acne" && $problem == "Acne" && $product == "Moisturizer") {
-        echo 'You need this item for acne-prone skin.<br>';
+        echo 'Here is a recommended product.<br>';
         echo '<img src="https://cdn.nicehair.dk/products/89332/clarifying-oil-free-water-gel-50-ml-1596691014.jpg"><br>';
-    } else {
-        echo 'No skin type or skin concern selected.';
     }
-} else {
-    echo 'Form not completed.';
-}
+
+
+
+    if ($type == "Dry" && $problem == "Acne" && $product == "Toner") {
+      echo 'Here is a recommended product:<br>';
+      echo '<img src="https://m.media-amazon.com/images/I/61ktMd4XNtL._SX522_.jpg"><br>';
+  } elseif ($type == "Oily" && $problem == "Acne" && $product == "Toner") {
+      echo 'Here is a recommended product: <br>';
+      echo '<img src="https://m.media-amazon.com/images/I/61PbxvE8UcL._SX522_.jpg"><br>'; 
+  } elseif ($type == "Acne" && $problem == "Acne" && $product == "Toner") {
+      echo 'Here is a recommended product.<br>';
+      echo '<img src="https://www.dermstore.com/images?url=https://static.thcdn.com/productimg/original/11429030-2885213116989150.jpg&format=webp&auto=avif&width=985&height=985&fit=cover&dpr=2"><br>';
+  } 
+    
+
+
+if ($type == "Dry" && $problem == "Acne" && $product == "Serum") {
+  echo 'Here is a recommended product:<br>';
+  echo '<img src="https://cdn.shopify.com/s/files/1/2626/0488/products/Untitled-2.jpg?v=1615522495"><br>';
+} elseif ($type == "Oily" && $problem == "Acne" && $product == "Serum") {
+  echo 'Here is a recommended product: <br>';
+  echo '<img src="https://www.jeancoutu.com/catalogue-images/455901/viewer-zoom/0/caudalie-vinopure-serum-perfecteur-de-peau-30-ml.png"><br>'; 
+} elseif ($type == "Acne" && $problem == "Acne" && $product == "Serum") {
+  echo 'Here is a recommended product.<br>';
+  echo '<img src="https://s4.thcdn.com//productimg/1600/1600/13906946-9374975436100654.jpg"><br>';
+} 
+
+if ($type == "Dry" && $problem == "Acne" && $product == "Cleanser") {
+  echo 'Here is a recommended product:<br>';
+  echo '<img src="https://m.media-amazon.com/images/I/617cYpld9UL._SX522_.jpg"><br>';
+} elseif ($type == "Oily" && $problem == "Acne" && $product == "Cleanser") {
+  echo 'Here is a recommended product: <br>';
+  echo '<img src="https://media.ulta.com/i/ulta/2609330?w=1080&h=1080&fmt=auto"><br>'; 
+} elseif ($type == "Acne" && $problem == "Acne" && $product == "Cleanser") {
+  echo 'Here is a recommended product.<br>';
+  echo '<img src="https://media.ulta.com/i/ulta/2615399?w=1080&h=1080&fmt=auto"><br>';
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+  
+
+
 ?>
 
     <footer class="footer">
@@ -81,211 +139,5 @@
     </footer>
 
   
-  </body>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
