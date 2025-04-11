@@ -1,3 +1,4 @@
+
 CREATE DATABASE products_page;
 USE products_page;
 
