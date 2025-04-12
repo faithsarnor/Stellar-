@@ -1,111 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Stellar</title>
-    <link rel="stylesheet" href="main.css" />
-    <script src="java1.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Stellar</title>
+  <link rel="stylesheet" href="main.css" />
+  <script src="java1.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
 
-  <body>
-    <!-- Slideshow -->
-    <div class="rectangle-22">
-      <div class="slideshow-container" id="slides">
-        <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
-          <span id="pipo">Discounts & Coupons</span>
-        </div>
-        <div class="slide"><span>Get 40% off Your First Order</span></div>
-        <div class="slide"><span>Free Shipping on Orders $110+</span></div>
+<body>
+  <!-- Slideshow -->
+  <div class="rectangle-22">
+    <div class="slideshow-container" id="slides">
+      <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
+        <span id="pipo">Discounts & Coupons</span>
       </div>
-      <div class="slideshow-nav">
-        <button id="prev-slide">&lt;</button>
-        <button id="next-slide">&gt;</button>
-      </div>
+      <div class="slide"><span>Get 40% off Your First Order</span></div>
+      <div class="slide"><span>Free Shipping on Orders $110+</span></div>
     </div>
-
-    <!-- Popup -->
-    <div id="discount-popup" class="popup">
-      <div class="popup-content">
-        <span class="close-popup">X</span>
-        <p id="popup-message"></p>
-      </div>
+    <div class="slideshow-nav">
+      <button id="prev-slide">&lt;</button>
+      <button id="next-slide">&gt;</button>
     </div>
+  </div>
 
-    <!-- Header -->
-    <div class="header">
-      <ul class="head">
-        <li class="fix"><a href="index.html">Stellar</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li class="dropdown">
-          <a href="#" class="drop">Products</a>
-          <div class="dropdown-menu">
-            <div class="submenu">
-              <a href="#">Cleanser ▸</a>
-              <div class="submenu-menu">
-                <a href="#">CeraVe</a>
-                <a href="#">La Roche-Posay</a>
-                <a href="#">Aveeno</a>
-                <a href="#">Vanicream</a>
-                <a href="#">Cetaphil</a>
-              </div>
-            </div>
-            <div class="submenu">
-              <a href="#">Moisturizer ▸</a>
-              <div class="submenu-menu">
-                <a href="#">Cetaphil</a>
-                <a href="#">La Roche-Posay</a>
-                <a href="#">CeraVe</a>
-                <a href="#">Olay</a>
-                <a href="#">Itk</a>
-              </div>
-            </div>
-            <div class="submenu">
-              <a href="#">Toner ▸</a>
-              <div class="submenu-menu">
-                <a href="#">First Aid Beauty</a>
-                <a href="#">Cetaphil</a>
-                <a href="#">Byoma</a>
-                <a href="#">Thayers</a>
-                <a href="#">Mario Badescu</a>
-              </div>
+  <!-- Popup -->
+  <div id="discount-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">X</span>
+      <p id="popup-message"></p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <ul class="head">
+      <li class="fix"><a href="index.html">Stellar</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li class="dropdown">
+        <a href="#" class="drop">Products</a>
+        <div class="dropdown-menu">
+          <div class="submenu">
+            <a href="#">Cleanser ▸</a>
+            <div class="submenu-menu">
+              <a href="#">CeraVe</a>
+              <a href="#">La Roche-Posay</a>
+              <a href="#">Aveeno</a>
+              <a href="#">Vanicream</a>
+              <a href="#">Cetaphil</a>
             </div>
           </div>
-        </li>
-        <li class="ai">GlamBot</li>
-      </ul>
+          <div class="submenu">
+            <a href="#">Moisturizer ▸</a>
+            <div class="submenu-menu">
+              <a href="#">Cetaphil</a>
+              <a href="#">La Roche-Posay</a>
+              <a href="#">CeraVe</a>
+              <a href="#">Olay</a>
+              <a href="#">Itk</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#">Toner ▸</a>
+            <div class="submenu-menu">
+              <a href="#">First Aid Beauty</a>
+              <a href="#">Cetaphil</a>
+              <a href="#">Byoma</a>
+              <a href="#">Thayers</a>
+              <a href="#">Mario Badescu</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ai">GlamBot</li>
+      <li><a href="form.html">&nbsp;&nbsp;Skincare Quiz</a></li>
+    </ul>
+  </div>
+
+  <!-- Icons and Search -->
+  <div  class="icons">
+    <a href="#" class="icon"><i class="fas fa-search"></i></a>
+    <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
+    <a href="cart.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+  </div>
+
+  <div class="search-container" id="search-container">
+    <div class="search-input-wrapper">
+      <input type="text" id="search-input" placeholder="What can we help you find?" />
+      <i class="fas fa-times" id="search-close-icon"></i>
+    </div>
+    <div id="search-results"></div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="parallel_display">
+    <div class="about">
+      <h2>Who We Are?</h2>
+      <p><i>Where self-care meets skincare!</i><br>
+        At Stellar, we prioritize your skincare journey by curating trusted products designed to nourish, replenish, and rejuvenate your skin. Our e-commerce platform uses cutting-edge AI to ask personalized questions about your skin, allowing us to offer customized product recommendations for every skin type and tone. With advanced technology and a user-friendly interface, our site gives you a seamless, deluxe experience—empowering you to care for your skin with confidence.
+      </p>
     </div>
 
-    <!-- Content Section -->
-    <div class="parallel_display">
-      <div class="about">
-        <h2>Who We Are?</h2>
-        <p><i>Where self-care meets skincare!</i><br>
-        At Stellar, we prioritize your skincare journey by curating trusted products designed to nourish, replenish, and rejuvenate your skin. Our e-commerce platform uses cutting-edge AI to ask personalized questions about your skin, allowing us to offer customized product recommendations for every skin type and tone. With advanced technology and a user-friendly interface, our site gives you a seamless, deluxe experience—empowering you to care for your skin with confidence.</p>
-      </div>
-
-      <div class="about">
-        <h2>Contact Information</h2>
-        <p>Contact us if you run into any issues—we’ll do our best to help!</p>
-        <p>Email: stellarskin@gmail.com</p>
-        <p>Phone: (267) 568-9777</p>
-      </div>
-
-      <div class="about">
-        <h2>GlamBot</h2>
-        <p>Not sure which skincare products are right for your skin type?<br>
-        Use our AI chatbot, <i><a href="#">GlamBot</a></i>, which asks personalized questions about your skin and recommends the perfect products just for you!</p>
-      </div>
+    <div class="about">
+      <h2>Contact Information</h2>
+      <p>Contact us if you run into any issues—we’ll do our best to help!</p>
+      <p>Email: stellarskin@gmail.com</p>
+      <p>Phone: (267) 568-9777</p>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <span>FAQ</span>&nbsp;&nbsp;
-      <span>Feedback</span>&nbsp;&nbsp;
-      <span>Contact Us</span>&nbsp;&nbsp;
-      <span>Customer Support</span>
-    </footer>
-  </body>
+    <div class="about">
+      <h2>GlamBot</h2>
+      <p>Not sure which skincare products are right for your skin type?<br>
+        Use our AI chatbot, <i><a href="#">GlamBot</a></i>, which asks personalized questions about your skin and recommends the perfect products just for you!
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>FAQ</span>&nbsp;&nbsp;
+    <span>Feedback</span>&nbsp;&nbsp;
+    <span>Contact Us</span>&nbsp;&nbsp;
+    <span>Customer Support</span>
+  </footer>
+</body>
 </html>
