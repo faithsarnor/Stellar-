@@ -8,11 +8,12 @@ html {
 }
 
 body {
-    background-image: url("img/backimg.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%);
+    
+    
+    
 }
+
 
 /* Header Style */
 .header {
@@ -127,7 +128,7 @@ body {
 
 .about {
     width: 27%;
-    background-color: rgb(144, 181, 193);
+    background-color: #457b9d;
     border-radius: 15px;
     padding: 2%;
     margin: 1%;
@@ -210,6 +211,7 @@ body {
 .icons {
     display: flex;
     align-items: center;
+   
 }
 
 .icon {

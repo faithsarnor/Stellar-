@@ -7,13 +7,11 @@ html {
     overflow: auto;
 }
 
-body {
-    background-image: url("../img/backimg.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+ body {
+     background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%);
+         
+     
 }
-
 /* Header Style */
 .header {
     display: flex;
