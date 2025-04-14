@@ -1,134 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> FAQ Page</title>
-        <link rel="stylesheet " href="main.css">
-    </head>
-    <body>
-          <div class="header">
-            <div class="header">
-                <h2>FAQ Section</h2>
-              </div>
-            <ul class="head">
-              <li><a href="index.html">Stellar&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-              <li><a href="about.html">About Us&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-              <li><a href="faq.html">FAQ&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-              <li class="dropdown">
-                <a href="Products.html">
-                    <button class="drop">Products&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                </a>
-                <div class="dropdown-menu">
-                  <div class="submenu">
-                      <a href="#">Cleanser ▸</a>
-                      <div class="submenu-menu">
-                          <a href="#">CeraVe</a>
-                          <a href="#">La Roche-Posay</a>
-                          <a href="#">Aveeno</a>
-                          <a href="#">Vanicream</a>
-                          <a href="#">Cetaphil</a>
-    
-                      </div>
-                  </div>
-                  <div class="submenu">
-                      <a href="#">Moisturizer ▸</a>
-                      <div class="submenu-menu">
-                          <a href="#">Cetaphil</a>
-                          <a href="#">La Roche-Posay</a>
-                          <a href="#">Cerave</a>
-                          <a href="#">Olay</a>
-                          <a href="#">Itk</a>
-    
-                      </div>
-                      <div class="submenu">
-                        <a href="#">Toner ▸</a>
-                        <div class="submenu-menu">
-                            <a href="#">First Aid Beauty</a>
-                            <a href="#">Cetaphil</a>
-                            <a href="#">Byoma</a>
-                            <a href="#">Thayers</a>
-                            <a href="#"> Mario Badescu </a>
-                        </div>
-                  </div>
-              </div>
-            </li>
-              <li class="ai">GlamBot</li>
-            </ul>
-          </div>
-          <h1>Hey StellarDoll!</h1>
-          <p>Welcome to our FAQ section! Here, you’ll find answers to common questions about our skincare recommendations, product ingredients, and how to use them. We don’t sell directly — we guide, glow, and glam. ✨ Need help? GlamBot’s got you covered!</p>
-          
-          <div class="faq-container">
-            <h2>Frequently Asked Questions</h2>
-            <label for="faq-category">Select a Topic:</label>
-            <select id="faq-category" onchange="showFAQ()">
-              <option value="">-- Choose a category --</option>
-              <option value="general">General Questions</option>
-              <option value="orders">Orders & Info</option>
-              <option value="returns">Returns & Clarifications</option>
-              <option value="product">Product Information & Usage</option>
-              <option value="support">Contact & Support</option>
-            </select>
-          
-            <div id="faq-content">
-              <div id="general" class="faq-section" style="display:none;">
-                <h3>General Questions</h3>
-                <p><strong>Q: What is Stellar?</strong><br>
-                A: Stellar is your virtual skincare concierge, offering curated recommendations of dermatologist-approved products for different skin types and concerns.</p>
-                <p><strong>Q: Are your recommendations safe for all skin types?</strong><br>
-                A: Yes! We suggest products suitable for sensitive, oily, dry, combination, and acne-prone skin. Always double-check the labels and consult a dermatologist if unsure.</p>
-                <p><strong>Q: Are the products you showcase cruelty-free or vegan?</strong><br>
-                A: Many of them are! We highlight cruelty-free or vegan tags where applicable in our recommendations.</p>
-              </div>
-          
-              <div id="orders" class="faq-section" style="display:none;">
-                <h3>Orders & Info</h3>
-                <p><strong>Q: Can I buy products directly from your website?</strong><br>
-                A: Not at the moment. We showcase top-rated products and provide links or guidance on where to find them, along with approximate prices to help you plan your skincare routine.</p>
-                <p><strong>Q: Do you display actual product prices?</strong><br>
-                A: We show <em>estimated prices</em> to give you a sense of affordability. Prices may vary based on location or retailer.</p>
-                <p><strong>Q: Do you ship skincare products?</strong><br>
-                A: Nope! We’re not a store – think of us more like your skincare-savvy bestie pointing you in the right direction.</p>
-              </div>
-          
-              <div id="returns" class="faq-section" style="display:none;">
-                <h3>Returns & Clarifications</h3>
-                <p><strong>Q: What if I have a bad reaction to a product you recommended?</strong><br>
-                A: We always recommend doing a patch test first. While we try to match products to your skin type, we can’t guarantee personal results. Always read full ingredient lists.</p>
-                <p><strong>Q: How do I return a product?</strong><br>
-                A: Returns would be handled through the store or website you purchase the product from. We don’t process purchases or returns directly.</p>
-              </div>
-          
-              <div id="product" class="faq-section" style="display:none;">
-                <h3>Product Information & Usage</h3>
-                <p><strong>Q: How do I know which product is right for me?</strong><br>
-                A: Check our skin-type tags, product reviews, and ingredient breakdowns – or take our skin quiz! GlamBot is always here to help too.</p>
-                <p><strong>Q: Do your recommendations include dermatologist-tested items?</strong><br>
-                A: Yes, we prioritize dermatologist-recommended and tested products wherever possible. That’s part of what makes us Stellar!</p>
-                <p><strong>Q: Do the products contain harmful ingredients?</strong><br>
-                A: Many of the brands we highlight offer clean beauty options free from parabens, sulfates, and artificial fragrances. Always check ingredient lists before use.</p>
-              </div>
-          
-              <div id="support" class="faq-section" style="display:none;">
-                <h3>Contact & Support</h3>
-                <p><strong>Q: How can I contact someone for help?</strong><br>
-                A: Reach out to us at <a href="mailto:support@stellarskin.com">support@stellarskin.com</a> or chat with GlamBot anytime!</p>
-                <p><strong>Q: Do you offer skincare consultations?</strong><br>
-                A: Our AI-powered GlamBot gives quick recommendations, but for serious concerns, we advise speaking with a licensed dermatologist.</p>
-              </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Page</title>
+  <link rel="stylesheet" href="main.css" />
+  <script src="java1.js"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    .accordion-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion-container h2 {
+      text-align: center;
+      color: #1d2d44;
+      margin-bottom: 2rem;
+    }
+
+    .accordion {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .accordion-item {
+      background: #e6f0fa;
+      border-radius: 10px;
+      padding: 1rem;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      border: 1px solid #cfe3f3;
+    }
+
+    .accordion-item.active {
+      background-color: #1d2d44;
+      color: #ffffff;
+    }
+
+    .accordion-item h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .accordion-item .answer {
+      display: none;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .accordion-item.active .answer {
+      display: block;
+      color: #e0f7ff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rectangle-22">
+    <div class="slideshow-container" id="slides">
+      <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
+        <span id="pipo">Discounts & Coupons</span>
+      </div>
+      <div class="slide"><span>Get 40% off Your First Order</span></div>
+      <div class="slide"><span>Free Shipping on Orders $110+</span></div>
+    </div>
+
+    <div class="slideshow-nav">
+      <button id="prev-slide">&lt;</button>
+      <button id="next-slide">&gt;</button>
+    </div>
+  </div>
+
+  <div id="discount-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">X</span>
+      <p id="popup-message"></p>
+    </div>
+  </div>
+
+  <!-- Header with Stellar and Navigation Links -->
+  <div class="header">
+    <ul class="head">
+      <li class="fix"><a href="index.html">Stellar</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li class="dropdown">
+        <a href="Products.php">
+          <button class="drop">Products</button>
+        </a>
+        <div class="dropdown-menu">
+          <div class="submenu">
+            <a href="#">Cleanser ▸</a>
+            <div class="submenu-menu">
+              <a href="#">CeraVe</a>
+              <a href="#">La Roche-Posay</a>
+              <a href="#">Aveeno</a>
+              <a href="#">Vanicream</a>
+              <a href="#">Cetaphil</a>
             </div>
           </div>
-          
-          <script>
-            function showFAQ() {
-              const sections = document.querySelectorAll('.faq-section');
-              const selected = document.getElementById('faq-category').value;
-              sections.forEach(section => {
-                section.style.display = section.id === selected ? 'block' : 'none';
-              });
-            }
-          </script>
-   </body>       
+          <div class="submenu">
+            <a href="#">Moisturizer ▸</a>
+            <div class="submenu-menu">
+              <a href="#">Cetaphil</a>
+              <a href="#">La Roche-Posay</a>
+              <a href="#">Cerave</a>
+              <a href="#">Olay</a>
+              <a href="#">Itk</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#">Toner ▸</a>
+            <div class="submenu-menu">
+              <a href="#">First Aid Beauty</a>
+              <a href="#">Cetaphil</a>
+              <a href="#">Byoma</a>
+              <a href="#">Thayers</a>
+              <a href="#">Mario Badescu</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ai">GlamBot</li>
+      <li><a href="form.html"> &nbsp; &nbsp; Skincare Quiz</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="icons">
+      <a href="#" class="icon"><i class="fas fa-search"></i></a>
+      <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
+      <a href="cart.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+
+    <div class="search-container" id="search-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="What can we help you find?" />
+        <i class="fas fa-times" id="search-close-icon"></i>
+      </div>
+      <div id="search-results"></div>
+    </div>
+  </div>
+
+  <h1 style="text-align:center; color:#1d2d44;">Hey StellarDoll!</h1>
+  <p style="text-align:center; max-width: 700px; margin: auto;">
+    Welcome to our FAQ section! We answer common skincare questions, ingredient info, and usage tips. We don’t sell directly but we guide, glow, and glam.
+  </p>
+
+  <div class="accordion-container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <h3>What is Stellar?</h3>
+        <div class="answer">Stellar is your virtual skincare concierge offering curated, dermatologist-approved product recommendations.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Are your recommendations safe for all skin types?</h3>
+        <div class="answer">Yes! We recommend products suitable for sensitive, oily, dry, combination, and acne-prone skin types.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Do you sell products?</h3>
+        <div class="answer">Nope! We showcase stellar skincare options and where to get them, but we don’t handle transactions.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Are your recommendations cruelty-free or vegan?</h3>
+        <div class="answer">Many of them are! Look out for cruelty-free or vegan tags on our suggestions.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Can I return a product you recommended?</h3>
+        <div class="answer">Returns are processed through the retailer you purchase from. We don't sell directly.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>How do I know which product is right for me?</h3>
+        <div class="answer">We provide detailed descriptions and a skin quiz to help you find the perfect match.</div>
+      </div>
+      <div class="accordion-item">
+        <h3>Where can I get in touch for help?</h3>
+        <div class="answer">Email us at support@stellarskin.com or chat with GlamBot directly on our site!</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(item => {
+      item.addEventListener('click', () => {
+        accordionItems.forEach(i => i.classList.remove('active'));
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+
 </html>

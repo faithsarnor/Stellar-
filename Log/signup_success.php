@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Successful</title>
-    <link rel="stylesheet" href="deep.css"> <!-- Link to the same CSS file for consistent styling -->
+    <link rel="stylesheet" href="deep.css"> 
     <style>
         body {
             font-family: Arial, sans-serif;
