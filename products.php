@@ -20,20 +20,20 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
-
+        /* --- General Body Styles (from your main.css, potentially) --- */
         body {
             background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%); /* From your CSS */
             font-family: Arial, sans-serif; /* A default font */
             margin: 0;
             padding: 0;
         }
-       
+        /* --- Header and Navigation (from your CSS) --- */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-family: "Cormorant Garamond";
-            background: lightblue; 
+            background: lightblue; /* or whatever color you have */
             padding: 10px 20px;
         }
         .header .fix {
@@ -61,7 +61,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         }
         .head a {
             text-decoration: none;
-            color: #1d2d44;
+            color: #1d2d44; /* Or whatever color you want */
             font-size: 20px;
             margin-right: 12px;
         }
@@ -74,7 +74,36 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
             line-height: 25px;
             top: 3px;
         }
-      
+        .dropdown { ... } // Your dropdown styles
+        .dropdown .drop { ... }
+        .dropdown-menu { ... }
+        .dropdown-menu a { ... }
+        .dropdown:hover .dropdown-menu { ... }
+
+        /* --- Slideshow Styles (from your CSS) --- */
+        .rectangle-22 { ... }
+        .slideshow-container { ... }
+        .slide { ... }
+        .slideshow-nav { ... }
+
+        /* --- Icon Styles (from your CSS) --- */
+        .icons { ... }
+        .icon { ... }
+        .icon:hover { ... }
+        .icon i { ... }
+
+         /* Search Bar Styles (Soko Glam Inspired) (from your CSS) */
+        .search-container { ... }
+        .search-container.active { ... }
+        .search-input-wrapper { ... }
+        #search-input { ... }
+        #search-input::placeholder { ... }
+        #search-close-icon { ... }
+        #search-results { ... }
+        #search-results a { ... }
+
+        /* --- Footer Styles (from your CSS) --- */
+        .footer { ... }
 
         /* --- Product Grid Styles (NEW, and also incorporate your existing styles) --- */
         .product-grid {
@@ -105,6 +134,11 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         }
         .product-details {
             padding: 15px;
+            /* NEW:  Add flex to the product-details to control the content layout within */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;  /* This is KEY! */
+            flex-grow: 1; /* Allow the details section to take up the remaining space */
         }
         .product h3 {
             margin-top: 0; /* Remove default margin */
@@ -142,30 +176,46 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
             box-sizing: border-box; /* Include padding/border in width */
             font-size: 1em;
         }
+          /* Style for the message */
+        .cart-message {
+          background-color: #d4edda;
+          color: #155724;
+          border: 1px solid #c3e6cb;
+          padding: 10px;
+          margin-bottom: 10px;
+          border-radius: 4px;
+        }
+
+        /* Add space between the product grid and the footer */
+        main {
+            padding-bottom: 20px;  /* Or whatever spacing you prefer */
+        }
     </style>
 </head>
 
 <body>
     <!-- ---  Slider  --- -->
-    <div class="rectangle-22">
+     <div class="font">
+      <div class="rectangle-22" >
         <div class="slideshow-container" id="slides">
-        <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
-          <span id="pipo">Discounts & Coupons</span>
-            </div>
+          <div class="slide"  onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
+            <span id="pipo">Discounts & Coupons</span></div>
             <div class="slide"><span>Get 40% off Your First Order</span></div>
             <div class="slide"><span>Free Shipping on Orders $110+</span></div>
-        </div>
-        <div class="slideshow-nav">
+          </div>
+          <div class="slideshow-nav">
             <button id="prev-slide"><</button>
             <button id="next-slide">></button>
+          </div>
         </div>
-    </div>
+      </div>
 
     <div id="discount-popup" class="popup">
-        <div class="popup-content">
-            <span class="close-popup">X</span>
-            <p id="popup-message"></p>
-        </div>
+      <div class="popup-content">
+        <span class="close-popup">X</span>
+        <p id="popup-message"></p>
+      </div>
+
     </div>
     <!-- ---  Header and Navigation  --- -->
     <div class="header">
@@ -216,7 +266,13 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <!-- --- Product Grid  --- -->
     <main>
-        <h1 style="color:rgb(50, 119, 112) !important; text-align: center;">Our Products</h1>
+        <h1 style=" color: #1d2d44; text-align: center;">Our Products</h1>
+        <?php if (isset($_SESSION['cart_message'])): ?>
+            <div class="cart-message">
+                <?php echo htmlspecialchars($_SESSION['cart_message']); ?>
+            </div>
+            <?php unset($_SESSION['cart_message']); // Clear the message after displaying ?>
+        <?php endif; ?>
         <div class="product-grid">
             <?php if (!empty($table_products)): ?>
                 <?php foreach ($table_products as $product): ?>
@@ -248,6 +304,32 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         <span>Contact US</span>  
         <span>Customer Support</span>
     </footer>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+
+   
+
+
     <!--  Script includes  -->
     <script src="java1.js"></script>
 </body>

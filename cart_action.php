@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session to manage the cart
+session_start(); // Start the session
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['action']) && $_POST['action'] == 'add') {
@@ -8,25 +8,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Basic input validation
         if (empty($product_id) || $quantity <= 0) {
-            // Handle invalid input (e.g., redirect back to the product page with an error)
-            header("Location: products.php?error=invalid_quantity");
+            // Handle invalid input (e.g., set an error in the session)
+            $_SESSION['cart_error'] = "Invalid quantity.";
+            header("Location: products.php"); // Redirect back to products
             exit();
         }
 
-        // Add the product to the cart (using session variables)
+        // Add the product to the cart
         if (!isset($_SESSION['cart'])) {
-            $_SESSION['cart'] = array(); // Initialize the cart if it doesn't exist
+            $_SESSION['cart'] = array();
         }
 
-        // Check if the product is already in the cart
         if (isset($_SESSION['cart'][$product_id])) {
             $_SESSION['cart'][$product_id] += $quantity; // Increment quantity
         } else {
             $_SESSION['cart'][$product_id] = $quantity; // Add new item
         }
 
-        // Redirect back to the products page (or the cart page)
-        header("Location: cart.php?success=added"); // Indicate success
+        // Set a success message in the session
+        $_SESSION['cart_message'] = "Item added to cart!";
+        header("Location: products.php"); // Redirect back to products
         exit();
     }
     elseif (isset($_POST['action']) && $_POST['action'] == 'update') {
@@ -57,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       exit();
     }
 } else {
-    // Handle direct access to this script (e.g., redirect to a safe page)
+    // Handle direct access to this script
     header("Location: products.php");
     exit();
 }
