@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,85 +52,40 @@
       <div id="search-results"></div>
     </div>
   </div>
-  <?php
-  if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) { // Check if form data is set
-    $type = $_POST['type'];
-    $problem = $_POST['skin'];
-    $product = $_POST['product'];
-    
-    if ($type == "Dry" && $problem == "Acne" && $product == "Moisturizer") {
-        echo 'Here is a recommended product:<br>';
-        echo '<img src="https://th.bing.com/th/id/OIP.JOgFRUanurAGcghIhE5qhQHaHa?rs=1&pid=ImgDetMain"><br>';
-    } elseif ($type == "Oily" && $problem == "Acne" && $product == "Moisturizer") {
-        echo 'Here is a recommended product: <br>';
-        echo '<img src="https://m.media-amazon.com/images/I/61tAp+18-bL._SL1500_.jpg"><br>'; 
-    } elseif ($type == "Acne" && $problem == "Acne" && $product == "Moisturizer") {
-        echo 'Here is a recommended product.<br>';
-        echo '<img src="https://cdn.nicehair.dk/products/89332/clarifying-oil-free-water-gel-50-ml-1596691014.jpg"><br>';
-    }
-
-
-
-    if ($type == "Dry" && $problem == "Acne" && $product == "Toner") {
-      echo 'Here is a recommended product:<br>';
-      echo '<img src="https://m.media-amazon.com/images/I/61ktMd4XNtL._SX522_.jpg"><br>';
-  } elseif ($type == "Oily" && $problem == "Acne" && $product == "Toner") {
-      echo 'Here is a recommended product: <br>';
-      echo '<img src="https://m.media-amazon.com/images/I/61PbxvE8UcL._SX522_.jpg"><br>'; 
-  } elseif ($type == "Acne" && $problem == "Acne" && $product == "Toner") {
-      echo 'Here is a recommended product.<br>';
-      echo '<img src="https://www.dermstore.com/images?url=https://static.thcdn.com/productimg/original/11429030-2885213116989150.jpg&format=webp&auto=avif&width=985&height=985&fit=cover&dpr=2"><br>';
-  } 
-    
-
-
-if ($type == "Dry" && $problem == "Acne" && $product == "Serum") {
-  echo 'Here is a recommended product:<br>';
-  echo '<img src="https://cdn.shopify.com/s/files/1/2626/0488/products/Untitled-2.jpg?v=1615522495"><br>';
-} elseif ($type == "Oily" && $problem == "Acne" && $product == "Serum") {
-  echo 'Here is a recommended product: <br>';
-  echo '<img src="https://www.jeancoutu.com/catalogue-images/455901/viewer-zoom/0/caudalie-vinopure-serum-perfecteur-de-peau-30-ml.png"><br>'; 
-} elseif ($type == "Acne" && $problem == "Acne" && $product == "Serum") {
-  echo 'Here is a recommended product.<br>';
-  echo '<img src="https://s4.thcdn.com//productimg/1600/1600/13906946-9374975436100654.jpg"><br>';
-} 
-
-if ($type == "Dry" && $problem == "Acne" && $product == "Cleanser") {
-  echo 'Here is a recommended product:<br>';
-  echo '<img src="https://m.media-amazon.com/images/I/617cYpld9UL._SX522_.jpg"><br>';
-} elseif ($type == "Oily" && $problem == "Acne" && $product == "Cleanser") {
-  echo 'Here is a recommended product: <br>';
-  echo '<img src="https://media.ulta.com/i/ulta/2609330?w=1080&h=1080&fmt=auto"><br>'; 
-} elseif ($type == "Acne" && $problem == "Acne" && $product == "Cleanser") {
-  echo 'Here is a recommended product.<br>';
-  echo '<img src="https://media.ulta.com/i/ulta/2615399?w=1080&h=1080&fmt=auto"><br>';
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  }
-
-
-
-
-
-
-
-
+  <?php 
+  if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) {
+      // Retrieve form data
+      $type = $_POST['type'];
+      $skin_problem = $_POST['skin'];
+      $product = $_POST['product'];
   
-
-
+      // Database connection
+      $conn = new mysqli('localhost', 'root', '', 'my_products');
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+  
+      // Query to fetch the recommended product
+      $sql = "SELECT recommended_image_url 
+              FROM SkinCareRecommendations 
+              WHERE type = ? AND skin_problem = ? AND product = ?";
+      $stmt = $conn->prepare($sql);
+      $stmt->bind_param('sss', $type, $skin_problem, $product);
+      $stmt->execute();
+      $result = $stmt->get_result();
+  
+      // Display the recommended product if found
+      if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              echo 'Here is a recommended product:<br>';
+              echo '<img src="' . htmlspecialchars($row['recommended_image_url']) . '"><br>';
+          }
+      } else {
+          echo "No recommendations found for the selected options.";
+      }
+    }
 ?>
+
 
     <footer class="footer">
       <span> FAQ</span> &nbsp;&nbsp;
