@@ -17,7 +17,7 @@ CREATE TABLE products (
 
 INSERT INTO products (name, price, category, image_url) VALUES
 -- Cleansers
-('CeraVe - Hydrating Facial Cleanser', 18.00, 'Cleansers', 'img/:images:cerave-cleanser.jpg'),
+('PanOxyl - Acne Forming ', 18.00, 'Cleanser', 'img/PanOxyl.jpg'),
 ('La Roche-Posay - Hydrating Gentle Face Cleanser', 20.00, 'Cleansers', 'img/La Roche Posay Cleanser.jpg'),
 ('Aveeno - Calm + Restore Nourishing Oat Facial Cleanser', 15.00, 'Cleansers', 'img/Aveeno cleanser.jpg'),
 ('Vanicream - Gentle Facial Cleanser', 13.00, 'Cleansers', 'img/Vanicream Cleanser.jpg'),

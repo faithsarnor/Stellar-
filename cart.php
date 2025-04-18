@@ -168,12 +168,17 @@ $subtotal = 0;
 
         /* --- Footer Styles (from your CSS) --- */
         .footer { ... }
-        /*  General Body Styles (from your main.css, potentially) --- */
+         /*  General Body Styles (from your main.css, potentially) --- */
         body {
             background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%); /* From your CSS */
             font-family: Arial, sans-serif; /* A default font */
             margin: 0;
             padding: 0;
+        }
+         /*  Styles for quantity input */
+        .quantity-input {
+            width: 40px;
+            text-align: center;
         }
 
     </style>
@@ -301,8 +306,7 @@ $subtotal = 0;
                                 <form class="update-quantity-form" action="cart_action.php" method="post">
                                     <input type="hidden" name="action" value="update">
                                     <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product_id); ?>">
-                                    <input type="number" name="new_quantity" value="<?php echo htmlspecialchars($quantity); ?>" min="0">
-                                    <button type="submit">Update</button>
+                                    <input type="number" name="new_quantity" value="<?php echo htmlspecialchars($quantity); ?>" min="0" class="quantity-input" onchange="this.form.submit()"> <!-- Added onchange event -->
                                 </form>
                             </td>
                             <td>$<?php echo htmlspecialchars(number_format($subtotal_item, 2)); ?></td>

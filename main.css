@@ -2,18 +2,12 @@ body,
 html {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
 }
 
 body {
-    background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%);
-    
-    
+    background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%); 
     
 }
-
 
 /* Header Style */
 .header {
@@ -135,11 +129,12 @@ body {
     width: 100%;
     text-align: left;
     font-weight: 200px;
+
 }
 
 .about {
     width: 27%;
-    background-color: #457b9d;
+     background: #457b9d;
     border-radius: 15px;
     padding: 2%;
     margin: 1%;
@@ -222,7 +217,6 @@ body {
 .icons {
     display: flex;
     align-items: center;
-   
 }
 
 .icon {
@@ -427,7 +421,10 @@ body {
     margin: 0; 
 }
 
+.font{
+    font-family: "Cormorant Garamond";
 
+}
 
 
 
