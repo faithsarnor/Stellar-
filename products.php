@@ -1,3 +1,13 @@
+<?php
+session_start();
+include_once 'database.php';
+
+// Fetch products
+$query_table_products = "SELECT product_id, name, category, price, description, image_url, stock FROM products";
+$statement_products = $db->prepare($query_table_products);
+$statement_products->execute();
+$table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -152,16 +162,7 @@
     </body>
 </html>
 -->
-<?php
-session_start();
-include_once 'database.php';
 
-// Fetch products
-$query_table_products = "SELECT product_id, name, category, price, description, image_url, stock FROM products";
-$statement_products = $db->prepare($query_table_products);
-$statement_products->execute();
-$table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
