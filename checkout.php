@@ -4,6 +4,7 @@
   Date: April 18, 2025
   Description: Checkout page for the Stellar skincare website, including billing, shipping, and payment forms.
   Attribution: Font Awesome for icons, Google Fonts for typography, and W3Schools for slideshow example.
+
 */
 session_start();
 ?>
