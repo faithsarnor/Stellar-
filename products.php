@@ -1,4 +1,14 @@
 <?php
+/*
+  Author: Faith Sarnor
+  Modified by: Zainab Sajjad, 4/18/2025
+  Description: Fixed issues with the shopping cart functionality, including properly displaying items from the session and calculating totals. 
+               Added PHP code to dynamically retrieve product data (name, price, image) from the MySQL database for each item in the cart.
+               Updated CSS to improve the layout and design of the cart page, ensuring better responsiveness and alignment of elements.
+  Attribution: Font Awesome for icons, Google Fonts for typography, and W3Schools for slideshow example.
+*/
+
+
 session_start();
 include_once 'database.php';
 
@@ -403,7 +413,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </li>
-            <li class="ai">GlamBot</li>
+            <li class="ai">GlamBot</li> &nbsp; &nbsp;
             <li><a href="form.html">     Skincare Quiz</a></li>
         </ul>
         <div class="icons">

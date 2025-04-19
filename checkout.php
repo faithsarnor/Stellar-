@@ -1,18 +1,25 @@
 <?php
+/*
+  Author: Zainab Sajjad
+  Date: April 18, 2025
+  Description: Checkout page for the Stellar skincare website, including billing, shipping, and payment forms.
+  Attribution: Font Awesome for icons, Google Fonts for typography, and W3Schools for slideshow example.
+*/
 session_start();
-// You may want to add some checks here to make sure the cart is not empty before proceeding to checkout.
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Checkout</title>
-    <link rel="stylesheet" href="main.css">  <!-- Link to your main.css -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="main.css" />
+    <script src="java1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" >
+
     <style>
-        /* Basic checkout page styles - adjust to fit your design */
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Cormorant Garamond";
             background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%); /* From your CSS */
             margin: 0;
             padding: 0;
@@ -133,10 +140,10 @@ session_start();
     </style>
 </head>
 <body>
-  <div class="rectangle-22" >
+<div class="rectangle-22" >
       <div class="slideshow-container" id="slides">
         
-        <div class="slide"  onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when 
+        <div class="slide"  onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
           <span id="pipo">Discounts & Coupons</span></div>
         <div class="slide"><span>Get 40% off Your First Order</span></div>
         <div class="slide"><span>Free Shipping on Orders $110+</span></div>
@@ -212,7 +219,7 @@ session_start();
       <div class="icons">
         <a href="#" class="icon"><i class="fas fa-search"></i></a>
         <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
-        <a href="cart.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+        <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
     <div class="search-container" id="search-container">
       <div class="search-input-wrapper">
@@ -258,16 +265,6 @@ session_start();
                 <label for="billing_zip">Zip Code:</label>
                 <input type="text" id="billing_zip" name="billing_zip" required>
             </div>
-            <div class="form-group">
-                <label for="billing_country">Country:</label>
-                <select id="billing_country" name="billing_country" required>
-                    <option value="">Select Country</option>
-                    <!-- Add your country options here -->
-                    <option value="US">United States</option>
-                    <option value="CA">Canada</option>
-                    <!-- ... more options ... -->
-                </select>
-            </div>
 
             <h3>Shipping Information</h3>
             <div class="form-group">
@@ -294,16 +291,7 @@ session_start();
                 <label for="shipping_zip">Zip Code:</label>
                 <input type="text" id="shipping_zip" name="shipping_zip" required>
             </div>
-            <div class="form-group">
-                <label for="shipping_country">Country:</label>
-                <select id="shipping_country" name="shipping_country" required>
-                    <option value="">Select Country</option>
-                    <!-- Add your country options here -->
-                    <option value="US">United States</option>
-                    <option value="CA">Canada</option>
-                    <!-- ... more options ... -->
-                </select>
-            </div>
+           
 
             <h3>Payment Information</h3>
             <div class="form-group">
@@ -329,5 +317,7 @@ session_start();
         <span>Contact US</span>  
         <span>Customer Support</span>
     </footer>
+
+    
 </body>
 </html>
