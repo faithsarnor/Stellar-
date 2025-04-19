@@ -19,6 +19,7 @@ $statement_products->execute();
 $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+
 <!-- <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -173,10 +174,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 </html>
 -->
 
-<?php
-session_start();   
-include_once 'database.php';
-?>
+
 
 
 <!DOCTYPE html>
