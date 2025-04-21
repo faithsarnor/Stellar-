@@ -22,19 +22,42 @@ INSERT INTO products (name, price, category, image_url) VALUES
 ('Aveeno - Calm + Restore Nourishing Oat Facial Cleanser', 15.00, 'Cleansers', 'img/Aveeno cleanser.jpg'),
 ('Vanicream - Gentle Facial Cleanser', 13.00, 'Cleansers', 'img/Vanicream Cleanser.jpg'),
 ('Cetaphil - Gentle Skin Cleanser Face Wash, for Sensitive Skin', 12.00, 'Cleansers', 'img/cetaphil cleanser.jpg'),
+('CeraVe Foaming Facial Cleanser ', 15.00, 'Cleansers', 'img/cerave foam cleanser.webp'),
+('La Roche-Posay Toleriane Purifying Foaming Cleanser', 18.00, 'Cleansers', 'img/Laroche posay toleraine purifying foaming cleanser.jpg'),
+('Neutrogena Oil-Free Acne Wash', 16.00, 'Cleansers', 'img/Neutrogena Oil-Free Acne Wash.webp'),
+
 
 -- Moisturizers
 ('Cetaphil - Moisturizing Cream for Dry to Very Dry Skin', 11.00, 'Moisturizers', 'img/cetaphil moisturizer.jpg'),
 ('La Roche-Posay - Toleriane Double Repair Face Moisturizer', 25.00, 'Moisturizers', 'img/la roche posay moisturizer.webp'),
 ('CeraVe - Moisturizing Cream', 15.00, 'Moisturizers', 'img/cerave moisturizer.jpg'),
 ('Olay - Micro Sculpting Cream', 25.00, 'Moisturizers', 'img/olay moisturizer.jpeg'),
+('CeraVe Ultra-Light Moisturizing Gel', 20.00, 'Moisturizers', 'img/Ultra-Light Moisturizing Gel.webp'),
+('Cetaphil Gentle Clear Mattifying Acne Moisturzer', 11.00, 'Moisturizers', 'img/Cetaphil Gentle Clear Mattifying Acne Moisturzer.webp'),
 ('Itk - Prebiotic Gel Moisturizer', 12.00, 'Moisturizers', 'img/cerave moisturizer.jpg'),
+('Sephora Collection Hydrating Cica cream', 20.00, 'Moisturizers', 'img/Sephora Collection Hydrating Cica cream.webp'),
 
 -- Toners
 ('First Aid Beauty - Ultra Repair Wild Oat Hydrating Toner', 24.00, 'Toners', 'img/First aid beauty toner.jpg'),
 ('Cetaphil - Bright Healthy Radiance Brightness Refresh Toner', 22.00, 'Toners', 'img/Cetaphil toner.webp'),
 ('Thayers - Rose Petal Toner', 11.00, 'Toners', 'img/thayers toner.jpg'),
 ('Mario Badescu Aloe Vera Toner', 16.00, 'Toners', 'img/mario badescu toner.webp');
+('Good Molecules Niacinamide Brightening Toner', 14.00, 'Toners', 'img/Good Molecules Niacinamide Brightening Toner.jpg');
+('The Ordinary Glycolic Acid 7% Toning Solution', 13.00, 'Toners', 'img/The Ordinary Glycolic Acid 7% Toning Solution.jpeg');
+
+-- Eye Treaments 
+('CeraVe Eye Repair Cream', 15.00, 'Eye Treaments', 'img/CeraVe Eye Repair Cream.webp'),
+('Haruharu Wonder Black Rice Bakuchiol Eye Cream', 10.00, 'img/HARUHARUWONDERBlackRiceBakuchiolEyeCream_grande.webp'),
+('Neutrogena Hydro Boost Eye Gel-Cream', 20.00, 'Eye Treaments', 'img/Neutrogena Hydro Boost Eye Gel-Cream.webp'),
+
+-- Treatments and serums 
+('The Ordinary Niacinamide 10% + Zin 1% Serum', 20.00, 'Treatments and serums', 'img/The Ordinary Niacinamide 10% + Zin 1% Serum.webp'),
+('Differin Adapalene Gel 0.1% Acn Treatment', 15.00, 'Treatments and serums', 'img/Differin Adapalene Gel 0.1% Acn Treatment.webp'),
+('Hero Cosmetics Mighty Pach Original', 12.00, 'Treatments and serums', 'img/Mighty-Patch-by-Hero.webp'),
+
+-- Sunscreens
+('Hero Cosmetics Force Shield Superlight Suncreen SPF 30', 20.00, 'Sunscreens', 'img/Hero Cosmetics Force Shield Superlight Suncreen SPF 30.webp'),
+('CeraVe Hydrating Mineral Suscreen SPF 30', 18.00, 'Sunscreens', 'img/CeraVe Hydrating Mineral Suscreen SPF 30.jpg'),
 
 CREATE TABLE SkinCareRecommendations (
     id INT AUTO_INCREMENT PRIMARY KEY,
