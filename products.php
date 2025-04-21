@@ -1,4 +1,14 @@
 <?php
+/*
+  Author: Faith Sarnor
+  Modified by: Zainab Sajjad, 4/18/2025
+  Description: Fixed issues with the shopping cart functionality, including properly displaying items from the session and calculating totals. 
+               Added PHP code to dynamically retrieve product data (name, price, image) from the MySQL database for each item in the cart.
+               Updated CSS to improve the layout and design of the cart page, ensuring better responsiveness and alignment of elements.
+  Attribution: Font Awesome for icons, Google Fonts for typography, and W3Schools for slideshow example.
+*/
+
+
 session_start();
 include_once 'database.php';
 
@@ -8,6 +18,7 @@ $statement_products = $db->prepare($query_table_products);
 $statement_products->execute();
 $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -162,12 +173,8 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
     </body>
 </html>
 -->
-<<<<<<< HEAD
-<?php
-session_start();   
-include_once 'database.php';
-=======
->>>>>>> cbb81947afe13b8964aea387ca8f27bb9221b3c7
+
+
 
 
 <!DOCTYPE html>
@@ -385,17 +392,30 @@ include_once 'database.php';
             <li><a href="about.html">About Us</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li class="dropdown">
-        <div class="dropdown">
-          <a href="products.php" class="drop">Products</a> <!-- Products is a link now -->
-          <div class="dropdown-menu">
-            <a href="cleanser.html">Cleanser</a>
-            <a href="moisturizer.html">Moisturizer</a>
-            <a href="toner.html">Toner</a>
-            <a href="Face and Eye Treatments.html">Face and Eye Treatments</a>
-            <a href="Suncare.html">Suncare</a>
-          </div>
-        </div>          
-    </li>
+                <a href="products.php">
+                    <button class="drop">Products</button>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="submenu">
+                        <a href="#">Cleanser ▸</a>
+                        <div class="submenu-menu">
+                            <a href="#">CeraVe</a> <a href="#">La Roche-Posay</a> <a href="#">Aveeno</a> <a href="#">Vanicream</a> <a href="#">Cetaphil</a>
+                        </div>
+                    </div>
+                    <div class="submenu">
+                        <a href="#">Moisturizer ▸</a>
+                        <div class="submenu-menu">
+                            <a href="#">Cetaphil</a> <a href="#">La Roche-Posay</a> <a href="#">Cerave</a> <a href="#">Olay</a> <a href="#">Itk</a>
+                        </div>
+                    </div>
+                    <div class="submenu">
+                        <a href="#">Toner ▸</a>
+                        <div class="submenu-menu">
+                            <a href="#">First Aid Beauty</a> <a href="#">Cetaphil</a> <a href="#">Byoma</a> <a href="#">Thayers</a> <a href="#"> Mario Badescu </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
             <li class="ai">GlamBot</li>
             <li><a href="form.html">     Skincare Quiz</a></li>
         </ul>
