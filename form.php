@@ -53,6 +53,8 @@
     </div>
   </div>
   <?php 
+ 
+  
   if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) {
       // Retrieve form data
       $type = $_POST['type'];
@@ -77,13 +79,16 @@
       // Display the recommended product if found
       if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {
-              echo 'Here is a recommended product:<br>';
-              echo '<img src="' . htmlspecialchars($row['recommended_image_url']) . '"><br>';
+              echo '<div class="recommended-product">';
+              echo 'Here is a recommended product:<br><br>';
+              echo '<img src="' . htmlspecialchars($row['recommended_image_url']) . '" class="product-img"><br>';
+              echo '</div>';
           }
       } else {
           echo "No recommendations found for the selected options.";
       }
     }
+   
 ?>
 
 
