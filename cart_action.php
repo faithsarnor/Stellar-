@@ -1,4 +1,11 @@
 <?php
+/*
+  Author: Zainab Sajjad
+  Date: April 18, 2025
+  Description: Handles all cart actions including adding items to cart, updating quantities, and removing items. Uses sessions to track the cart across pages.
+  Attribution: The logic for managing session-based cart operations was structured with reference to online e-commerce tutorials and enhanced using ChatGPT assistance.
+  Notes: Could add CSRF token validation for security. Input sanitization can be further improved in future iterations.
+*/
 session_start(); // Start the session
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!isset($_SESSION['cart'])) {
             $_SESSION['cart'] = array();
         }
+#if the product is already in the cart, look inside the cart, is this product ID already there?
 
         if (isset($_SESSION['cart'][$product_id])) {
             $_SESSION['cart'][$product_id] += $quantity; // Increment quantity
