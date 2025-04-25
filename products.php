@@ -19,8 +19,7 @@ $statement_products->execute();
 $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<<<<<<< HEAD
-=======
+
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -178,7 +177,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 
 
 
->>>>>>> 3986b0387f068f055f70c8a4e9a4dc896d7a4bcf
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -390,7 +389,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
     <!-- ---  Header and Navigation  --- -->
     <div class="header">
         <ul class="head">
-            <li class="fix"><a href="index.html">Stellar</a></li>
+            <li class="fix"><a href="index.php">Stellar</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="faq.html">FAQ</a></li> &nbsp;&nbsp;&nbsp;
             <li class="dropdown">
