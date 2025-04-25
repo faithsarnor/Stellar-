@@ -125,7 +125,7 @@ $subtotal = 0;
                 <?php endif; endforeach; ?>
             </tbody>
             <tfoot>
-                <tr>
+                <tr>1
                     <td colspan="2">Total Items: <?php echo $total_items; ?></td>
                     <td><b>Subtotal:</b></td>
                     <td>$<?php echo number_format($subtotal, 2); ?></td>
@@ -141,13 +141,10 @@ $subtotal = 0;
         <p>Your cart is empty.</p>
     <?php endif; ?>
 </div>
-
 <footer class="footer">
-    <span>FAQ</span>  
-    <span>Feedback</span>  
-    <span>Contact US</span>  
+    <span>Feedback</span>&nbsp;&nbsp;
+    <span>Contact US</span>&nbsp;&nbsp;
     <span>Customer Support</span>
 </footer>
-
 </body>
 </html>

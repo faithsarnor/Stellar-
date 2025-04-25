@@ -467,10 +467,9 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
     </main>
     <!-- --- Footer --- -->
     <footer class="footer">
-        <span> FAQ</span>   
-        <span>Feedback</span>  
-        <span>Contact US</span>  
-        <span>Customer Support</span>
+      <span>Feedback</span>&nbsp;&nbsp;
+      <span>Contact US</span>&nbsp;&nbsp;
+      <span>Customer Support</span>
     </footer>
     &nbsp;
     &nbsp;
