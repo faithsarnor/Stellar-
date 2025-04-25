@@ -28,10 +28,10 @@
     <!-- Header with Stellar and Navigation Links -->
     <div class="header">
       <ul class="head">
-        <li class="fix"><a href="index.html">Stellar</a></li> 
+        <li class="fix"><a href="index.php">Stellar</a></li> 
         <li><a href="about.html">About Us</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="Products.html">Products</a></li>
+        <li><a href="Products.php">Products</a></li>
         <li class="ai">GlamBot</li>
         <li><a href="form.html"> &nbsp; &nbsp; Skincare Quiz</a></li>
        
@@ -53,6 +53,8 @@
     </div>
   </div>
   <?php 
+ 
+  
   if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) {
       // Retrieve form data
       $type = $_POST['type'];
@@ -77,13 +79,16 @@
       // Display the recommended product if found
       if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {
-              echo 'Here is a recommended product:<br>';
-              echo '<img src="' . htmlspecialchars($row['recommended_image_url']) . '"><br>';
+              echo '<div class="recommended-product">';
+              echo 'Here is a recommended product:<br><br>';
+              echo '<img src="' . htmlspecialchars($row['recommended_image_url']) . '" class="product-img"><br>';
+              echo '</div>';
           }
       } else {
           echo "No recommendations found for the selected options.";
       }
     }
+   
 ?>
 
 

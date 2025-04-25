@@ -56,7 +56,7 @@
         <?php endif; ?>
         <h2>Login Successful!</h2>
         <p>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?>! You have successfully logged in.</p>
-        <a href="index.html" class="btn">Go to Dashboard</a>
+        <a href="index.php" class="btn">Go to Dashboard</a>
     </div>
 </body>
 </html>

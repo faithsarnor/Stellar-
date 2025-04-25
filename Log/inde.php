@@ -64,7 +64,7 @@ session_start();  // Start the session here
         <?php endif; ?>
         <h2>Login Successful!</h2>
         <p>Welcome <?php echo isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : 'to Stellar'; ?>! You are now logged in and ready to explore.</p>
-        <a href="../index.html" class="btn">Go to Dashboard</a>
+        <a href="../index.php" class="btn">Go to Dashboard</a>
     </div>
 </body>
 </html>
