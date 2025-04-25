@@ -4,7 +4,6 @@
 // Description: Handles the processing of orders from the checkout page, sanitizes input, confirms purchase, and displays confirmation.
 // Attribution: Font Awesome CDN, Google Fonts, JavaScript slideshow used from local and external sources.
 
-// process_order.php
 session_start();
 require_once("database.php"); // assumes you have a file to connect to MySQL
 
@@ -14,7 +13,7 @@ function clean_input($data) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Collect and clean billing info (as before)
+    // Collect and clean billing info
     $billing_first = clean_input($_POST['billing_first_name']);
     $billing_last = clean_input($_POST['billing_last_name']);
     $billing_email = clean_input($_POST['billing_email']);
@@ -24,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $billing_state = clean_input($_POST['billing_state']);
     $billing_zip = clean_input($_POST['billing_zip']);
 
-    // Collect and clean shipping info (as before)
+    // Collect and clean shipping info
     $shipping_first = clean_input($_POST['shipping_first_name']);
     $shipping_last = clean_input($_POST['shipping_last_name']);
     $shipping_address = clean_input($_POST['shipping_address']);
@@ -32,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $shipping_state = clean_input($_POST['shipping_state']);
     $shipping_zip = clean_input($_POST['shipping_zip']);
 
-    // Collect and clean payment info (as before)
+    // Collect and clean payment info
     $card_number = clean_input($_POST['card_number']);
     $expiry_date = clean_input($_POST['expiry_date']);
     $cvv = clean_input($_POST['cvv']);
@@ -40,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // You could also handle session cart items here
     $cart_items = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 
-    // Display confirmation
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -53,18 +51,64 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
 
         <style>
+        /* Confirmation Box Styling */
+        .confirmation-container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .confirmation-container h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #2b2b2b;
+        }
+
+        .confirmation-container p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .confirmation-container strong {
+            color: #0073e6;
+        }
+
+        .return {
+            margin-top: 30px;
+        }
+
         .return a {
-            color: white; 
-            text-decoration: none; 
-            padding: 10px 20px; 
-            background-color: blue; 
-            border-radius: 5px; 
+            display: inline-block;
+            background-color: #0073e6;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
         .return a:hover {
-            background-color: darkblue; 
+            background-color: #005bb5;
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         </style>
     </head>
 
@@ -91,14 +135,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         </div>
 
-        <!-- Header with Stellar and Navigation Links -->
+        <!-- Header -->
         <div class="header">
             <ul class="head">
                 <li class="fix"><a href="index.html">Stellar</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li class="dropdown">
-                    <a href="Products.html">
+                    <a href="Products.php">
                         <button class="drop">Products</button>
                     </a>
                     <div class="dropdown-menu">
@@ -128,7 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     <a href="#">Cetaphil</a>
                                     <a href="#">Byoma</a>
                                     <a href="#">Thayers</a>
-                                    <a href="#"> Mario Badescu </a>
+                                    <a href="#">Mario Badescu</a>
                                 </div>
                             </div>
                         </div>
@@ -145,16 +189,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         </div>
 
+        <!-- Order Confirmation Box -->
         <div class="confirmation-container">
             <h2>Thank You for Your Order!</h2>
             <p>Your order has been placed successfully.</p>
             <p>A confirmation email will be sent to <strong><?php echo htmlspecialchars($billing_email); ?></strong>.</p>
-           <span class= "return" ><a href="index.html">Return to Home</a></span>
+            <div class="return"><a href="index.html">Return to Home</a></div>
         </div>
 
-        <!-- --- Footer --- -->
+        <!-- Footer -->
         <footer class="footer">
-            <span> FAQ</span>
+            <span>FAQ</span>
             <span>Feedback</span>
             <span>Contact US</span>
             <span>Customer Support</span>
