@@ -416,7 +416,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </li>
-            <li class="ai">GlamBot</li> &nbsp; &nbsp;
+            <li class="ai">GlamBot</li>
             <li><a href="form.html">     Skincare Quiz</a></li>
         </ul>
         <div class="icons">
