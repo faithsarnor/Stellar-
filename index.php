@@ -1,17 +1,9 @@
-<!-- 
-  Author: Zainab Sajjad
-  Date: April 18, 2025
-  Description: This HTML file displays the main header and navigation layout for Stellar’s homepage, including discounts, search functionality, and product category menus.
-  Attribution: Used Font Awesome for icons and Google Fonts for typography. Some UI/UX interaction logic referenced from online tutorials and customized with the help of ChatGPT.
--->
 <?php
 /*
   Author: Faith Sarnor
   Modified by: Zainab Sajjad, 4/18/2025
-  Description: Fixed issues with the shopping cart functionality, including properly displaying items from the session and calculating totals. 
-               Added PHP code to dynamically retrieve product data (name, price, image) from the MySQL database for each item in the cart.
-               Updated CSS to improve the layout and design of the cart page, ensuring better responsiveness and alignment of elements.
-  Attribution: Font Awesome for icons, Google Fonts for typography, and W3Schools for slideshow example.
+  Description: This HTML file displays the main header and navigation layout for Stellar’s homepage, including discounts, search functionality, and product category menus.
+  Attribution: Used Font Awesome for icons and Google Fonts for typography. Some UI/UX interaction logic referenced from online tutorials and customized with the help of ChatGPT.
 */
 
 
@@ -23,6 +15,10 @@ $query_table_products = "SELECT product_id, name, category, price, description, 
 $statement_products = $db->prepare($query_table_products);
 $statement_products->execute();
 $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
+
+// Assign table_products to $products, so it can be used by Javascript
+$products = $table_products;
+
 ?>
 
 
@@ -31,6 +27,10 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <title>Stellar - Products</title>
     <link rel="stylesheet" href="main.css" /> <!-- Include your main CSS -->
+    <script>
+        // Pass PHP products data to JavaScript
+        var products = <?php echo json_encode($products); ?>;
+    </script>
     <script src="java1.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -238,7 +238,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         <ul class="head">
             <li class="fix"><a href="index.php">Stellar</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="faq.html">FAQ</a></li> &nbsp;&nbsp;&nbsp;
+            <li><a href="faq.html">FAQ</a></li>    
             <li class="dropdown">
                 <a href="products.php">
                     <button class="drop">Products</button>
@@ -268,18 +268,19 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
             <li><a href="form.html">     Skincare Quiz</a></li>
         </ul>
         <div class="icons">
-            <a href="#" class="icon"><i class="fas fa-search"></i></a>
-            <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
-            <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
-        </div>
+      <a href="#" class="icon" id="search-icon"><i class="fas fa-search"></i></a>
+      <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
+      <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
+
     <div class="search-container" id="search-container">
-        <div class="search-input-wrapper">
-            <input type="text" id="search-input" placeholder="What can we help you find?" />
-            <i class="fas fa-times" id="search-close-icon"></i>
-        </div>
-        <div id="search-results"></div>
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="What can we help you find?" />
+        <i class="fas fa-times" id="search-close-icon"></i>
+      </div>
+      <div id="search-results"></div>
     </div>
+  </div>
     <!-- --- Product Grid  --- -->
     <main>
         <h1 style=" color: #1d2d44; text-align: center;">Our Products</h1>
@@ -292,7 +293,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         <div class="product-grid">
             <?php if (!empty($table_products)): ?>
                 <?php foreach ($table_products as $product): ?>
-                    <div class="product">
+                    <div class="product" id="product-<?php echo $product['product_id']; ?>">  <!-- Add an ID for each product -->
                         <img src="<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                         <div class="product-details">
                             <h3><?php echo htmlspecialchars($product['name']); ?></h3>
@@ -315,37 +316,32 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
     </main>
     <!-- --- Footer --- -->
     <footer class="footer">
-      <span>Feedback</span>&nbsp;&nbsp;
-      <span>Contact US</span>&nbsp;&nbsp;
+      <span>Feedback</span>  
+      <span>Contact US</span>  
       <span>Customer Support</span>
     </footer>
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
 
    
-
-
-    <!--  Script includes  -->
-    <script src="java1.js"></script>
 </body>
 </html>

@@ -61,7 +61,7 @@ $subtotal = 0;
 
 <div class="header">
     <ul class="head">
-        <li class="fix"><a href="index.html">Stellar</a></li>
+        <li class="fix"><a href="index.php">Stellar</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li class="dropdown">

@@ -154,13 +154,6 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
                     <button class="add-to-cart">Add to Cart</button>
                     <img src="img/Cetaphil toner.webp" alt="Cetaphil Toner">
                     
-                </div>
-                <div class="product">
-                    <h3>Thayers - Rose Petal Toner</h3>
-                    <p>$11</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                    <img src="img/thayers toner.jpg" alt="Thayers Toner">
-                    
                    <div class="product">
                     <h3> Mario Badescu Aloe Vera Toner      </h3>
                         <p>$16</p>
@@ -182,6 +175,10 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <title>Stellar - Products</title>
     <link rel="stylesheet" href="main.css" /> <!-- Include your main CSS -->
+    <script>
+        // Pass PHP products data to JavaScript
+        var products = <?php echo json_encode($table_products); ?>;
+    </script>
     <script src="java1.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -389,7 +386,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         <ul class="head">
             <li class="fix"><a href="index.php">Stellar</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="faq.html">FAQ</a></li> &nbsp;&nbsp;&nbsp;
+            <li><a href="faq.html">FAQ</a></li>    
             <li class="dropdown">
                 <a href="products.php">
                     <button class="drop">Products</button>
@@ -415,11 +412,11 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </li>
-            <li class="ai">GlamBot</li> &nbsp; &nbsp;
+            <li class="ai">GlamBot</li>
             <li><a href="form.html">     Skincare Quiz</a></li>
         </ul>
         <div class="icons">
-            <a href="#" class="icon"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon" id="search-icon"><i class="fas fa-search"></i></a>
             <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
             <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
@@ -443,7 +440,7 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         <div class="product-grid">
             <?php if (!empty($table_products)): ?>
                 <?php foreach ($table_products as $product): ?>
-                    <div class="product">
+                    <div class="product" id="product-<?php echo $product['product_id']; ?>">  <!-- Add an ID for each product -->
                         <img src="<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                         <div class="product-details">
                             <h3><?php echo htmlspecialchars($product['name']); ?></h3>
@@ -466,37 +463,32 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
     </main>
     <!-- --- Footer --- -->
     <footer class="footer">
-      <span>Feedback</span>&nbsp;&nbsp;
-      <span>Contact US</span>&nbsp;&nbsp;
+      <span>Feedback</span>  
+      <span>Contact US</span>  
       <span>Customer Support</span>
     </footer>
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
 
    
-
-
-    <!--  Script includes  -->
-    <script src="java1.js"></script>
 </body>
 </html>

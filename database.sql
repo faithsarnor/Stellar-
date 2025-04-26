@@ -62,14 +62,11 @@ CREATE TABLE SkinCareRecommendations (
     product VARCHAR(50) NOT NULL,
     recommended_image_url TEXT NOT NULL
 );
-<<<<<<< HEAD
-INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_image_url) VALUES
--- Acne
-=======
+
+
 
 INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_image_url) VALUES
 -- Acne 
->>>>>>> 3986b0387f068f055f70c8a4e9a4dc896d7a4bcf
 ('Dry', 'Acne', 'Moisturizer', 'https://th.bing.com/th/id/OIP.JOgFRUanurAGcghIhE5qhQHaHa?rs=1&pid=ImgDetMain'),
 ('Oily', 'Acne', 'Moisturizer', 'https://m.media-amazon.com/images/I/61tAp+18-bL._SL1500_.jpg'),
 ('Acne', 'Acne', 'Moisturizer', 'https://cdn.nicehair.dk/products/89332/clarifying-oil-free-water-gel-50-ml-1596691014.jpg'),
@@ -82,7 +79,7 @@ INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_im
 ('Dry', 'Acne', 'Cleanser', 'https://m.media-amazon.com/images/I/617cYpld9UL._SX522_.jpg'),
 ('Oily', 'Acne', 'Cleanser', 'https://media.ulta.com/i/ulta/2609330?w=1080&h=1080&fmt=auto'),
 ('Acne', 'Acne', 'Cleanser', 'https://media.ulta.com/i/ulta/2615399?w=1080&h=1080&fmt=auto'),
-<<<<<<< HEAD
+
 -- Hyperpigmentation
 ('Dry', 'Hyperpigmentation', 'Moisturizer', 'https://www.sephora.com/productimages/sku/s2418879-main-zoom.jpg?imwidth=930'),
 ('Oily', 'Hyperpigmentation', 'Moisturizer', 'https://i.pinimg.com/736x/e9/8e/46/e98e464a8f831c4c7fd1acee0bc80ced.jpg'),
@@ -111,8 +108,6 @@ INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_im
 ('Acne', 'Redness', 'Cleanser', 'https://m.media-amazon.com/images/I/61a9G+1e9KL._SX522_.jpg');
 
 
-=======
->>>>>>> 3986b0387f068f055f70c8a4e9a4dc896d7a4bcf
 
 -- Hyperpigmentation 
 ('Dry','Hyperpigmentation','Moisturizer', 'https://drgavinsandercoe.com.au/wp-content/uploads/2022/01/SkinCeuticals%C2%AE-Renew-Overnight-Dry-Moisturiser-60mL-1.jpg'),

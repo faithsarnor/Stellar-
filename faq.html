@@ -71,59 +71,56 @@
 </head>
 
 <body>
-  <div class="rectangle-22" >
+  <!-- Promo Slideshow -->
+  <div class="rectangle-22">
     <div class="slideshow-container" id="slides">
-      
-      <div class="slide"  onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
-        <span id="pipo">Discounts & Coupons</span></div>
+      <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
+        <span id="pipo">Discounts & Coupons</span>
+      </div>
       <div class="slide"><span>Get 40% off Your First Order</span></div>
       <div class="slide"><span>Free Shipping on Orders $110+</span></div>
-      
-      
     </div>
     <div class="slideshow-nav">
-      <button id="prev-slide"><</button>
-      <button id="next-slide">></button>
+      <button id="prev-slide">&lt;</button>
+      <button id="next-slide">&gt;</button>
     </div>
   </div>
 
+  <!-- Discount Popup -->
   <div id="discount-popup" class="popup">
     <div class="popup-content">
       <span class="close-popup">X</span>
       <p id="popup-message"></p>
     </div>
-
   </div>
 
-  <!-- Header with Stellar and Navigation Links -->
+  <!-- Header Navigation -->
   <div class="header">
     <ul class="head">
       <li class="fix"><a href="index.php">Stellar</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li class="dropdown">
-        <div class="dropdown">
-          <a href="products.php" class="drop">Products</a> <!-- Products is a link now -->
-          <div class="dropdown-menu">
-            <a href="cleanser.html">Cleanser</a>
-            <a href="moisturizer.html">Moisturizer</a>
-            <a href="toner.html">Toner</a>
-            <a href="Face and Eye Treatments.html">Face and Eye Treatments</a>
-            <a href="Suncare.html">Suncare</a>
-          </div>
-        </div>          
-    </li>
+        <a href="products.php" class="drop">Products</a>
+        <div class="dropdown-menu">
+          <a href="cleanser.html">Cleanser</a>
+          <a href="moisturizer.html">Moisturizer</a>
+          <a href="toner.html">Toner</a>
+          <a href="Face and Eye Treatments.html">Face and Eye Treatments</a>
+          <a href="Suncare.html">Suncare</a>
+        </div>
+      </li>
       <li class="ai">GlamBot</li>
-      <li><a href="form.html"> &nbsp; &nbsp; Skincare Quiz</a></li>
+      <li><a href="form.html">&nbsp;&nbsp; Skincare Quiz</a></li>
     </ul>
 
     <!-- Icons -->
     <div class="icons">
-      <a href="#" class="icon"><i class="fas fa-search"></i></a>
       <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
       <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
 
+    <!-- Search Bar -->
     <div class="search-container" id="search-container">
       <div class="search-input-wrapper">
         <input type="text" id="search-input" placeholder="What can we help you find?" />
@@ -133,9 +130,11 @@
     </div>
   </div>
 
+  <!-- FAQ Section -->
   <h1 style="text-align:center; color:#1d2d44;">Hey StellarDoll!</h1>
   <p style="text-align:center; max-width: 700px; margin: auto;">
-    Welcome to our FAQ section! We answer common skincare questions, ingredient info, and usage tips. We don’t sell directly but we guide, glow, and glam.
+    Welcome to our FAQ section! We answer common skincare questions, ingredient info, and usage tips.
+    We don’t sell directly but we guide, glow, and glam.
   </p>
 
   <div class="accordion-container">
@@ -172,6 +171,7 @@
     </div>
   </div>
 
+  <!-- Accordion Script -->
   <script>
     const accordionItems = document.querySelectorAll('.accordion-item');
     accordionItems.forEach(item => {
