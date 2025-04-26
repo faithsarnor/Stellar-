@@ -19,7 +19,10 @@ $statement_products->execute();
 $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ebc84b (updated index page)
 
 <!-- <!DOCTYPE html>
 <html lang="en">

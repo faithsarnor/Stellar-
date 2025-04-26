@@ -1,60 +1,61 @@
+-- Database and Products Table Setup
 CREATE DATABASE my_products;
 USE my_products;
 
 CREATE TABLE products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL, -- Product name
-    category VARCHAR(100), -- Category of the product
-    price DECIMAL(10, 2) NOT NULL, -- Price of the product
-    description TEXT, -- Product description
-    image_url TEXT, -- URL of the product image
-    stock INT NOT NULL -- Number of items available in stock
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(100),
+    price DECIMAL(10, 2) NOT NULL,
+    description TEXT,
+    image_url TEXT,
+    stock INT NOT NULL DEFAULT 20
 );
 
 INSERT INTO products (name, price, category, image_url) VALUES
 -- Cleansers
-('PanOxyl - Acne Forming', 18.00, 'Cleanser', 'img/PanOxyl.jpg'),
+('PanOxyl - Acne Forming', 18.00, 'Cleansers', 'img/PanOxyl.jpg'),
 ('La Roche-Posay - Hydrating Gentle Face Cleanser', 20.00, 'Cleansers', 'img/La Roche Posay Cleanser.jpg'),
 ('Aveeno - Calm + Restore Nourishing Oat Facial Cleanser', 15.00, 'Cleansers', 'img/Aveeno cleanser.jpg'),
 ('Vanicream - Gentle Facial Cleanser', 13.00, 'Cleansers', 'img/Vanicream Cleanser.jpg'),
-('Cetaphil - Gentle Skin Cleanser Face Wash, for Sensitive Skin', 12.00, 'Cleansers', 'img/cetaphil cleanser.jpg'),
-('CeraVe Foaming Facial Cleanser ', 15.00, 'Cleansers', 'img/cerave foam cleanser.webp'),
+('Cetaphil - Gentle Skin Cleanser Face Wash', 12.00, 'Cleansers', 'img/cetaphil cleanser.jpg'),
+('CeraVe Foaming Facial Cleanser', 15.00, 'Cleansers', 'img/cerave foam cleanser.webp'),
 ('La Roche-Posay Toleriane Purifying Foaming Cleanser', 18.00, 'Cleansers', 'img/Laroche posay toleraine purifying foaming cleanser.jpg'),
 ('Neutrogena Oil-Free Acne Wash', 16.00, 'Cleansers', 'img/Neutrogena Oil-Free Acne Wash.webp'),
 
-
 -- Moisturizers
-('Cetaphil - Moisturizing Cream for Dry to Very Dry Skin', 11.00, 'Moisturizers', 'img/cetaphil moisturizer.jpg'),
-('La Roche-Posay - Toleriane Double Repair Face Moisturizer', 25.00, 'Moisturizers', 'img/la roche posay moisturizer.webp'),
+('Cetaphil - Moisturizing Cream for Dry Skin', 11.00, 'Moisturizers', 'img/cetaphil moisturizer.jpg'),
+('La Roche-Posay - Toleriane Double Repair Moisturizer', 25.00, 'Moisturizers', 'img/la roche posay moisturizer.webp'),
 ('CeraVe - Moisturizing Cream', 15.00, 'Moisturizers', 'img/cerave moisturizer.jpg'),
 ('Olay - Micro Sculpting Cream', 25.00, 'Moisturizers', 'img/olay moisturizer.jpeg'),
 ('CeraVe Ultra-Light Moisturizing Gel', 20.00, 'Moisturizers', 'img/Ultra-Light Moisturizing Gel.webp'),
-('Cetaphil Gentle Clear Mattifying Acne Moisturzer', 11.00, 'Moisturizers', 'img/Cetaphil Gentle Clear Mattifying Acne Moisturzer.webp'),
+('Cetaphil Gentle Clear Mattifying Acne Moisturizer', 11.00, 'Moisturizers', 'img/Cetaphil Gentle Clear Mattifying Acne Moisturzer.webp'),
 ('Itk - Prebiotic Gel Moisturizer', 12.00, 'Moisturizers', 'img/cerave moisturizer.jpg'),
-('Sephora Collection Hydrating Cica cream', 20.00, 'Moisturizers', 'img/Sephora Collection Hydrating Cica cream.webp'),
+('Sephora Collection Hydrating Cica Cream', 20.00, 'Moisturizers', 'img/Sephora Collection Hydrating Cica cream.webp'),
 
 -- Toners
-('First Aid Beauty - Ultra Repair Wild Oat Hydrating Toner', 24.00, 'Toners', 'img/First aid beauty toner.jpg'),
-('Cetaphil - Bright Healthy Radiance Brightness Refresh Toner', 22.00, 'Toners', 'img/Cetaphil toner.webp'),
+('First Aid Beauty - Ultra Repair Oat Hydrating Toner', 24.00, 'Toners', 'img/First aid beauty toner.jpg'),
+('Cetaphil - Brightness Refresh Toner', 22.00, 'Toners', 'img/Cetaphil toner.webp'),
 ('Thayers - Rose Petal Toner', 11.00, 'Toners', 'img/thayers toner.jpg'),
-('Mario Badescu Aloe Vera Toner', 16.00, 'Toners', 'img/mario badescu toner.webp');
-('Good Molecules Niacinamide Brightening Toner', 14.00, 'Toners', 'img/Good Molecules Niacinamide Brightening Toner.jpg');
-('The Ordinary Glycolic Acid 7% Toning Solution', 13.00, 'Toners', 'img/The Ordinary Glycolic Acid 7% Toning Solution.jpeg');
+('Mario Badescu Aloe Vera Toner', 16.00, 'Toners', 'img/mario badescu toner.webp'),
+('Good Molecules Niacinamide Brightening Toner', 14.00, 'Toners', 'img/Good Molecules Niacinamide Brightening Toner.jpg'),
+('The Ordinary Glycolic Acid 7% Toning Solution', 13.00, 'Toners', 'img/The Ordinary Glycolic Acid 7% Toning Solution.jpeg'),
 
--- Eye Treaments 
-('CeraVe Eye Repair Cream', 15.00, 'Eye Treaments', 'img/CeraVe Eye Repair Cream.webp'),
-('Haruharu Wonder Black Rice Bakuchiol Eye Cream', 10.00, 'img/HARUHARUWONDERBlackRiceBakuchiolEyeCream_grande.webp'),
-('Neutrogena Hydro Boost Eye Gel-Cream', 20.00, 'Eye Treaments', 'img/Neutrogena Hydro Boost Eye Gel-Cream.webp'),
+-- Eye Treatments
+('CeraVe Eye Repair Cream', 15.00, 'Eye Treatments', 'img/CeraVe Eye Repair Cream.webp'),
+('Haruharu Wonder Black Rice Eye Cream', 10.00, 'Eye Treatments', 'img/HARUHARUWONDERBlackRiceBakuchiolEyeCream_grande.webp'),
+('Neutrogena Hydro Boost Eye Gel-Cream', 20.00, 'Eye Treatments', 'img/Neutrogena Hydro Boost Eye Gel-Cream.webp'),
 
--- Treatments and serums 
-('The Ordinary Niacinamide 10% + Zin 1% Serum', 20.00, 'Treatments and serums', 'img/The Ordinary Niacinamide 10% + Zin 1% Serum.webp'),
-('Differin Adapalene Gel 0.1% Acn Treatment', 15.00, 'Treatments and serums', 'img/Differin Adapalene Gel 0.1% Acn Treatment.webp'),
-('Hero Cosmetics Mighty Pach Original', 12.00, 'Treatments and serums', 'img/Mighty-Patch-by-Hero.webp'),
+-- Treatments and Serums
+('The Ordinary Niacinamide 10% + Zinc 1% Serum', 20.00, 'Treatments and Serums', 'img/The Ordinary Niacinamide 10% + Zin 1% Serum.webp'),
+('Differin Adapalene Gel 0.1% Acne Treatment', 15.00, 'Treatments and Serums', 'img/Differin Adapalene Gel 0.1% Acn Treatment.webp'),
+('Hero Cosmetics Mighty Patch Original', 12.00, 'Treatments and Serums', 'img/Mighty-Patch-by-Hero.webp'),
 
 -- Sunscreens
-('Hero Cosmetics Force Shield Superlight Suncreen SPF 30', 20.00, 'Sunscreens', 'img/Hero Cosmetics Force Shield Superlight Suncreen SPF 30.webp'),
-('CeraVe Hydrating Mineral Suscreen SPF 30', 18.00, 'Sunscreens', 'img/CeraVe Hydrating Mineral Suscreen SPF 30.jpg'),
+('Hero Cosmetics Force Shield SPF 30', 20.00, 'Sunscreens', 'img/Hero Cosmetics Force Shield Superlight Suncreen SPF 30.webp'),
+('CeraVe Hydrating Mineral Sunscreen SPF 30', 18.00, 'Sunscreens', 'img/CeraVe Hydrating Mineral Suscreen SPF 30.jpg');
 
+-- SkinCare Recommendation Table
 CREATE TABLE SkinCareRecommendations (
     id INT AUTO_INCREMENT PRIMARY KEY,
     type VARCHAR(50) NOT NULL,
@@ -62,10 +63,15 @@ CREATE TABLE SkinCareRecommendations (
     product VARCHAR(50) NOT NULL,
     recommended_image_url TEXT NOT NULL
 );
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2ebc84b (updated index page)
 
+-- Sample Inserts
 INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_image_url) VALUES
+<<<<<<< HEAD
 -- Acne 
 ('Dry', 'Acne', 'Moisturizer', 'https://th.bing.com/th/id/OIP.JOgFRUanurAGcghIhE5qhQHaHa?rs=1&pid=ImgDetMain'),
 ('Oily', 'Acne', 'Moisturizer', 'https://m.media-amazon.com/images/I/61tAp+18-bL._SL1500_.jpg'),
@@ -106,8 +112,15 @@ INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_im
 ('Dry', 'Redness', 'Cleanser', 'https://m.media-amazon.com/images/I/61+rSYzq51L._SX679_.jpg'),
 ('Oily', 'Redness', 'Cleanser', 'https://media.ulta.com/i/ulta/2157846?w=1080&h=1080&fmt=auto'),
 ('Acne', 'Redness', 'Cleanser', 'https://m.media-amazon.com/images/I/61a9G+1e9KL._SX522_.jpg');
+=======
+('Dry', 'Acne', 'Moisturizer', 'https://th.bing.com/th/id/OIP.JOgFRUanurAGcghIhE5qhQHaHa?rs=1&pid=ImgDetMain'),
+('Oily', 'Acne', 'Moisturizer', 'https://m.media-amazon.com/images/I/61tAp+18-bL._SL1500_.jpg'),
+('Acne', 'Acne', 'Moisturizer', 'https://cdn.nicehair.dk/products/89332/clarifying-oil-free-water-gel-50-ml-1596691014.jpg');
+>>>>>>> 2ebc84b (updated index page)
 
+-- Add more rows as needed...
 
+<<<<<<< HEAD
 
 -- Hyperpigmentation 
 ('Dry','Hyperpigmentation','Moisturizer', 'https://drgavinsandercoe.com.au/wp-content/uploads/2022/01/SkinCeuticals%C2%AE-Renew-Overnight-Dry-Moisturiser-60mL-1.jpg'),
@@ -134,3 +147,9 @@ TO root@localhost;
 GRANT SELECT
 ON my_products.SkinCareRecommendations
 TO root@localhost;
+=======
+-- Grant Permissions
+GRANT SELECT, INSERT, DELETE, UPDATE ON my_products.* TO 'root'@'localhost';
+GRANT SELECT ON my_products.products TO 'root'@'localhost';
+GRANT SELECT ON my_products.SkinCareRecommendations TO 'root'@'localhost';
+>>>>>>> 2ebc84b (updated index page)
