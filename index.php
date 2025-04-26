@@ -27,14 +27,12 @@ $products = $table_products;
 <head>
     <title>Stellar - Products</title>
 <<<<<<< HEAD
-    <link rel="stylesheet" href="main.css" /> <!-- Include your main CSS -->
+    <link rel="stylesheet" href="main.css" /> 
     <script>
         // Pass PHP products data to JavaScript
         var products = <?php echo json_encode($products); ?>;
     </script>
-=======
     <link rel="stylesheet" href="main.css" /> 
->>>>>>> 2ebc84b (updated index page)
     <script src="java1.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -284,12 +282,9 @@ $products = $table_products;
       </div>
       <div id="search-results"></div>
     </div>
-<<<<<<< HEAD
   </div>
-    <!-- --- Product Grid  --- -->
-=======
-     --- Product Grid  --- 
->>>>>>> 2ebc84b (updated index page)
+    
+
     <main>
         <h1 style=" color: #1d2d44; text-align: center;">Our Products</h1>
         <?php if (isset($_SESSION['cart_message'])): ?>
@@ -301,7 +296,7 @@ $products = $table_products;
         <div class="product-grid">
             <?php if (!empty($table_products)): ?>
                 <?php foreach ($table_products as $product): ?>
-                    <div class="product" id="product-<?php echo $product['product_id']; ?>">  <!-- Add an ID for each product -->
+                    <div class="product" id="product-<?php echo $product['product_id']; ?>">  
                         <img src="<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                         <div class="product-details">
                             <h3><?php echo htmlspecialchars($product['name']); ?></h3>
@@ -328,33 +323,6 @@ $products = $table_products;
       <span>Contact US</span>  
       <span>Customer Support</span>
     </footer>
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-
-   
-<<<<<<< HEAD
-=======
-
-
      Script includes  -
     <script src="java1.js"></script>
 </body>
@@ -566,6 +534,6 @@ $products = $table_products;
     </footer>
 
     <script src="java1.js"></script>
->>>>>>> 2ebc84b (updated index page)
+ (updated index page)
 </body>
 </html>
