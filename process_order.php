@@ -145,36 +145,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <a href="Products.php">
                         <button class="drop">Products</button>
                     </a>
-                    <div class="dropdown-menu">
-                        <div class="submenu">
-                            <a href="#">Cleanser ▸</a>
-                            <div class="submenu-menu">
-                                <a href="#">CeraVe</a>
-                                <a href="#">La Roche-Posay</a>
-                                <a href="#">Aveeno</a>
-                                <a href="#">Vanicream</a>
-                                <a href="#">Cetaphil</a>
-                            </div>
-                        </div>
-                        <div class="submenu">
-                            <a href="#">Moisturizer ▸</a>
-                            <div class="submenu-menu">
-                                <a href="#">Cetaphil</a>
-                                <a href="#">La Roche-Posay</a>
-                                <a href="#">Cerave</a>
-                                <a href="#">Olay</a>
-                                <a href="#">Itk</a>
-                            </div>
-                            <div class="submenu">
-                                <a href="#">Toner ▸</a>
-                                <div class="submenu-menu">
-                                    <a href="#">First Aid Beauty</a>
-                                    <a href="#">Cetaphil</a>
-                                    <a href="#">Byoma</a>
-                                    <a href="#">Thayers</a>
-                                    <a href="#">Mario Badescu</a>
-                                </div>
-                            </div>
+                    <div class="dropdown">
+          <a href="products.php" class="drop">Products</a> <!-- Products is a link now -->
+          <div class="dropdown-menu">
+            <a href="category.php?category=Cleansers">Cleansers</a>
+            <a href="category.php?category=Moisturizers">Moisturizers</a>
+            <a href="category.php?category=Toners">Toners</a>
+            <a href="category.php?category=Eye Treatments">Eye Treatments</a>
+            <a href="category.php?category=Sunscreens">Sunscreens</a>
+          </div>
+        </div>    
                         </div>
                     </div>
                 </li>

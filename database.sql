@@ -2,22 +2,36 @@
 CREATE DATABASE my_products;
 USE my_products;
 
+-- Create Products Table
 CREATE TABLE products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
+
     name VARCHAR(255) NOT NULL,
     category VARCHAR(100),
     price DECIMAL(10, 2) NOT NULL,
     description TEXT,
     image_url TEXT,
     stock INT NOT NULL DEFAULT 20
+
+    name VARCHAR(255) NOT NULL, -- Product name
+    category VARCHAR(100), -- Category of the product
+    price DECIMAL(10, 2) NOT NULL, -- Price of the product
+    description TEXT, -- Product description (optional, can be updated later)
+    image_url TEXT, -- URL of the product image
+    stock INT NOT NULL DEFAULT 100 -- Default stock (can change later)
+
 );
 
-INSERT INTO products (name, price, category, image_url) VALUES
 -- Cleansers
+
+
+INSERT INTO products (name, price, category, image_url) VALUES
+
 ('PanOxyl - Acne Forming', 18.00, 'Cleansers', 'img/PanOxyl.jpg'),
 ('La Roche-Posay - Hydrating Gentle Face Cleanser', 20.00, 'Cleansers', 'img/La Roche Posay Cleanser.jpg'),
 ('Aveeno - Calm + Restore Nourishing Oat Facial Cleanser', 15.00, 'Cleansers', 'img/Aveeno cleanser.jpg'),
 ('Vanicream - Gentle Facial Cleanser', 13.00, 'Cleansers', 'img/Vanicream Cleanser.jpg'),
+
 ('Cetaphil - Gentle Skin Cleanser Face Wash', 12.00, 'Cleansers', 'img/cetaphil cleanser.jpg'),
 ('CeraVe Foaming Facial Cleanser', 15.00, 'Cleansers', 'img/cerave foam cleanser.webp'),
 ('La Roche-Posay Toleriane Purifying Foaming Cleanser', 18.00, 'Cleansers', 'img/Laroche posay toleraine purifying foaming cleanser.jpg'),
@@ -56,6 +70,51 @@ INSERT INTO products (name, price, category, image_url) VALUES
 ('CeraVe Hydrating Mineral Sunscreen SPF 30', 18.00, 'Sunscreens', 'img/CeraVe Hydrating Mineral Suscreen SPF 30.jpg');
 
 -- SkinCare Recommendation Table
+
+('Cetaphil - Gentle Skin Cleanser Face Wash, for Sensitive Skin', 12.00, 'Cleansers', 'img/cetaphil cleanser.jpg'),
+('CeraVe Foaming Facial Cleanser', 15.00, 'Cleansers', 'img/cerave foam cleanser.webp'),
+('La Roche-Posay Toleriane Purifying Foaming Cleanser', 18.00, 'Cleansers', 'img/Laroche posay toleraine purifying foaming cleanser.jpg'),
+('Neutrogena Oil-Free Acne Wash', 16.00, 'Cleansers', 'img/Neutrogena Oil-Free Acne Wash.webp');
+
+-- Moisturizers
+INSERT INTO products (name, price, category, image_url) VALUES
+('Cetaphil - Moisturizing Cream for Dry to Very Dry Skin', 11.00, 'Moisturizers', 'img/cetaphil moisturizer.jpg'),
+('La Roche-Posay - Toleriane Double Repair Face Moisturizer', 25.00, 'Moisturizers', 'img/la roche posay moisturizer.webp'),
+('CeraVe - Moisturizing Cream', 15.00, 'Moisturizers', 'img/cerave moisturizer.jpg'),
+('Olay - Micro Sculpting Cream', 25.00, 'Moisturizers', 'img/olay moisturizer.jpeg'),
+('CeraVe Ultra-Light Moisturizing Gel', 20.00, 'Moisturizers', 'img/Ultra-Light Moisturizing Gel.webp'),
+('Cetaphil Gentle Clear Mattifying Acne Moisturzer', 11.00, 'Moisturizers', 'img/Cetaphil Gentle Clear Mattifying Acne Moisturzer.webp'),
+('Itk - Prebiotic Gel Moisturizer', 12.00, 'Moisturizers', 'img/itk moisturizer.webp'),
+('Sephora Collection Hydrating Cica cream', 20.00, 'Moisturizers', 'img/Sephora Collection Hydrating Cica cream.webp');
+
+-- Toners
+INSERT INTO products (name, price, category, image_url) VALUES
+('First Aid Beauty - Ultra Repair Wild Oat Hydrating Toner', 24.00, 'Toners', 'img/First aid beauty toner.jpg'),
+('Cetaphil - Bright Healthy Radiance Brightness Refresh Toner', 22.00, 'Toners', 'img/Cetaphil toner.webp'),
+('Thayers - Rose Petal Toner', 11.00, 'Toners', 'img/thayers toner.jpg'),
+('Mario Badescu Aloe Vera Toner', 16.00, 'Toners', 'img/mario badescu toner.webp'),
+('Good Molecules Niacinamide Brightening Toner', 14.00, 'Toners', 'img/Good Molecules Niacinamide Brightening Toner.jpg'),
+('The Ordinary Glycolic Acid 7% Toning Solution', 13.00, 'Toners', 'img/The Ordinary Glycolic Acid 7% Toning Solution.jpg');
+
+-- Eye Treatments
+INSERT INTO products (name, price, category, image_url) VALUES
+('CeraVe Eye Repair Cream', 15.00, 'Eye Treatments', 'img/CeraVe Eye Repair Cream.webp'),
+('Haruharu Wonder Black Rice Bakuchiol Eye Cream', 10.00, 'Eye Treatments', 'img/HARUHARUWONDERBlackRiceBakuchiolEyeCream_grande.webp'),
+('Neutrogena Hydro Boost Eye Gel-Cream', 20.00, 'Eye Treatments', 'img/Neutrogena Hydro Boost Eye Gel-Cream.webp');
+
+-- Treatments and Serums
+INSERT INTO products (name, price, category, image_url) VALUES
+('The Ordinary Niacinamide 10% + Zinc 1% Serum', 20.00, 'Treatments and Serums', 'img/The Ordinary Niacinamide 10% + Zin 1% Serum.jpg'),
+('Differin Adapalene Gel 0.1% Acne Treatment', 15.00, 'Treatments and Serums', 'img/Differin Adapalene Gel 0.1% Acn Treatment.webp'),
+('Hero Cosmetics Mighty Patch Original', 12.00, 'Treatments and Serums', 'img/Mighty-Patch-by-Hero.webp');
+
+-- Sunscreens
+INSERT INTO products (name, price, category, image_url) VALUES
+('Hero Cosmetics Force Shield Superlight Sunscreen SPF 30', 20.00, 'Sunscreens', 'img/Hero Cosmetics Force Shield Superlight Suncreen SPF 30.webp'),
+('CeraVe Hydrating Mineral Sunscreen SPF 30', 18.00, 'Sunscreens', 'img/CeraVe Hydrating Mineral Suscreen SPF 30.jpg');
+
+-- Create Recommendations Table
+
 CREATE TABLE SkinCareRecommendations (
     id INT AUTO_INCREMENT PRIMARY KEY,
     type VARCHAR(50) NOT NULL,
@@ -63,16 +122,22 @@ CREATE TABLE SkinCareRecommendations (
     product VARCHAR(50) NOT NULL,
     recommended_image_url TEXT NOT NULL
 );
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 2ebc84b (updated index page)
+
+
+
 
 -- Sample Inserts
 INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_image_url) VALUES
-<<<<<<< HEAD
+
 -- Acne 
+
+
+-- Recommendations
+INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_image_url) VALUES
+-- Acne
+
 ('Dry', 'Acne', 'Moisturizer', 'https://th.bing.com/th/id/OIP.JOgFRUanurAGcghIhE5qhQHaHa?rs=1&pid=ImgDetMain'),
 ('Oily', 'Acne', 'Moisturizer', 'https://m.media-amazon.com/images/I/61tAp+18-bL._SL1500_.jpg'),
 ('Acne', 'Acne', 'Moisturizer', 'https://cdn.nicehair.dk/products/89332/clarifying-oil-free-water-gel-50-ml-1596691014.jpg'),
@@ -80,10 +145,11 @@ INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_im
 ('Oily', 'Acne', 'Toner', 'https://m.media-amazon.com/images/I/61PbxvE8UcL._SX522_.jpg'),
 ('Acne', 'Acne', 'Toner', 'https://m.media-amazon.com/images/I/51tRMi-tQaL._SX679_.jpg'),
 ('Dry', 'Acne', 'Serum', 'https://cdn.shopify.com/s/files/1/2626/0488/products/Untitled-2.jpg?v=1615522495'),
-('Oily', 'Acne', 'Serum', 'https://www.bing.com/th?id=OPHS.HoaFHcYsXhnGDA474C474&o=5&pid=21.1&w=148&h=260&qlt=100&dpr=1.5&bw=6&bc=FFFFFF'),
+('Oily', 'Acne', 'Serum', 'https://www.bing.com/th?id=OPHS.HoaFHcYsXhnGDA474C474'),
 ('Acne', 'Acne', 'Serum', 'https://s4.thcdn.com//productimg/1600/1600/13906946-9374975436100654.jpg'),
 ('Dry', 'Acne', 'Cleanser', 'https://m.media-amazon.com/images/I/617cYpld9UL._SX522_.jpg'),
 ('Oily', 'Acne', 'Cleanser', 'https://media.ulta.com/i/ulta/2609330?w=1080&h=1080&fmt=auto'),
+
 ('Acne', 'Acne', 'Cleanser', 'https://media.ulta.com/i/ulta/2615399?w=1080&h=1080&fmt=auto'),
 
 -- Hyperpigmentation
@@ -116,29 +182,44 @@ INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_im
 ('Dry', 'Acne', 'Moisturizer', 'https://th.bing.com/th/id/OIP.JOgFRUanurAGcghIhE5qhQHaHa?rs=1&pid=ImgDetMain'),
 ('Oily', 'Acne', 'Moisturizer', 'https://m.media-amazon.com/images/I/61tAp+18-bL._SL1500_.jpg'),
 ('Acne', 'Acne', 'Moisturizer', 'https://cdn.nicehair.dk/products/89332/clarifying-oil-free-water-gel-50-ml-1596691014.jpg');
->>>>>>> 2ebc84b (updated index page)
+
 
 -- Add more rows as needed...
 
-<<<<<<< HEAD
+('Acne', 'Acne', 'Cleanser', 'https://media.ulta.com/i/ulta/2615399?w=1080&h=1080&fmt=auto');
 
--- Hyperpigmentation 
-('Dry','Hyperpigmentation','Moisturizer', 'https://drgavinsandercoe.com.au/wp-content/uploads/2022/01/SkinCeuticals%C2%AE-Renew-Overnight-Dry-Moisturiser-60mL-1.jpg'),
-('Oily','Hyperpigmentation','Moisturizer', 'https://i5.walmartimages.com/seo/CeraVe-Oil-Control-Moisturizing-Gel-Cream-Face-Moisturizer-To-Rebalance-Oily-Skin-3-fl-oz_8d16eacf-567a-4ad7-b079-3835455dd4af.18e3f7b033e0765323b5b280b8089b3e.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF'),
-('Acne','Hyperpigmentation','Moisturizer', ''),
-('Dry','Hyperpigmentation','Toner', ''),
-('Oily','Hyperpigmentation','Toner', ''),
-('Acne','Hyperpigmentation','Toner', ''),
-('Dry','Hyperpigmentation','Serum', 'https://media.ulta.com/i/ulta/2579637?w=800&h=800&fmt=auto'),
-('Oily','Hyperpigmentation','Serum', ''),
-('Acne','Hyperpigmentation','Serum', ''),
-('Dry','Hyperpigmentation','Cleanser', ''),
-('Oily','Hyperpigmentation','Cleanser', ''),
-('Acne','Hyperpigmentation','Cleanser', '');
+-- Access Permissions (optional for local setup)
+GRANT SELECT, INSERT, DELETE, UPDATE ON my_products.* TO root@localhost;
+GRANT SELECT ON my_products.products TO root@localhost;
+GRANT SELECT ON my_products.SkinCareRecommendations TO root@localhost;
 
-GRANT SELECT, INSERT, DELETE, UPDATE
-ON my_products.*
-TO root@localhost;
+-- Ingredients Table
+CREATE TABLE product_ingredients (
+    ingredient_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    ingredient_name VARCHAR(255) NOT NULL,
+    FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
+);
+
+
+-- Ingredients for Product ID 1 (PanOxyl Example)
+INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
+(1, 'Benzoyl Peroxide'),
+(1, 'Water'),
+(1, 'Glycerin'),
+(1, 'Sodium Hydroxide');
+
+-- Reviews Table
+CREATE TABLE product_reviews (
+    review_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    reviewer_name VARCHAR(100),
+    rating INT CHECK (rating BETWEEN 1 AND 5),
+    review_text TEXT,
+    review_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
+);
+
 
 GRANT SELECT
 ON my_products.products
@@ -147,9 +228,15 @@ TO root@localhost;
 GRANT SELECT
 ON my_products.SkinCareRecommendations
 TO root@localhost;
-=======
+
 -- Grant Permissions
 GRANT SELECT, INSERT, DELETE, UPDATE ON my_products.* TO 'root'@'localhost';
 GRANT SELECT ON my_products.products TO 'root'@'localhost';
 GRANT SELECT ON my_products.SkinCareRecommendations TO 'root'@'localhost';
->>>>>>> 2ebc84b (updated index page)
+
+-- Reviews for Product ID 1
+INSERT INTO product_reviews (product_id, reviewer_name, rating, review_text) VALUES
+(1, 'Faith', 5, 'Absolutely love it! My skin looks so clear!'),
+(1, 'Zainab', 4, 'Good but a little drying, use moisturizer after.'),
+(1, 'John', 5, 'Cleared up my acne faster than anything else!');
+
