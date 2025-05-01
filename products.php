@@ -19,7 +19,13 @@ $statement_products->execute();
 $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<<<<<<< HEAD
  
+=======
+
+
+
+>>>>>>> 0a155e59c5dcb4a43b155396378b33dc5eaca961
 <!-- <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -153,13 +159,6 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
                     <button class="add-to-cart">Add to Cart</button>
                     <img src="img/Cetaphil toner.webp" alt="Cetaphil Toner">
                     
-                </div>
-                <div class="product">
-                    <h3>Thayers - Rose Petal Toner</h3>
-                    <p>$11</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                    <img src="img/thayers toner.jpg" alt="Thayers Toner">
-                    
                    <div class="product">
                     <h3> Mario Badescu Aloe Vera Toner      </h3>
                         <p>$16</p>
@@ -176,12 +175,19 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0a155e59c5dcb4a43b155396378b33dc5eaca961
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Stellar - Products</title>
     <link rel="stylesheet" href="main.css" /> <!-- Include your main CSS -->
+    <script>
+        // Pass PHP products data to JavaScript
+        var products = <?php echo json_encode($table_products); ?>;
+    </script>
     <script src="java1.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -389,8 +395,9 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         <ul class="head">
             <li class="fix"><a href="index.php">Stellar</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="faq.html">FAQ</a></li> &nbsp;&nbsp;&nbsp;
+            <li><a href="faq.html">FAQ</a></li>    
             <li class="dropdown">
+
                 <a href="products.php">
                     <button class="drop">Products</button>
                 </a>
@@ -416,10 +423,24 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </li>
             <li class="ai">GlamBot</li>
+
+        <div class="dropdown">
+          <a href="products.php" class="drop">Products</a> <!-- Products is a link now -->
+          <div class="dropdown-menu">
+          <a href="category.php?category=Cleansers">Cleansers</a>
+          <a href="category.php?category=Moisturizers">Moisturizers</a>
+          <a href="category.php?category=Toners">Toners</a>
+          <a href="category.php?category=Eye Treatments">Eye Treatments</a>
+          <a href="category.php?category=Sunscreens">Sunscreens</a>
+          </div>
+        </div>          
+    </li>
+            <li class="ai">GlamBot</li> &nbsp; &nbsp;
+
             <li><a href="form.html">     Skincare Quiz</a></li>
         </ul>
         <div class="icons">
-            <a href="#" class="icon"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon" id="search-icon"><i class="fas fa-search"></i></a>
             <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
             <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
@@ -443,7 +464,8 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         <div class="product-grid">
             <?php if (!empty($table_products)): ?>
                 <?php foreach ($table_products as $product): ?>
-                    <div class="product">
+
+                    <div class="product" id="product-<?php echo $product['product_id']; ?>">  <!-- Add an ID for each product -->
                         <img src="<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                         <div class="product-details">
                             <h3><?php echo htmlspecialchars($product['name']); ?></h3>
@@ -458,6 +480,31 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
                             </form>
                         </div>
                     </div>
+
+                    <div class="product">
+    <a href="product_details.php?id=<?php echo $product['product_id']; ?>">
+        <img src="<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+    </a>
+    <div class="product-details">
+        <h3>
+            <a href="product_details.php?id=<?php echo $product['product_id']; ?>" style="text-decoration: none; color: inherit;">
+                <?php echo htmlspecialchars($product['name']); ?>
+            </a>
+        </h3>
+        <p>Price: $<?php echo htmlspecialchars(number_format($product['price'], 2)); ?></p>
+        <p><?php echo htmlspecialchars($product['description']); ?></p>
+
+        <form action="cart_action.php" method="post">
+            <input type="hidden" name="action" value="add">
+            <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+            <label for="quantity_<?php echo $product['product_id']; ?>" class="visually-hidden">Quantity:</label>
+            <input type="number" id="quantity_<?php echo $product['product_id']; ?>" name="quantity" value="1" class="quantity-input">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
+
                 <?php endforeach; ?>
             <?php else: ?>
                 <p>No products found.</p>
@@ -466,37 +513,32 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
     </main>
     <!-- --- Footer --- -->
     <footer class="footer">
-      <span>Feedback</span>&nbsp;&nbsp;
-      <span>Contact US</span>&nbsp;&nbsp;
+      <span>Feedback</span>  
+      <span>Contact US</span>  
       <span>Customer Support</span>
     </footer>
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
 
    
-
-
-    <!--  Script includes  -->
-    <script src="java1.js"></script>
 </body>
 </html>

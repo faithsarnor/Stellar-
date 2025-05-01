@@ -462,7 +462,22 @@ body {
   }
   
 
-
+  .search-container {
+    display: none;
+    /* Your default search bar styles */
+  }
+  
+  .search-container.active {
+    display: block;
+    /* Styles when search bar is active (visible) */
+  }
+  
+  /* Add this to your main.css (or in a <style> tag in your HTML if you prefer) */
+.product.highlighted {
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.7); /* Example:  Blue shadow */
+    /* You can also add things like a border, background-color, etc. */
+    transition: box-shadow 0.3s ease; /* Smooth transition */
+}
 
 
 

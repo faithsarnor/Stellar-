@@ -31,7 +31,7 @@
         <li class="fix"><a href="index.php">Stellar</a></li> 
         <li><a href="about.html">About Us</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="Products.html">Products</a></li>
+        <li><a href="Products.php">Products</a></li>
         <li class="ai">GlamBot</li>
         <li><a href="form.html"> &nbsp; &nbsp; Skincare Quiz</a></li>
        
