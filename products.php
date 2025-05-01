@@ -19,9 +19,7 @@ $statement_products->execute();
 $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<<<<<<< HEAD
-=======
-
+ 
 <!-- <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -178,7 +176,6 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 
 
 
->>>>>>> 3986b0387f068f055f70c8a4e9a4dc896d7a4bcf
 
 <!DOCTYPE html>
 <html lang="en">
