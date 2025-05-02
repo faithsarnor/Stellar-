@@ -521,6 +521,5 @@ $products = $table_products;
     </footer>
 
     <script src="java1.js"></script>
- (updated index page)
 </body>
 </html>
