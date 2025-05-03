@@ -318,7 +318,7 @@ $products = $table_products;
     <script src="java1.js"></script>
 </body>
 </html>
-            -->
+            
 <!--
 <!DOCTYPE html>
 <html lang="en">
