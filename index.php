@@ -314,7 +314,7 @@ $products = $table_products;
       <span>Contact US</span>  
       <span>Customer Support</span>
     </footer>
-     Script includes  -
+   
     <script src="java1.js"></script>
 </body>
 </html>
@@ -520,7 +520,6 @@ $products = $table_products;
 
 
 
-  
 
     <footer class="footer">
         <span>Feedback</span>&nbsp;&nbsp;
@@ -531,10 +530,7 @@ $products = $table_products;
 
 
     <script src="java1.js"></script>
-<<<<<<< HEAD
     <script src="glam/script.js"></script> 
- (updated index page)
-=======
->>>>>>> 774ec7a0f351b01e2462c2750cf7d3e66a62ef2b
+
 </body>
 </html>
