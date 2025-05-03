@@ -1,4 +1,11 @@
 <?php
+
+/* Author: ?
+Modified by: Awo Asieduwaa Afranie-Adjei, 05/02/2025
+Description: Product details page for Stellar. Displays product info, ingredients, and user reviews. I included an interactive star rating system where users can rate products, and the average rating updates dynamically.  
+Attribution: Font Awesome used for icons, Google Fonts for typography. Rating functionality built with PHP, SQL, and JavaScript, with guidance from online tutorials.
+*/
+
 // database.php connection assumed
 include_once 'database.php';
 include 'header.php';
@@ -117,6 +124,40 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
             <h1 class="product-name"><?php echo htmlspecialchars($product['name']); ?></h1>
             <p class="product-price">$<?php echo number_format($product['price'], 2); ?></p>
             <p><?php echo htmlspecialchars($product['description']); ?></p>
+           
+            <!-- Rating Form -->
+            <form action="rate_product.php" method="POST" style="margin-top: 20px;">
+            <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+            <label for="rating">Rate this product:</label>
+            <div style="font-size: 24px;">
+        <?php for ($i = 1; $i <= 5; $i++): ?>
+            <label>
+                <input type="radio" name="rating" value="<?php echo $i; ?>" style="display:none;" onchange="this.form.submit()">
+                <i class="far fa-star" style="cursor: pointer;" onmouseover="highlightStars(this, <?php echo $i; ?>)" onmouseout="resetStars(this)" onclick="fillStars(this, <?php echo $i; ?>)"></i>
+            </label>
+        <?php endfor; ?>
+    </div>
+</form>
+
+<script>
+function highlightStars(el, count) {
+    const stars = el.parentElement.parentElement.querySelectorAll('i');
+    stars.forEach((star, index) => {
+        star.className = index < count ? 'fas fa-star' : 'far fa-star';
+    });
+}
+function resetStars(el) {
+    const stars = el.parentElement.parentElement.querySelectorAll('i');
+    stars.forEach(star => star.className = 'far fa-star');
+}
+function fillStars(el, count) {
+    const stars = el.parentElement.parentElement.querySelectorAll('i');
+    stars.forEach((star, index) => {
+        star.className = index < count ? 'fas fa-star' : 'far fa-star';
+    });
+}
+</script>
+
         </div>
     </div>
 
@@ -131,6 +172,17 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
         <p>No ingredients listed for this product.</p>
     <?php endif; ?>
 
+                            <div class="rating-stars">
+                                <?php
+                                $averageRating = round($product['rating']);
+                                for ($i = 1; $i <= 5; $i++) {
+                                    echo ($i <= $averageRating)
+                                        ? '<i class="fas fa-star"></i>'
+                                        : '<i class="far fa-star"></i>';
+                                }
+                                ?>
+                                <span>(<?php echo (int) $product['rating_count']; ?>)</span>
+                            </div>
     <h2 class="section-title">Customer Reviews</h2>
     <?php if (!empty($reviews)): ?>
         <?php foreach ($reviews as $review): ?>
@@ -145,6 +197,26 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 
     <a href="products.php" style="display:block; margin-top:30px; text-decoration:none; color:#007bff;">← Back to Products</a>
+
+    <?php foreach ($reviews as $review): ?>
+    <div class="review">
+        <div class="review-name">
+            <?php echo htmlspecialchars($review['reviewer_name']); ?>
+            <span class="rating">
+                <?php
+                for ($i = 1; $i <= 5; $i++) {
+                    echo ($i <= $review['rating']) 
+                        ? '<i class="fas fa-star"></i>' 
+                        : '<i class="far fa-star"></i>';
+                }
+                ?>
+            </span>
+        </div>
+        <div class="review-text"><?php echo htmlspecialchars($review['review_text']); ?></div>
+        <small><?php echo date('F j, Y', strtotime($review['review_date'])); ?></small>
+    </div>
+<?php endforeach; ?>
+
 </div>
 </body>
 </html>
