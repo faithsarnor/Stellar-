@@ -478,7 +478,28 @@ body {
     /* You can also add things like a border, background-color, etc. */
     transition: box-shadow 0.3s ease; /* Smooth transition */
 }
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
 
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.stars input[type="radio"]:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+    color: gold;
+    transition: color 0.2s;
+}
 
 
 
