@@ -6,6 +6,7 @@ Description: Handles star rating submissions for Stellar products. Inserts new r
 Attribution: PHP and SQL logic supported with guidance from online resources
 */
 
+
 include_once 'database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

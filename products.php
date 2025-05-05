@@ -2,11 +2,18 @@
 session_start();
 include_once 'database.php';
 
-// Fetch products
-$query_table_products = "SELECT product_id, name, category, price, description, image_url, stock FROM products";
-$statement_products = $db->prepare($query_table_products);
-$statement_products->execute();
-$table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
+// Filter by category if set
+$categoryFilter = isset($_GET['category']) ? $_GET['category'] : '';
+if ($categoryFilter) {
+    $query = "SELECT product_id, name, category, price, description, image_url, rating, rating_count FROM products WHERE category = :category";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':category', $categoryFilter);
+} else {
+    $query = "SELECT product_id, name, category, price, description, image_url, rating, rating_count FROM products";
+    $stmt = $db->prepare($query);
+}
+$stmt->execute();
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -14,62 +21,67 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <title>Stellar - Products</title>
     <link rel="stylesheet" href="main.css" />
-    <script>
-        var products = <?php echo json_encode($table_products); ?>;
-    </script>
-    <script src="java1.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
     <style>
         body {
+            font-family: "Cormorant Garamond", serif;
             background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%);
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
         }
         .header {
+            background: lightblue;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-family: "Cormorant Garamond";
-            background: lightblue;
-            padding: 10px 20px;
-        }
-        .header .fix a {
-            text-decoration: none;
-            color: #926f34;
-            font-size: 60px;
         }
         .head {
-            padding: 0;
-            margin: 0;
             list-style: none;
             display: flex;
-            align-items: center;
+            margin: 0;
+            padding: 0;
         }
         .head li {
             margin-right: 20px;
+            position: relative;
         }
         .head a {
             text-decoration: none;
             color: #1d2d44;
             font-size: 20px;
         }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .head li:hover .dropdown-menu {
+            display: block;
+        }
+        .icons a {
+            margin-left: 15px;
+            color: #1d2d44;
+            font-size: 20px;
+        }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: auto;
         }
         .product {
-            background-color: #fff;
-            border-radius: 8px;
+            background: white;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
             display: flex;
             flex-direction: column;
         }
@@ -78,131 +90,102 @@ $table_products = $statement_products->fetchAll(PDO::FETCH_ASSOC);
         }
         .product img {
             width: 100%;
-            height: auto;
+            height: 250px;
+            object-fit: cover;
         }
         .product-details {
             padding: 15px;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            justify-content: space-between;
         }
         .product h3 {
-            margin-top: 0;
-            font-size: 1.2em;
-            margin-bottom: 8px;
+            margin: 10px 0 5px;
+            font-size: 20px;
         }
-        .product p {
-            margin-bottom: 10px;
-            color: #555;
+        .rating-stars i {
+            color: #f5a623;
+            cursor: pointer;
+        }
+        .price {
+            color: #1d2d44;
+            font-size: 16px;
+            margin: 5px 0;
         }
         .add-to-cart-btn {
             background-color: #007bff;
             color: white;
-            padding: 10px 15px;
+            padding: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
             margin-top: 10px;
         }
         .add-to-cart-btn:hover {
             background-color: #0056b3;
         }
-        .quantity-input {
-            width: 60px;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            text-align: center;
-            margin-right: 10px;
-            font-size: 1em;
-        }
-        .cart-message {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 4px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        main {
-            padding-bottom: 20px;
-        }
-        .footer {
-            background-color: #1d2d44;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
     </style>
 </head>
-
 <body>
     <div class="header">
         <ul class="head">
-            <li class="fix"><a href="index.php">Stellar</a></li>
+            <li class="fix"><a href="index.php" style="font-size: 24px; font-weight: bold; color:#926f34;">Stellar</a></li>
+            <li>
+                <a href="#">Products</a>
+                <div class="dropdown-menu">
+                    <a href="products.php?category=Cleansers">Cleansers</a><br>
+                    <a href="products.php?category=Moisturizers">Moisturizers</a><br>
+                    <a href="products.php?category=Toners">Toners</a><br>
+                    <a href="products.php?category=Sunscreens">Sunscreens</a>
+                </div>
+            </li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="products.php">Products</a></li>
             <li><a href="form.html">Skincare Quiz</a></li>
         </ul>
         <div class="icons">
-            <a href="#" class="icon"><i class="fas fa-search"></i></a>
-            <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
-            <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="Log/indi.html"><i class="fas fa-user"></i></a>
+            <a href="cart.php"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </div>
 
-    <main>
-        <h1 style="color: #1d2d44; text-align: center;">Our Products</h1>
+    <h1 style="text-align:center; color:#1d2d44;">
+        <?php echo $categoryFilter ? htmlspecialchars($categoryFilter) : "Our Products"; ?>
+    </h1>
 
-        <?php if (isset($_SESSION['cart_message'])): ?>
-            <div class="cart-message">
-                <?php echo htmlspecialchars($_SESSION['cart_message']); ?>
-            </div>
-            <?php unset($_SESSION['cart_message']); ?>
-        <?php endif; ?>
-
-        <div class="product-grid">
-            <?php if (!empty($table_products)): ?>
-                <?php foreach ($table_products as $product): ?>
-                    <div class="product">
-                        <a href="product_details.php?id=<?php echo $product['product_id']; ?>">
-                            <img src="<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
-                        </a>
-                        <div class="product-details">
-                            <h3>
-                                <a href="product_details.php?id=<?php echo $product['product_id']; ?>" style="text-decoration: none; color: inherit;">
-                                    <?php echo htmlspecialchars($product['name']); ?>
-                                </a>
-                            </h3>
-                            <p>Price: $<?php echo htmlspecialchars(number_format($product['price'], 2)); ?></p>
-                            <p><?php echo htmlspecialchars($product['description']); ?></p>
-                            <form action="cart_action.php" method="post">
-                                <input type="hidden" name="action" value="add">
-                                <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
-                                <label for="quantity_<?php echo $product['product_id']; ?>" class="visually-hidden">Quantity:</label>
-                                <input type="number" id="quantity_<?php echo $product['product_id']; ?>" name="quantity" value="1" class="quantity-input">
-                                <button type="submit" class="add-to-cart-btn">Add to Cart</button>
-                            </form>
-                        </div>
+    <div class="product-grid">
+        <?php foreach ($products as $product): ?>
+            <div class="product">
+                <a href="product_details.php?id=<?php echo $product['product_id']; ?>">
+                    <img src="<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                </a>
+                <div class="product-details">
+                    <a href="product_details.php?id=<?php echo $product['product_id']; ?>" style="text-decoration:none; color:#1d2d44;">
+                        <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+                    </a>
+                    <div class="price">$<?php echo number_format($product['price'], 2); ?></div>
+                    <div class="rating-stars">
+                        <form action="rate_product.php" method="POST" style="display: inline-block;">
+                            <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <button type="submit" name="rating" value="<?php echo $i; ?>" style="border:none; background:none; padding:0;">
+                                    <i class="<?php echo ($i <= round($product['rating'])) ? 'fas' : 'far'; ?> fa-star"></i>
+                                </button>
+                            <?php endfor; ?>
+                            <span>(<?php echo (int)$product['rating_count']; ?>)</span>
+                        </form>
                     </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>No products found.</p>
-            <?php endif; ?>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <span>Feedback</span>  
-        <span>Contact Us</span>  
-        <span>Customer Support</span>
-    </footer>
+                    <form action="cart_action.php" method="POST">
+                        <input type="hidden" name="action" value="add">
+                        <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </body>
 </html>
