@@ -13,17 +13,36 @@
   </head>
 
   <body>
-    <div class="rectangle-22">
-      <div class="slideshow-container" id="slides">
-        <div class="slide"><span>Free Shipping on Orders $300+</span></div>
-        <div class="slide"><span>Get 40% off Your First Order</span></div>
-        <div class="slide"><span>Discounts & Coupons</span></div>
-      </div>
-      <div class="slideshow-nav">
-        <button id="prev-slide"></button>
-        <button id="next-slide">></button>
-      </div>
+    <!-- Promo Slideshow -->
+<div class="rectangle-22">
+  <div class="slideshow-container" id="slides">
+  <div class="slide"  onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">      <span id="pipo">Discounts & Coupons</span>
     </div>
+    <div class="slide"><span>Get 40% off Your First Order</span></div>
+    <div class="slide"><span>Free Shipping on Orders $110+</span></div>
+  </div>
+  <div class="slideshow-nav">
+    <button id="prev-slide">&lt;</button>
+    <button id="next-slide">&gt;</button>
+  </div>
+</div>
+<!-- Discount Popup -->
+<div id="discount-popup" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">X</span>
+    <p id="popup-message"></p>
+  </div>
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
 
     <!-- Header with Stellar and Navigation Links -->
     <div class="header">
@@ -40,9 +59,8 @@
       <!--icons-->
       <div class="icons">
         <a href="#" class="icon"><i class="fas fa-search"></i></a>
-        <a href="login.html" class="icon"><i class="fas fa-user"></i></a>
-        <a href="wishlist.html" class="icon"><i class="fas fa-heart"></i></a>
-        <a href="cart.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+        <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
+        <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
     <div class="search-container" id="search-container">
       <div class="search-input-wrapper">
