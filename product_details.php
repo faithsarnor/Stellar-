@@ -1,7 +1,13 @@
 <?php
-// database.php connection assumed
+// Author: Faith Sarnor
+// Description: Displays individual product details, ingredients, reviews, and allows new reviews to be submitted.
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include_once 'database.php';
 include 'header.php';
+
 // Get product ID from URL
 if (!isset($_GET['id'])) {
     echo "No product selected.";
@@ -30,7 +36,7 @@ $stmt_ingredients->execute();
 $ingredients = $stmt_ingredients->fetchAll(PDO::FETCH_ASSOC);
 
 // Fetch reviews
-$query_reviews = "SELECT reviewer_name, rating, review_text, review_date FROM product_reviews WHERE product_id = :product_id";
+$query_reviews = "SELECT reviewer_name, rating, review_text, review_date FROM product_reviews WHERE product_id = :product_id ORDER BY review_date DESC";
 $stmt_reviews = $db->prepare($query_reviews);
 $stmt_reviews->bindParam(':product_id', $product_id);
 $stmt_reviews->execute();
@@ -41,72 +47,40 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 <head>
     <title><?php echo htmlspecialchars($product['name']); ?> | Stellar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="main.css">
     <style>
-        body {
-            font-family: "Cormorant Garamond", serif;
-            margin: 0;
-            padding: 0;
-            background: radial-gradient(circle, rgb(227, 226, 223) 0%, rgb(107, 177, 201) 100%);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        .product-top {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .product-image {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-        }
-        .product-details {
-            flex: 2;
-            padding: 20px;
-        }
         .product-image img {
-            width: 100%;
+            max-width: 400px;
+            height: auto;
             border-radius: 10px;
         }
-        .product-name {
-            font-size: 32px;
-            color: #1d2d44;
-            margin-bottom: 10px;
+        .star-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
         }
-        .product-price {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #1d2d44;
+        .rating-stars i {
+            color: #f5a623;
         }
-        .section-title {
-            margin-top: 40px;
-            font-size: 28px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            color: #1d2d44;
+        .rating-stars input[type="radio"] {
+            display: none;
         }
-        ul {
-            padding-left: 20px;
+        .rating-stars label {
+            cursor: pointer;
         }
-        .review {
-            border-bottom: 1px solid #eee;
-            padding: 10px 0;
+        .rating-stars label i {
+            font-size: 20px;
+            color: #ccc;
         }
-        .review-name {
-            font-weight: bold;
-        }
-        .rating {
+        .rating-stars input:checked ~ label i,
+        .rating-stars label:hover ~ label i,
+        .rating-stars label:hover i {
             color: #f5a623;
         }
     </style>
 </head>
-
 <body>
 <div class="container">
     <div class="product-top">
@@ -114,13 +88,32 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
             <img src="<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
         </div>
         <div class="product-details">
-            <h1 class="product-name"><?php echo htmlspecialchars($product['name']); ?></h1>
-            <p class="product-price">$<?php echo number_format($product['price'], 2); ?></p>
+            <h1><?php echo htmlspecialchars($product['name']); ?></h1>
+            <p>Price: $<?php echo number_format($product['price'], 2); ?></p>
             <p><?php echo htmlspecialchars($product['description']); ?></p>
+
+            <form action="cart_action.php" method="POST">
+                <input type="hidden" name="action" value="add">
+                <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+            </form>
+
+            <div class="rating-stars">
+                <form action="rate_product.php" method="POST">
+                    <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                        <button type="submit" name="rating" value="<?php echo $i; ?>" class="star-btn">
+                            <i class="<?php echo ($i <= round($product['rating'])) ? 'fas' : 'far'; ?> fa-star"></i>
+                        </button>
+                    <?php endfor; ?>
+                    <span>(<?php echo (int)$product['rating_count']; ?>)</span>
+                </form>
+            </div>
         </div>
     </div>
 
-    <h2 class="section-title">Key Ingredients</h2>
+    <h2>Key Ingredients</h2>
     <?php if (!empty($ingredients)): ?>
         <ul>
             <?php foreach ($ingredients as $ingredient): ?>
@@ -131,12 +124,14 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
         <p>No ingredients listed for this product.</p>
     <?php endif; ?>
 
-    <h2 class="section-title">Customer Reviews</h2>
+    <h2>Customer Reviews</h2>
     <?php if (!empty($reviews)): ?>
         <?php foreach ($reviews as $review): ?>
             <div class="review">
-                <div class="review-name"><?php echo htmlspecialchars($review['reviewer_name']); ?> <span class="rating"><?php echo str_repeat('★', $review['rating']); ?></span></div>
-                <div class="review-text"><?php echo htmlspecialchars($review['review_text']); ?></div>
+                <div><strong><?php echo htmlspecialchars($review['reviewer_name']); ?></strong> - 
+                    <?php echo str_repeat('★', $review['rating']) . str_repeat('☆', 5 - $review['rating']); ?>
+                </div>
+                <p><?php echo htmlspecialchars($review['review_text']); ?></p>
                 <small><?php echo date('F j, Y', strtotime($review['review_date'])); ?></small>
             </div>
         <?php endforeach; ?>
@@ -144,9 +139,32 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
         <p>No reviews yet. Be the first to leave a review!</p>
     <?php endif; ?>
 
-    <a href="products.php" style="display:block; margin-top:30px; text-decoration:none; color:#007bff;">← Back to Products</a>
+    <h2 class="section-title">Leave a Review</h2>
+    <form action="submit_review.php" method="POST">
+        <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+
+        <label for="reviewer_name">Your Name:</label><br>
+        <input type="text" name="reviewer_name" required><br><br>
+
+        <label for="rating">Rating:</label><br>
+        <div class="rating-stars">
+            <?php for ($i = 5; $i >= 1; $i--): ?>
+                <input type="radio" name="rating" value="<?php echo $i; ?>" id="star<?php echo $i; ?>">
+                <label for="star<?php echo $i; ?>">
+                    <i class="fa fa-star"></i>
+                </label>
+            <?php endfor; ?>
+        </div><br>
+
+        <label for="review_text">Review:</label><br>
+        <textarea name="review_text" rows="4" required></textarea><br><br>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <a href="products.php" style="display:block; margin-top:30px; text-decoration:none; color:#007bff;">&larr; Back to Products</a>
 </div>
 </body>
 </html>
 
-<?php include 'footer.php'; ?> 
+<?php include 'footer.php'; ?>
