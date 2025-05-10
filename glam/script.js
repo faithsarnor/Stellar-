@@ -32,7 +32,7 @@ async function fetchGeminiResponse(prompt) {
     return data.response || "GlamBot is currently overwhelmed. Please try again in a minute";
   } catch (error) {
     console.error("Client fetch error:", error);
-    return "Something went wrong while talking to GlamBot.";
+    return "Upgrade your plan in order to talk to Glambot.";
   }
 }
 
