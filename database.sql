@@ -153,15 +153,6 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 
 
 
-
-
-
-
-
-
-
-
-
 -- Create Reviews Table
 CREATE TABLE product_reviews (
     review_id INT AUTO_INCREMENT PRIMARY KEY,
