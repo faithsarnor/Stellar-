@@ -5,7 +5,6 @@ USE my_products;
 -- Create Products Table
 CREATE TABLE IF NOT EXISTS products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
-<<<<<<< HEAD
     name VARCHAR(255) NOT NULL,              -- Product name
     category VARCHAR(100),                   -- Category of the product
     price DECIMAL(10, 2) NOT NULL,           -- Price of the product
@@ -117,7 +116,7 @@ INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_im
 
 -- Create Ingredients Table
 CREATE TABLE product_ingredients (
-=======
+
     name VARCHAR(255) NOT NULL,
     category VARCHAR(100),
     price DECIMAL(10, 2) NOT NULL,
@@ -172,14 +171,14 @@ INSERT INTO products (name, price, category, image_url, description) VALUES
 
 -- Create Ingredients Table
 CREATE TABLE IF NOT EXISTS product_ingredients (
->>>>>>> 75b6fbfba227038b6bc7a47c504a9ced0440a815
+
     ingredient_id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT NOT NULL,
     ingredient_name VARCHAR(255) NOT NULL,
     FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
 );
 
-<<<<<<< HEAD
+
 -- Ingredients for Product ID 1 (PanOxyl Example)
 INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 (1, 'Benzoyl Peroxide'), (1, 'Water'), (1, 'Glycerin'), (1, 'Sodium Hydroxide'),
@@ -210,7 +209,8 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 
 -- Create Reviews Table
 CREATE TABLE product_reviews (
-=======
+);
+
 -- Insert Ingredients (sample for 5 products)
 INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 (1, 'Benzoyl Peroxide'), (1, 'Water'), (1, 'Glycerin'), (1, 'Sodium Hydroxide'),
@@ -224,7 +224,7 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 
 -- Create Reviews Table
 CREATE TABLE IF NOT EXISTS product_reviews (
->>>>>>> 75b6fbfba227038b6bc7a47c504a9ced0440a815
+
     review_id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT NOT NULL,
     reviewer_name VARCHAR(100),
@@ -234,16 +234,16 @@ CREATE TABLE IF NOT EXISTS product_reviews (
     FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
 );
 
-<<<<<<< HEAD
--- Reviews for Product ID 1
-=======
+
+
+
 -- Sample Reviews
->>>>>>> 75b6fbfba227038b6bc7a47c504a9ced0440a815
+
 INSERT INTO product_reviews (product_id, reviewer_name, rating, review_text) VALUES
 (1, 'Faith', 5, 'Absolutely love it! My skin looks so clear!'),
 (1, 'Zainab', 4, 'Good but a little drying, use moisturizer after.'),
 (1, 'John', 5, 'Cleared up my acne faster than anything else!');
-<<<<<<< HEAD
+
 
 -- Access Permissions (optional for local setup)
 GRANT SELECT, INSERT, DELETE, UPDATE ON my_products.* TO 'root'@'localhost';
@@ -252,5 +252,5 @@ GRANT SELECT ON my_products.SkinCareRecommendations TO 'root'@'localhost';
 
 
 
-=======
->>>>>>> 75b6fbfba227038b6bc7a47c504a9ced0440a815
+
+ 
