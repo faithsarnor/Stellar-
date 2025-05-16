@@ -128,9 +128,24 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
+    <div class="font">
+        <div class="rectangle-22">
+            <div class="slideshow-container" id="slides">
+                <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout!')">
+                    <span id="pipo">Discounts & Coupons</span>
+                </div>
+                <div class="slide"><span>Get 40% off Your First Order</span></div>
+                <div class="slide"><span>Free Shipping on Orders $110+</span></div>
+            </div>
+            <div class="slideshow-nav">
+                <button id="prev-slide"><</button>
+                <button id="next-slide">></button>
+            </div>
+        </div>
+    </div>
     <div class="header">
         <ul class="head">
-            <li class="fix"><a href="index.php" style="font-size: 24px; font-weight: bold; color:#926f34;">Stellar</a></li>
+            <li class="fix"><a href="index.php" style="font-size: 24px;  color:#926f34;">Stellar</a></li>
             <li>
                 <a href="#">Products</a>
                 <div class="dropdown-menu">
