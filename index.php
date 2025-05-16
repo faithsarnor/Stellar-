@@ -33,6 +33,21 @@ $products = $table_products;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+<div class="font">
+        <div class="rectangle-22">
+            <div class="slideshow-container" id="slides">
+                <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout!')">
+                    <span id="pipo">Discounts & Coupons</span>
+                </div>
+                <div class="slide"><span>Get 40% off Your First Order</span></div>
+                <div class="slide"><span>Free Shipping on Orders $110+</span></div>
+            </div>
+            <div class="slideshow-nav">
+                <button id="prev-slide"><</button>
+                <button id="next-slide">></button>
+            </div>
+        </div>
+    </div>
 <body>
     <div class="header">
         <ul class="head">
@@ -46,22 +61,6 @@ $products = $table_products;
             <a href="#" class="icon"><i class="fas fa-search"></i></a>
             <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
             <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
-        </div>
-    </div>
-
-    <div class="font">
-        <div class="rectangle-22">
-            <div class="slideshow-container" id="slides">
-                <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout!')">
-                    <span id="pipo">Discounts & Coupons</span>
-                </div>
-                <div class="slide"><span>Get 40% off Your First Order</span></div>
-                <div class="slide"><span>Free Shipping on Orders $110+</span></div>
-            </div>
-            <div class="slideshow-nav">
-                <button id="prev-slide"><</button>
-                <button id="next-slide">></button>
-            </div>
         </div>
     </div>
 
@@ -110,6 +109,9 @@ $products = $table_products;
         <p>We’ve got answers. Check out our FAQ section to learn more about shipping, returns, and skincare tips.</p>
         <a href="faq.html" style="background: #1d2d44; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; display: inline-block;">Visit FAQ</a>
     </div>
+    <br>
+    <br>
+   
   
 
     <footer class="footer">
