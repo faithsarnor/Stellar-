@@ -114,9 +114,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <body>
         <!-- --- Slider --- -->
+
         <div class="rectangle-22">
             <div class="slideshow-container" id="slides">
-                <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
+
+        <div class="font">
+        <div class="rectangle-22">
+            <div class="slideshow-container" id="slides">
+                <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout!')">
+
                     <span id="pipo">Discounts & Coupons</span>
                 </div>
                 <div class="slide"><span>Get 40% off Your First Order</span></div>
@@ -128,12 +134,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         </div>
 
+
         <div id="discount-popup" class="popup">
             <div class="popup-content">
                 <span class="close-popup">X</span>
                 <p id="popup-message"></p>
             </div>
         </div>
+
+    </div>
+
 
         <!-- Header -->
         <div class="header">

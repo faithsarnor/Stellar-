@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,25 +13,44 @@
   </head>
 
   <body>
-    <div class="rectangle-22">
-      <div class="slideshow-container" id="slides">
-        <div class="slide"><span>Free Shipping on Orders $300+</span></div>
-        <div class="slide"><span>Get 40% off Your First Order</span></div>
-        <div class="slide"><span>Discounts & Coupons</span></div>
-      </div>
-      <div class="slideshow-nav">
-        <button id="prev-slide"></button>
-        <button id="next-slide">></button>
-      </div>
+    <!-- Promo Slideshow -->
+<div class="rectangle-22">
+  <div class="slideshow-container" id="slides">
+  <div class="slide"  onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">      <span id="pipo">Discounts & Coupons</span>
     </div>
+    <div class="slide"><span>Get 40% off Your First Order</span></div>
+    <div class="slide"><span>Free Shipping on Orders $110+</span></div>
+  </div>
+  <div class="slideshow-nav">
+    <button id="prev-slide">&lt;</button>
+    <button id="next-slide">&gt;</button>
+  </div>
+</div>
+<!-- Discount Popup -->
+<div id="discount-popup" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">X</span>
+    <p id="popup-message"></p>
+  </div>
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
 
     <!-- Header with Stellar and Navigation Links -->
     <div class="header">
       <ul class="head">
-        <li class="fix"><a href="index.html">Stellar</a></li> 
+        <li class="fix"><a href="index.php">Stellar</a></li> 
         <li><a href="about.html">About Us</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="Products.html">Products</a></li>
+        <li><a href="Products.php">Products</a></li>
         <li class="ai">GlamBot</li>
         <li><a href="form.html"> &nbsp; &nbsp; Skincare Quiz</a></li>
        
@@ -39,9 +59,8 @@
       <!--icons-->
       <div class="icons">
         <a href="#" class="icon"><i class="fas fa-search"></i></a>
-        <a href="login.html" class="icon"><i class="fas fa-user"></i></a>
-        <a href="wishlist.html" class="icon"><i class="fas fa-heart"></i></a>
-        <a href="cart.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+        <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
+        <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
     <div class="search-container" id="search-container">
       <div class="search-input-wrapper">
@@ -51,85 +70,45 @@
       <div id="search-results"></div>
     </div>
   </div>
-  <?php
-  if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) { // Check if form data is set
-    $type = $_POST['type'];
-    $problem = $_POST['skin'];
-    $product = $_POST['product'];
-    
-    if ($type == "Dry" && $problem == "Acne" && $product == "Moisturizer") {
-        echo 'Here is a recommended product:<br>';
-        echo '<img src="https://th.bing.com/th/id/OIP.JOgFRUanurAGcghIhE5qhQHaHa?rs=1&pid=ImgDetMain"><br>';
-    } elseif ($type == "Oily" && $problem == "Acne" && $product == "Moisturizer") {
-        echo 'Here is a recommended product: <br>';
-        echo '<img src="https://m.media-amazon.com/images/I/61tAp+18-bL._SL1500_.jpg"><br>'; 
-    } elseif ($type == "Acne" && $problem == "Acne" && $product == "Moisturizer") {
-        echo 'Here is a recommended product.<br>';
-        echo '<img src="https://cdn.nicehair.dk/products/89332/clarifying-oil-free-water-gel-50-ml-1596691014.jpg"><br>';
-    }
-
-
-
-    if ($type == "Dry" && $problem == "Acne" && $product == "Toner") {
-      echo 'Here is a recommended product:<br>';
-      echo '<img src="https://m.media-amazon.com/images/I/61ktMd4XNtL._SX522_.jpg"><br>';
-  } elseif ($type == "Oily" && $problem == "Acne" && $product == "Toner") {
-      echo 'Here is a recommended product: <br>';
-      echo '<img src="https://m.media-amazon.com/images/I/61PbxvE8UcL._SX522_.jpg"><br>'; 
-  } elseif ($type == "Acne" && $problem == "Acne" && $product == "Toner") {
-      echo 'Here is a recommended product.<br>';
-      echo '<img src="https://www.dermstore.com/images?url=https://static.thcdn.com/productimg/original/11429030-2885213116989150.jpg&format=webp&auto=avif&width=985&height=985&fit=cover&dpr=2"><br>';
-  } 
-    
-
-
-if ($type == "Dry" && $problem == "Acne" && $product == "Serum") {
-  echo 'Here is a recommended product:<br>';
-  echo '<img src="https://cdn.shopify.com/s/files/1/2626/0488/products/Untitled-2.jpg?v=1615522495"><br>';
-} elseif ($type == "Oily" && $problem == "Acne" && $product == "Serum") {
-  echo 'Here is a recommended product: <br>';
-  echo '<img src="https://www.jeancoutu.com/catalogue-images/455901/viewer-zoom/0/caudalie-vinopure-serum-perfecteur-de-peau-30-ml.png"><br>'; 
-} elseif ($type == "Acne" && $problem == "Acne" && $product == "Serum") {
-  echo 'Here is a recommended product.<br>';
-  echo '<img src="https://s4.thcdn.com//productimg/1600/1600/13906946-9374975436100654.jpg"><br>';
-} 
-
-if ($type == "Dry" && $problem == "Acne" && $product == "Cleanser") {
-  echo 'Here is a recommended product:<br>';
-  echo '<img src="https://m.media-amazon.com/images/I/617cYpld9UL._SX522_.jpg"><br>';
-} elseif ($type == "Oily" && $problem == "Acne" && $product == "Cleanser") {
-  echo 'Here is a recommended product: <br>';
-  echo '<img src="https://media.ulta.com/i/ulta/2609330?w=1080&h=1080&fmt=auto"><br>'; 
-} elseif ($type == "Acne" && $problem == "Acne" && $product == "Cleanser") {
-  echo 'Here is a recommended product.<br>';
-  echo '<img src="https://media.ulta.com/i/ulta/2615399?w=1080&h=1080&fmt=auto"><br>';
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  }
-
-
-
-
-
-
-
-
+  <?php 
+ 
   
-
-
+  if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) {
+      // Retrieve form data
+      $type = $_POST['type'];
+      $skin_problem = $_POST['skin'];
+      $product = $_POST['product'];
+  
+      // Database connection
+      $conn = new mysqli('localhost', 'root', '', 'my_products');
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+  
+      // Query to fetch the recommended product
+      $sql = "SELECT recommended_image_url 
+              FROM SkinCareRecommendations 
+              WHERE type = ? AND skin_problem = ? AND product = ?";
+      $stmt = $conn->prepare($sql);
+      $stmt->bind_param('sss', $type, $skin_problem, $product);
+      $stmt->execute();
+      $result = $stmt->get_result();
+  
+      // Display the recommended product if found
+      if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+              echo '<div class="recommended-product">';
+              echo 'Here is a recommended product:<br><br>';
+              echo '<img src="' . htmlspecialchars($row['recommended_image_url']) . '" class="product-img"><br>';
+              echo '</div>';
+          }
+      } else {
+          echo "No recommendations found for the selected options.";
+      }
+    }
+   
 ?>
+
 
     <footer class="footer">
       <span> FAQ</span> &nbsp;&nbsp;

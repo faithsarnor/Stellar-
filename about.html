@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <!-- Slideshow -->
+  <!-- Promo Banner -->
   <div class="rectangle-22">
     <div class="slideshow-container" id="slides">
       <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">
@@ -33,68 +33,45 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header and Navigation -->
   <div class="header">
     <ul class="head">
-      <li class="fix"><a href="index.html">Stellar</a></li>
+      <li class="fix"><a href="index.php">Stellar</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li class="dropdown">
-        <a href="#" class="drop">Products</a>
-        <div class="dropdown-menu">
-          <div class="submenu">
-            <a href="#">Cleanser ▸</a>
-            <div class="submenu-menu">
-              <a href="#">CeraVe</a>
-              <a href="#">La Roche-Posay</a>
-              <a href="#">Aveeno</a>
-              <a href="#">Vanicream</a>
-              <a href="#">Cetaphil</a>
-            </div>
+        <div class="dropdown">
+          <a href="products.php" class="drop">Products</a> <!-- Products is a link now -->
+          <div class="dropdown-menu">
+            <a href="category.php?category=Cleansers">Cleansers</a>
+            <a href="category.php?category=Moisturizers">Moisturizers</a>
+            <a href="category.php?category=Toners">Toners</a>
+            <a href="category.php?category=Eye Treatments">Eye Treatments</a>
+            <a href="category.php?category=Sunscreens">Sunscreens</a>
           </div>
-          <div class="submenu">
-            <a href="#">Moisturizer ▸</a>
-            <div class="submenu-menu">
-              <a href="#">Cetaphil</a>
-              <a href="#">La Roche-Posay</a>
-              <a href="#">CeraVe</a>
-              <a href="#">Olay</a>
-              <a href="#">Itk</a>
-            </div>
-          </div>
-          <div class="submenu">
-            <a href="#">Toner ▸</a>
-            <div class="submenu-menu">
-              <a href="#">First Aid Beauty</a>
-              <a href="#">Cetaphil</a>
-              <a href="#">Byoma</a>
-              <a href="#">Thayers</a>
-              <a href="#">Mario Badescu</a>
-            </div>
-          </div>
-        </div>
-      </li>
+        </div>          
+    </li>
       <li class="ai">GlamBot</li>
       <li><a href="form.html">&nbsp;&nbsp;Skincare Quiz</a></li>
     </ul>
-  </div>
 
-  <!-- Icons and Search -->
-  <div  class="icons">
-    <a href="#" class="icon"><i class="fas fa-search"></i></a>
-    <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
-    <a href="cart.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
-  </div>
-
-  <div class="search-container" id="search-container">
-    <div class="search-input-wrapper">
-      <input type="text" id="search-input" placeholder="What can we help you find?" />
-      <i class="fas fa-times" id="search-close-icon"></i>
+    <!-- Icons -->
+    <div class="icons">
+      <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
+      <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
-    <div id="search-results"></div>
+
+    <!-- Search -->
+    <div class="search-container" id="search-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="What can we help you find?" />
+        <i class="fas fa-times" id="search-close-icon"></i>
+      </div>
+      <div id="search-results"></div>
+    </div>
   </div>
 
-  <!-- Content Section -->
+  <!-- Main Content -->
   <div class="parallel_display">
     <div class="about">
       <h2>Who We Are?</h2>
@@ -120,10 +97,29 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <span>FAQ</span>&nbsp;&nbsp;
     <span>Feedback</span>&nbsp;&nbsp;
-    <span>Contact Us</span>&nbsp;&nbsp;
+    <span>Contact US</span>&nbsp;&nbsp;
     <span>Customer Support</span>
   </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
