@@ -25,7 +25,7 @@ try {
 // Function to generate response from Gemini API
 async function generateResponse(prompt) {
     try {
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
         const result = await model.generateContent(prompt);
         return result.response.text();
     } catch (error) {

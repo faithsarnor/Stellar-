@@ -1,6 +1,6 @@
 <?php
 /*
-  Author: Faith Sarnor, Zainab Sajjad 
+  Author: Zainab Sajjad 
   Modified by: Zainab Sajjad, 4/18/2025
   Description: This HTML file displays the main header and navigation layout for Stellar’s homepage, including discounts, search functionality, and product category menus.
   Attribution: Used Font Awesome for icons and Google Fonts for typography. Some UI/UX interaction logic referenced from online tutorials and customized with the help of ChatGPT.
@@ -58,7 +58,6 @@ $products = $table_products;
             <li><a href="form.html">Skincare Quiz</a></li>
         </ul>
         <div class="icons">
-            <a href="#" class="icon"><i class="fas fa-search"></i></a>
             <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
             <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
@@ -111,14 +110,10 @@ $products = $table_products;
     </div>
     <br>
     <br>
-   
-  
+    
+    
 
-    <footer class="footer">
-        <span>Feedback</span>&nbsp;&nbsp;
-        <span>Contact US</span>&nbsp;&nbsp;
-        <span>Customer Support</span>
-    </footer>
+    
 
     <script src="java1.js"></script>
     <script src="glam/script.js"></script> 

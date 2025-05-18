@@ -67,11 +67,9 @@ $subtotal = 0;
         <li class="dropdown">
             <a href="Products.php"><button class="drop">Products</button></a>
         </li>
-        <li class="ai">GlamBot</li>
         <li><a href="form.html">Skincare Quiz</a></li>
     </ul>
     <div class="icons">
-        <a href="#" class="icon"><i class="fas fa-search"></i></a>
         <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
         <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
