@@ -67,22 +67,7 @@ $products = $table_products;
     </div>
 
 
-    <div class="font">
-        <div class="rectangle-22">
-            <div class="slideshow-container" id="slides">
-                <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout!')">
-                    <span id="pipo">Discounts & Coupons</span>
-                </div>
-                <div class="slide"><span>Get 40% off Your First Order</span></div>
-                <div class="slide"><span>Free Shipping on Orders $110+</span></div>
-            </div>
-            <div class="slideshow-nav">
-                <button id="prev-slide"><</button>
-                <button id="next-slide">></button>
-            </div>
-        </div>
-    </div>
-
+    
 
     <div id="discount-popup" class="popup">
         <div class="popup-content">
