@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 include_once 'database.php';
 
 $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : '';
@@ -198,6 +200,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
+
 <div class="font">
         <div class="rectangle-22">
             <div class="slideshow-container" id="slides">
@@ -241,7 +244,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
-<!-- ✅ Search Bar -->
+<!-- Search Bar -->
 <div class="search-bar-container">
     <form method="GET" action="products.php" class="search-form">
         <input type="text" name="search" placeholder="Search for products..." value="<?php echo htmlspecialchars($searchTerm); ?>">
@@ -283,6 +286,8 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </form>
                 </div>
                 <form action="cart_action.php" method="POST">
+                <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+
                     <input type="hidden" name="action" value="add">
                     <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
                     <input type="hidden" name="quantity" value="1">
@@ -302,6 +307,49 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </footer>
 
 <script src="java1.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const popup = document.getElementById("cart-popup");
+        if (popup) {
+            setTimeout(() => {
+                popup.style.transition = "opacity 0.5s ease";
+                popup.style.opacity = "0";
+                setTimeout(() => popup.remove(), 500);
+            }, 2500);
+        }
+    });
+</script>
+<?php if (isset($_GET['msg']) && $_GET['msg'] === 'added'): ?>
+    <div id="cart-alert" style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        padding: 12px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        z-index: 1000;
+        transition: opacity 0.5s ease;
+    ">
+        Item added to cart!
+    </div>
+    <script>
+        setTimeout(() => {
+            const alert = document.getElementById("cart-alert");
+            if (alert) {
+                alert.style.opacity = "0";
+                setTimeout(() => alert.remove(), 500);
+            }
+
+            // Clean up the URL
+            const url = new URL(window.location);
+            url.searchParams.delete("msg");
+            window.history.replaceState({}, document.title, url.pathname + url.search);
+        }, 2500);
+    </script>
+<?php endif; ?>
 
 </body>
 </html>

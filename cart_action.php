@@ -34,9 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Set a success message in the session
-        $_SESSION['cart_message'] = "Item added to cart!";
-        header("Location: products.php"); // Redirect back to products
+        // Set a success message in the session
+        // cart_action.php
+        $redirect = isset($_POST['redirect']) ? $_POST['redirect'] : 'products.php';
+        $redirect .= (strpos($redirect, '?') !== false ? '&' : '?') . 'msg=added';
+        header("Location: $redirect");
         exit();
+        
+
     }
     elseif (isset($_POST['action']) && $_POST['action'] == 'update') {
       // This part handles updates in cart page (quantity)
