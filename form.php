@@ -1,122 +1,116 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Stellar</title>
-    <link rel="stylesheet" href="main.css" />
-    <script src="java1.js"></script>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  </head>
-
-  <body>
-    <!-- Promo Slideshow -->
-<div class="rectangle-22">
-  <div class="slideshow-container" id="slides">
-  <div class="slide"  onclick="showPopup('Get 30% off today with the code SAVE30 at checkout! Plus, receive a free 4-piece gift when you shop on first time of Stellar.com. This offer cannot be exchanged for cash or used as credit toward other products and is subject to change without notice. It cannot be combined with any other offers, and free items are eligible for returns or exchanges. Don’t miss out! Keep an eye on our site for 30% off every 3 weeks and other exclusive promotions coming your way!')">      <span id="pipo">Discounts & Coupons</span>
-    </div>
-    <div class="slide"><span>Get 40% off Your First Order</span></div>
-    <div class="slide"><span>Free Shipping on Orders $110+</span></div>
-  </div>
-  <div class="slideshow-nav">
-    <button id="prev-slide">&lt;</button>
-    <button id="next-slide">&gt;</button>
-  </div>
-</div>
-<!-- Discount Popup -->
-<div id="discount-popup" class="popup">
-  <div class="popup-content">
-    <span class="close-popup">X</span>
-    <p id="popup-message"></p>
-  </div>
-</div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
-
-    <!-- Header with Stellar and Navigation Links -->
-    <div class="header">
-      <ul class="head">
-        <li class="fix"><a href="index.php">Stellar</a></li> 
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="Products.php">Products</a></li>
-        <li class="ai">GlamBot</li>
-        <li><a href="form.html"> &nbsp; &nbsp; Skincare Quiz</a></li>
-       
-        
-      </ul>
-      <!--icons-->
-      <div class="icons">
-        <a href="#" class="icon"><i class="fas fa-search"></i></a>
-        <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
-        <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
-    </div>
-    <div class="search-container" id="search-container">
-      <div class="search-input-wrapper">
-        <input type="text" id="search-input" placeholder="What can we help you find?" />
-        <i class="fas fa-times" id="search-close-icon"></i>
-      </div>
-      <div id="search-results"></div>
-    </div>
-  </div>
-  <?php 
- 
-  
-  if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) {
-      // Retrieve form data
-      $type = $_POST['type'];
-      $skin_problem = $_POST['skin'];
-      $product = $_POST['product'];
-  
-      // Database connection
-      $conn = new mysqli('localhost', 'root', '', 'my_products');
-      if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-      }
-  
-      // Query to fetch the recommended product
-      $sql = "SELECT recommended_image_url 
-              FROM SkinCareRecommendations 
-              WHERE type = ? AND skin_problem = ? AND product = ?";
-      $stmt = $conn->prepare($sql);
-      $stmt->bind_param('sss', $type, $skin_problem, $product);
-      $stmt->execute();
-      $result = $stmt->get_result();
-  
-      // Display the recommended product if found
-      if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-              echo '<div class="recommended-product">';
-              echo 'Here is a recommended product:<br><br>';
-              echo '<img src="' . htmlspecialchars($row['recommended_image_url']) . '" class="product-img"><br>';
-              echo '</div>';
-          }
-      } else {
-          echo "No recommendations found for the selected options.";
-      }
+<head>
+  <meta charset="UTF-8">
+  <title>Stellar Recommendation Result</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
+  <style>
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #fdfdfd;
+      padding: 40px;
+      margin: 0;
     }
-   
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    p.description {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+    .routine-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .routine-card {
+      width: 260px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #fff;
+      transition: box-shadow 0.3s ease;
+    }
+    .routine-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .routine-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .routine-card h3 {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+    .routine-card .price {
+      color: #333;
+      margin: 10px 0;
+    }
+    .routine-card a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<?php
+if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) {
+    $type = $_POST['type'];
+    $skin_problem = $_POST['skin'];
+    $product = $_POST['product'];
+
+    $conn = new mysqli('localhost', 'root', '', 'my_products');
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT recommended_image_url FROM SkinCareRecommendations WHERE type = ? AND skin_problem = ? AND product = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('sss', $type, $skin_problem, $product);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    echo "<h1>Your Skincare Recommendation</h1>";
+    echo "<p class='description'>Based on your skin type and concern, here is our top recommended product:</p>";
+
+    if ($result->num_rows > 0) {
+        echo "<div class='routine-container'>";
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='routine-card'>";
+            echo "<img src='" . htmlspecialchars($row['recommended_image_url']) . "' alt='Recommended Product'>";
+            echo "<h3>Recommended Product</h3>";
+            echo "<a class='button' href='products.php'>Shop Now</a>";
+            echo "</div>";
+        }
+        echo "</div>";
+    } else {
+        echo "<p style='text-align:center;'>Sorry, we couldn't find a product that matches your selection. Please try again.</p>";
+    }
+
+    $stmt->close();
+    $conn->close();
+} else {
+    echo "<p style='text-align:center;'>It looks like you haven't completed the quiz yet.</p>";
+}
 ?>
+<form action="recroutine.php" method="POST">
+  <input type="hidden" name="type" value="<?php echo htmlspecialchars($type); ?>">
+  <input type="hidden" name="skin" value="<?php echo htmlspecialchars($skin_problem); ?>">
+  <input type="hidden" name="product" value="<?php echo htmlspecialchars($product); ?>">
+  <button type="submit" style="margin-top: 20px; padding: 10px 15px; font-size: 1rem; background: black; color: white; border: none; border-radius: 5px;">See Full Routine</button>
+</form>
 
-
-    <footer class="footer">
-      <span> FAQ</span> &nbsp;&nbsp;
-      <span>Feedback</span>&nbsp;&nbsp;
-      <span>Contact US</span>&nbsp;&nbsp;
-      <span>Customer Support</span>
-    </footer>
-
-  
 </body>
 </html>
