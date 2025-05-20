@@ -9,23 +9,21 @@ include_once 'database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product_id = intval($_POST['product_id']);
-    $rating = intval($_POST['rating']);
+    $reviewer_name = trim($_POST['reviewer_name']);
     $review_text = trim($_POST['review_text']);
-    $reviewer_name = trim($_POST['reviewer_name']) ?: 'Anonymous';
+    $rating = intval($_POST['rating']);
 
-    if ($product_id && $rating >= 1 && $rating <= 5) {
-        // 1. Insert review into product_reviews table
-        $stmt = $db->prepare("INSERT INTO product_reviews (product_id, reviewer_name, rating, review_text) 
-                              VALUES (:product_id, :reviewer_name, :rating, :review_text)");
+    if ($product_id && $rating >= 1 && $rating <= 5 && $reviewer_name && $review_text) {
+        // 1. Insert review into product_reviews
+        $stmt = $db->prepare("INSERT INTO product_reviews (product_id, reviewer_name, rating, review_text) VALUES (:product_id, :reviewer_name, :rating, :review_text)");
         $stmt->bindParam(':product_id', $product_id);
         $stmt->bindParam(':reviewer_name', $reviewer_name);
         $stmt->bindParam(':rating', $rating);
         $stmt->bindParam(':review_text', $review_text);
         $stmt->execute();
 
-        // 2. Recalculate average rating and count
-        $avg_stmt = $db->prepare("SELECT AVG(rating) AS avg_rating, COUNT(*) AS count 
-                                  FROM product_reviews WHERE product_id = :product_id");
+        // 2. Calculate new average rating
+        $avg_stmt = $db->prepare("SELECT AVG(rating) AS avg_rating, COUNT(*) AS count FROM product_reviews WHERE product_id = :product_id");
         $avg_stmt->bindParam(':product_id', $product_id);
         $avg_stmt->execute();
         $result = $avg_stmt->fetch(PDO::FETCH_ASSOC);
@@ -33,16 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $new_avg = round($result['avg_rating'], 2);
         $new_count = $result['count'];
 
-        // 3. Update product record
-        $update = $db->prepare("UPDATE products SET rating = :rating, rating_count = :count 
-                                WHERE product_id = :product_id");
+        // 3. Update products table
+        $update = $db->prepare("UPDATE products SET rating = :rating, rating_count = :rating_count WHERE product_id = :product_id");
         $update->bindParam(':rating', $new_avg);
-        $update->bindParam(':count', $new_count);
+        $update->bindParam(':rating_count', $new_count);
         $update->bindParam(':product_id', $product_id);
         $update->execute();
     }
 
-    // 4. Redirect
     header("Location: product_details.php?id=$product_id");
     exit;
 }
