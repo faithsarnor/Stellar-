@@ -24,7 +24,7 @@ $products = $table_products;
 ?>
 <?php include('glam/glam.html'); ?>
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Stellar - Welcome</title>
@@ -33,21 +33,26 @@ $products = $table_products;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>
-    <div class="header">
-        <ul class="head">
-            <li class="fix"><a href="index.php">Stellar</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="products.php">Products</a></li>
-            <li><a href="form.html">Skincare Quiz</a></li>
-        </ul>
-        <div class="icons">
-            <a href="#" class="icon"><i class="fas fa-search"></i></a>
-            <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
-            <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
+
+<div class="header">
+  <ul class="head">
+    <li class="fix"><a href="index.php">Stellar</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li class="dropdown">
+    <a href="products.php" class="drop" style="text-decoration: none">Products</a> <!-- Products is a link now -->
+        <div class="dropdown-menu">
+          <a href="category.php?category=Cleansers">Cleansers</a>
+          <a href="category.php?category=Moisturizers">Moisturizers</a>
+          <a href="category.php?category=Toners">Toners</a>
+          <a href="category.php?category=Eye Treatments">Eye Treatments</a>
+          <a href="category.php?category=Sunscreens">Sunscreens</a>
         </div>
-    </div>
+        <li><a href="form.html">Skincare Quiz</a></li> 
+      </div>          
+    
+  </ul>
+
 
     <div class="font">
         <div class="rectangle-22">

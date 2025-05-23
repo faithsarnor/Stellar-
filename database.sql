@@ -148,11 +148,19 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 (15, 'Glycerin'), (15, 'Niacinamide'), (15, 'Sodium Hyaluronate'), (15, 'Phenoxyethanol'), (15,'Potassium Sorbate'), (15, 'Glucose'),
 (16, 'Water'), (16, 'Glycerin'), (16, 'Butyrospermum Parkii (Shea Butter)'), (16, 'Panthenol'), (16, 'Centella Asiatica Extract'),
 (17, 'Collodial Oatmeal'), (17, 'Hyaluronic Acid'), (17, 'Squalane'), (17, 'Glycerin'), (17, 'Proplis Extract'), 
-(18, 'Water'), (18, 'Butylene Glycol'), (18, 'Niacinamide'), (18, 'Glycerin'), (18, 'Citric Acid'), (18, 'Pancratium Maritimum Extract'), (18, 'Hydrolyzed Cicer Seed Extract'), 
-(19, 'Purified Water'), (19, 'Witch Hazel'), (19, 'Aloe Barbadensis Leaf Juice'), (19, 'Glycerin'), (19, 'Citric Acid'), (19, 'Caprylyl Glycol'), (19, 'Fragrance (Natural Rose)'), 
-
-
- 
+(18, 'Water'), (18, 'Butylene Glycol'), (18, 'Niacinamide'), (18, 'Glycerin'), (18, 'Citric Acid'), (18, 'Pancratium Maritimum Extract'), (18, 'Hydrolyzed Cicer Seed Extract'),
+(19, 'Purified Water'), (19, 'Witch Hazel'), (19, 'Aloe Barbadensis Leaf Juice'), (19, 'Glycerin'), (19, 'Citric Acid'), (19, 'Caprylyl Glycol'), (19, 'Fragrance (Natural Rose)'),
+(20, 'Aloe Barbadensis Leaf Juice'), (20, 'Caprylyl Glycol'), (20, 'Citric Acid'), (20, 'Potassium Sorbate'), (20, 'Sodium Chloride'),
+(21, 'Niacinamide'), (21, 'Arbutin'), (21, 'Licorice Root Extract'),
+(22, '7% Glycolic Acid'), (22, 'Aloe Vera'), (22, 'Ginseng'), (22, 'Tasmanian Pepperberry Ingredients'),
+(23, 'Ceramides'), (23, 'Hyaluronic Acid'), (23, 'Niacinamide'), (23, 'MVE Technology'),
+(24, 'Black Rice'), (24, 'Sodium Hyaluronate'), (24, 'Amino Acids'), (24, 'Pentylene Glycol'),
+(25, 'Glycerin'), (25, 'Sorbitan Olivate'), (25, 'Polyacrylamide'), (25, 'Carbomer'), (25, 'Water'),
+(26, 'Niacinamide'), (26, 'Pentylene Glycol'), (26, 'Zinc PCA'), (26, 'Dimethyl Isosorbide'),
+(27, 'Adapalene 0.1% (Retinoid)'),
+(28, 'Hydrocolloid'),
+(29, 'Zinc Oxide (17.53%)'), (29, 'Green Surge Complex'), (29, 'Rice Extract'),
+(30, 'Titanium Dioxide'), (30, 'Zinc Oxide');
 
 
 
@@ -180,5 +188,5 @@ GRANT SELECT ON my_products.SkinCareRecommendations TO 'root'@'localhost';
 
 
 
-=======
->>>>>>> 75b6fbfba227038b6bc7a47c504a9ced0440a815
+
+

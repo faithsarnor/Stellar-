@@ -130,7 +130,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div class="header">
         <ul class="head">
-            <li class="fix"><a href="index.php" style="font-size: 24px; font-weight: bold; color:#926f34;">Stellar</a></li>
+            <li class="fix"><a href="index.php" style="font-size: 24px; color:#926f34;">Stellar</a></li>
             <li>
                 <a href="#">Products</a>
                 <div class="dropdown-menu">

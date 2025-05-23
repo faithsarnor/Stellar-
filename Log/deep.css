@@ -26,7 +26,6 @@ body {
 
 /* Ensure color is applied to .fix class */
 .header .fix {
-    font-family: "Cormorant Garamond";
     font-size: 50px;
     /* Increased font size */
     color: #926f34 !important;
@@ -113,6 +112,7 @@ body {
 }
 
 .footer {
+    font-family: "Cormorant Garamond";
     background: lightblue;
     color: #1d2d44;
     text-align: center;
