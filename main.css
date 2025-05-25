@@ -501,6 +501,12 @@ body {
     transition: color 0.2s;
 }
 
+a.drop {
+    font-weight: normal;
+}
+
+
+
 
 
 
