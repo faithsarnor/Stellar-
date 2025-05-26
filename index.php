@@ -1,6 +1,6 @@
 <?php
 /*
-  Author: Faith Sarnor, Zainab Sajjad 
+  Author: Zainab Sajjad 
   Modified by: Zainab Sajjad, 4/18/2025
   Description: This HTML file displays the main header and navigation layout for Stellar’s homepage, including discounts, search functionality, and product category menus.
   Attribution: Used Font Awesome for icons and Google Fonts for typography. Some UI/UX interaction logic referenced from online tutorials and customized with the help of ChatGPT.
@@ -33,25 +33,7 @@ $products = $table_products;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-
-<div class="header">
-  <ul class="head">
-    <li class="fix"><a href="index.php">Stellar</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li class="dropdown">
-    <a href="products.php" class="drop" style="text-decoration: none">Products</a> <!-- Products is a link now -->
-        <div class="dropdown-menu">
-          <a href="category.php?category=Cleansers">Cleansers</a>
-          <a href="category.php?category=Moisturizers">Moisturizers</a>
-          <a href="category.php?category=Toners">Toners</a>
-          <a href="category.php?category=Eye Treatments">Eye Treatments</a>
-          <a href="category.php?category=Sunscreens">Sunscreens</a>
-        </div>
-        <li><a href="form.html">Skincare Quiz</a></li> 
-      </div>          
-    
-  </ul>
+<body>
 
 
     <div class="font">
@@ -70,13 +52,53 @@ $products = $table_products;
         </div>
     </div>
 
-    <div id="discount-popup" class="popup">
-        <div class="popup-content">
-            <span class="close-popup">X</span>
-            <p id="popup-message"></p>
-        </div>
+  <!-- Popup -->
+  <div id="discount-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">X</span>
+      <p id="popup-message"></p>
+    </div>
+  </div>
+
+  <!-- Header and Navigation -->
+  <div class="header">
+    <ul class="head">
+      <li class="fix"><a href="index.php">Stellar</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li class="dropdown">
+        <div class="dropdown">
+          <a href="products.php" class="drop">Products</a> <!-- Products is a link now -->
+          <div class="dropdown-menu">
+            <a href="category.php?category=Cleansers">Cleansers</a>
+            <a href="category.php?category=Moisturizers">Moisturizers</a>
+            <a href="category.php?category=Toners">Toners</a>
+            <a href="category.php?category=Eye Treatments">Eye Treatments</a>
+            <a href="category.php?category=Sunscreens">Sunscreens</a>
+          </div>
+        </div>          
+    </li>
+
+      <li><a href="form.html">&nbsp;&nbsp;Skincare Quiz</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="icons">
+      <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
+      <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
 
+    <!-- Search -->
+    <div class="search-container" id="search-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="What can we help you find?" />
+        <i class="fas fa-times" id="search-close-icon"></i>
+      </div>
+      <div id="search-results"></div>
+    </div>
+  </div>
+  
+  <!--Main Code-->
     <div class="hero" style="display: flex; align-items: center; justify-content: space-around; padding: 60px 20px; background: #ffffff70; flex-wrap: wrap;">
         <div class="hero-text" style="max-width: 500px;">
             <h1 style="font-size: 2.8em; color: #1d2d44;">Filters are great, but real skincare is better.</h1>
@@ -115,13 +137,16 @@ $products = $table_products;
         <p>We’ve got answers. Check out our FAQ section to learn more about shipping, returns, and skincare tips.</p>
         <a href="faq.html" style="background: #1d2d44; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; display: inline-block;">Visit FAQ</a>
     </div>
+
+    <br>
+    <br>
+
+   
+
   
 
-    <footer class="footer">
-        <span>Feedback</span>&nbsp;&nbsp;
-        <span>Contact US</span>&nbsp;&nbsp;
-        <span>Customer Support</span>
-    </footer>
+
+    
 
     <script src="java1.js"></script>
     <script src="glam/script.js"></script> 

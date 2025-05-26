@@ -218,7 +218,6 @@ session_start();
       </ul>
       <!--icons-->
       <div class="icons">
-        <a href="#" class="icon"><i class="fas fa-search"></i></a>
         <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
         <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
     </div>
@@ -311,6 +310,10 @@ session_start();
             <button type="submit" class="submit-button">Place Order</button>
         </form>
     </div>
+
+    <br>
+    <br>
+    <br>
         <!-- --- Footer --- -->
     <footer class="footer">
       <span>Feedback</span>&nbsp;&nbsp;

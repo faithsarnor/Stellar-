@@ -21,6 +21,23 @@
       <div class="slide"><span>Get 40% off Your First Order</span></div>
       <div class="slide"><span>Free Shipping on Orders $110+</span></div>
     </div>
+    <?php if (isset($_GET['msg']) && $_GET['msg'] === 'added'): ?>
+    <div id="cart-alert" style="
+        text-align:center;
+        background-color:#d4edda;
+        color:#155724;
+        padding:10px 20px;
+        margin:10px auto;
+        max-width:800px;
+        border-radius:5px;
+        border:1px solid #c3e6cb;
+        font-weight:500;
+    ">
+        Item added to cart!
+    </div>
+<?php endif; ?>
+
+
     <div class="slideshow-nav">
       <button id="prev-slide"><</button>
       <button id="next-slide">></button>
@@ -70,3 +87,16 @@
     </div>
     <div id="search-results"></div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const alertBox = document.getElementById("cart-alert");
+    if (alertBox) {
+        setTimeout(() => {
+            alertBox.style.transition = "opacity 0.5s ease";
+            alertBox.style.opacity = "0";
+            setTimeout(() => alertBox.remove(), 500);
+            window.history.replaceState({}, document.title, window.location.pathname + window.location.search.replace(/([?&])msg=added(&|$)/, '$1').replace(/(&|\?)$/, ''));
+        }, 2500);
+    }
+});
+</script>

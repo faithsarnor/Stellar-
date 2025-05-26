@@ -144,9 +144,27 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
         form.review-form button:hover {
             background-color: #16324f;
         }
+        .add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
+
     </style>
 </head>
 <body>
+<div id="cart-alert" style="
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 12px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+"></div>
+
 <div class="container">
     <div class="product-top">
         <div class="product-image">
@@ -168,6 +186,16 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
                 ?>
                 <span>(<?php echo (int) $product['rating_count']; ?> reviews)</span>
             </div>
+            <form action="cart_action.php" method="POST">
+            
+            <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+    <input type="hidden" name="quantity" value="1">
+    <button type="submit" class="add-to-cart-btn" style="margin-top: 15px; background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Add to Cart</button>
+</form>
+
         </div>
     </div>
 
@@ -262,6 +290,56 @@ $reviews = $stmt_reviews->fetchAll(PDO::FETCH_ASSOC);
 
     <a href="products.php" style="display:block; margin-top:30px; text-decoration:none; color:#007bff;">&larr; Back to Products</a>
 </div>
+<?php if (isset($_GET['msg']) && $_GET['msg'] === 'added'): ?>
+<div id="cart-alert" style="
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 12px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+">
+    Item added to cart!
+</div>
+<?php endif; ?>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const alertBox = document.getElementById("cart-alert");
+
+    if (urlParams.get("msg") === "added" && alertBox) {
+        alertBox.innerText = "Item added to cart!";
+        alertBox.style.display = "block";
+
+        setTimeout(() => {
+            alertBox.style.opacity = "0";
+            setTimeout(() => alertBox.remove(), 500);
+            // Clean up URL without reloading the page
+            window.history.replaceState({}, document.title, window.location.pathname + window.location.search.replace(/([?&])msg=added(&|$)/, '$1').replace(/(&|\?)$/, ''));
+        }, 2500);
+    }
+});
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const popup = document.getElementById("cart-popup");
+        if (popup) {
+            setTimeout(() => {
+                popup.style.transition = "opacity 0.5s ease";
+                popup.style.opacity = "0";
+                setTimeout(() => popup.remove(), 500);
+            }, 2500);
+        }
+    });
+</script>
+
+
 </body>
 </html>
 

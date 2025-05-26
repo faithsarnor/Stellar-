@@ -36,7 +36,7 @@ INSERT INTO products (name, price, category, image_url) VALUES
 ('Olay - Micro Sculpting Cream', 25.00, 'Moisturizers', 'img/olay moisturizer.jpeg'),
 ('CeraVe Ultra-Light Moisturizing Gel', 20.00, 'Moisturizers', 'img/Ultra-Light Moisturizing Gel.webp'),
 ('Cetaphil Gentle Clear Mattifying Acne Moisturizer', 11.00, 'Moisturizers', 'img/Cetaphil Gentle Clear Mattifying Acne Moisturzer.webp'),
-('Itk - Prebiotic Gel Moisturizer', 12.00, 'Moisturizers', 'img/cerave moisturizer.jpg'),
+('Itk - Prebiotic Gel Moisturizer', 12.00, 'Moisturizers', 'img/ITK gel moisurizer .jpeg'),
 ('Sephora Collection Hydrating Cica Cream', 20.00, 'Moisturizers', 'img/Sephora Collection Hydrating Cica cream.webp');
 
 -- Toners
@@ -46,24 +46,29 @@ INSERT INTO products (name, price, category, image_url) VALUES
 ('Thayers - Rose Petal Toner', 11.00, 'Toners', 'img/thayers toner.jpg'),
 ('Mario Badescu Aloe Vera Toner', 16.00, 'Toners', 'img/mario badescu toner.webp'),
 ('Good Molecules Niacinamide Brightening Toner', 14.00, 'Toners', 'img/Good Molecules Niacinamide Brightening Toner.jpg'),
-('The Ordinary Glycolic Acid 7% Toning Solution', 13.00, 'Toners', 'img/The Ordinary Glycolic Acid 7% Toning Solution.jpeg');
+('SOS Daily Rescue Facial Spray with Hypochlorous Acid', 28.00, 'Toners', 'img/SOS Daily Rescue Facial Spray.webp');
 
 -- Eye Treatments
 INSERT INTO products (name, price, category, image_url) VALUES
 ('CeraVe Eye Repair Cream', 15.00, 'Eye Treatments', 'img/CeraVe Eye Repair Cream.webp'),
 ('Haruharu Wonder Black Rice Eye Cream', 10.00, 'Eye Treatments', 'img/HARUHARUWONDERBlackRiceBakuchiolEyeCream_grande.webp'),
-('Neutrogena Hydro Boost Eye Gel-Cream', 20.00, 'Eye Treatments', 'img/Neutrogena Hydro Boost Eye Gel-Cream.webp'),
+('Neutrogena Hydro Boost Eye Gel-Cream', 20.00, 'Eye Treatments', 'img/Neutrogena Hydro Boost Eye Gel-Cream.webp');
 
 -- Treatments and Serums
+
 INSERT INTO products (name, price, category, image_url) VALUES
 ('The Ordinary Niacinamide 10% + Zinc 1% Serum', 20.00, 'Treatments and Serums', 'img/The Ordinary Niacinamide 10% + Zin 1% Serum.webp'),
 ('Differin Adapalene Gel 0.1% Acne Treatment', 15.00, 'Treatments and Serums', 'img/Differin Adapalene Gel 0.1% Acne Treatment.webp'),
-('Hero Cosmetics Mighty Patch Original', 12.00, 'Treatments and Serums', 'img/Mighty-Patch-by-Hero.webp'),
+('Niacinamide Serum 12% Plus Zinc 2%', 17.00, 'Treatments and Serums', 'img/shopping (1).webp'),
+('CeraVe Skin Renewing Retinol Serum', 23.00, 'Treatments and Serums', 'img/CeraVe Skin Renewing Retinol Serum.webp'),
+('Hero Cosmetics Mighty Patch Original', 12.00, 'Treatments and Serums', 'img/Mighty-Patch-by-Hero.webp');
 
 -- Sunscreens
 INSERT INTO products (name, price, category, image_url) VALUES
 ('Hero Cosmetics Force Shield SPF 30', 20.00, 'Sunscreens', 'img/Hero Cosmetics Force Shield Superlight Suncreen SPF 30.webp'),
 ('CeraVe Hydrating Mineral Sunscreen SPF 30', 18.00, 'Sunscreens', 'img/CeraVe Hydrating Mineral Suscreen SPF 30.jpg');
+
+
 
 
 -- SkinCare Recommendation Table
@@ -150,6 +155,7 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 (17, 'Collodial Oatmeal'), (17, 'Hyaluronic Acid'), (17, 'Squalane'), (17, 'Glycerin'), (17, 'Proplis Extract'), 
 (18, 'Water'), (18, 'Butylene Glycol'), (18, 'Niacinamide'), (18, 'Glycerin'), (18, 'Citric Acid'), (18, 'Pancratium Maritimum Extract'), (18, 'Hydrolyzed Cicer Seed Extract'),
 (19, 'Purified Water'), (19, 'Witch Hazel'), (19, 'Aloe Barbadensis Leaf Juice'), (19, 'Glycerin'), (19, 'Citric Acid'), (19, 'Caprylyl Glycol'), (19, 'Fragrance (Natural Rose)'),
+
 (20, 'Aloe Barbadensis Leaf Juice'), (20, 'Caprylyl Glycol'), (20, 'Citric Acid'), (20, 'Potassium Sorbate'), (20, 'Sodium Chloride'),
 (21, 'Niacinamide'), (21, 'Arbutin'), (21, 'Licorice Root Extract'),
 (22, '7% Glycolic Acid'), (22, 'Aloe Vera'), (22, 'Ginseng'), (22, 'Tasmanian Pepperberry Ingredients'),
@@ -162,6 +168,126 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 (29, 'Zinc Oxide (17.53%)'), (29, 'Green Surge Complex'), (29, 'Rice Extract'),
 (30, 'Titanium Dioxide'), (30, 'Zinc Oxide');
 
+
+
+(20, 'Aqua (Water)'), (20, 'Aloe Barbadensis Leaf Juice'), (20, 'Sodium Chloride'), (20, 'Methylparaben'), (20, 'CI 19140 (Yellow 5)'), (20, 'CI 42090 (Blue 1)'),
+(21, 'Water'), (21, 'Glycerin'), (21, 'Niacinamide'), (21, '1,2-Hexanediol'), (21, 'Arbutin'), (21, 'Propanediol'), (21, 'Betaine'), (21, 'Sodium Hyaluronate'), (21, 'Licorice Root Extract'), (21, 'Ethylhexylglycerin'), (21, 'Carbomer'), (21, 'Tromethamine'), (21, 'Trisodium Ethylenediamine Disuccinate'), (21, 'Dextrin'),
+(22, 'Electrolyzed Water'), (22, 'Sodium Chloride'), (22, 'Hypochlorous Acid'),
+(23, 'Purified Water'), 
+(23, 'Niacinamide'), 
+(23, 'Cetyl Alcohol'), 
+(23, 'Caprylic/Capric Triglyceride'), 
+(23, 'Glycerin'), 
+(23, 'Propanediol'), 
+(23, 'Isononyl Isononanoate'), 
+(23, 'Jojoba Esters'), 
+(23, 'PEG-20 Methyl Glucose Sesquistearate'), 
+(23, 'Cetearyl Alcohol'), 
+(23, 'Dimethicone'), 
+(23, 'Methyl Glucose Sesquistearate'), 
+(23, 'Ceramide 3'), 
+(23, 'Ceramide 6-II'), 
+(23, 'Ceramide 1'), 
+(23, 'Hyaluronic Acid'), 
+(23, 'Zinc Citrate'), 
+(23, 'Prunus Amygdalus Dulcis (Almond) Oil'), 
+(23, 'Aloe Barbadensis Leaf Juice'), 
+(23, 'Chrysanthellum Indicum Extract'), 
+(23, 'Tocopherol'), 
+(23, 'Equisetum Arvense Extract'), 
+(23, 'Asparagopsis Armata Extract'), 
+(23, 'Ascophyllum Nodosum Extract'), 
+(23, 'Phenoxyethanol'), 
+(23, 'Carbomer'), 
+(23, 'Behentrimonium Methosulfate'), 
+(23, 'Sorbitol'), 
+(23, 'Triethanolamine'), 
+(23, 'Laureth-4'), 
+(23, 'Butylene Glycol'), 
+(23, 'Hydrogenated Vegetable Oil'), 
+(23, 'Tetrasodium EDTA'), 
+(23, 'Ethylhexylglycerin'), 
+(23, 'Sodium Lauroyl Lactylate'), 
+(23, 'Sodium Hydroxide'), 
+(23, 'Phytosphingosine'), 
+(23, 'Cholesterol'), 
+(23, 'Xanthan Gum'),
+(24, 'Water'), (24, 'Glycerin'), (24, 'Helianthus Annuus (Sunflower) Seed Oil'), (24, 'Caprylic/Capric Triglyceride'), (24, 'Niacinamide'), (24, 'Bakuchiol'), (24, 'Panax Ginseng Root Extract'), (24, 'Madecassoside'), (24, 'Sodium Hyaluronate'), (24, 'Wheat Amino Acids'), (24, 'Adenosine'),
+(25, 'Water'), 
+(25, 'Dimethicone'), 
+(25, 'Glycerin'), 
+(25, 'Cetearyl Olivate'), 
+(25, 'Polyacrylamide'), 
+(25, 'Sorbitan Olivate'), 
+(25, 'Phenoxyethanol'), 
+(25, 'Dimethicone/Vinyl Dimethicone Crosspolymer'), 
+(25, 'Synthetic Beeswax'), 
+(25, 'C13-14 Isoparaffin'), 
+(25, 'Dimethiconol'), 
+(25, 'Dimethicone Crosspolymer'), 
+(25, 'Chlorphenesin'), 
+(25, 'Laureth-7'), 
+(25, 'Carbomer'), 
+(25, 'Sodium Hyaluronate'), 
+(25, 'Ethylhexylglycerin'), 
+(25, 'C12-14 Pareth-12'), 
+(25, 'Sodium Hydroxide'),
+(26, 'Water'), 
+(26, 'Niacinamide'), 
+(26, 'Propanediol'), 
+(26, 'Glycerin'), 
+(26, 'Zinc PCA'), 
+(26, 'Polyacrylate Crosspolymer-11'), 
+(26, 'Sodium Hyaluronate'), 
+(26, 'Dimethicone'), 
+(26, 'Caprylyl Glycol'), 
+(26, 'Phenoxyethanol'), 
+(26, 'Xanthan Gum'), 
+(26, 'Potassium Sorbate'), 
+(26, 'Glyceryl Polyacrylate'), 
+(26, 'Tocopheryl Acetate'), 
+(26, 'Hexylene Glycol'), 
+(26, 'Citric Acid'),
+(27, 'Water'), 
+(27, 'Glycerin'), 
+(27, 'Caprylic/Capric Triglyceride'), 
+(27, 'Potassium Cetyl Phosphate'), 
+(27, 'Hydrogenated Palm Glycerides'), 
+(27, 'Polysorbate 20'), 
+(27, 'PEG-40 Stearate'), 
+(27, 'Cyclopentasiloxane'), 
+(27, 'Hydroxyethylcellulose'), 
+(27, 'Potassium Phosphate'), 
+(27, 'Ceramide NP'), 
+(27, 'Ceramide AP'), 
+(27, 'Ceramide EOP'), 
+(27, 'Carbomer'), 
+(27, 'Niacinamide'), 
+(27, 'Isoceteth-10'), 
+(27, 'Dimethicone/Vinyl Dimethicone Crosspolymer'), 
+(27, 'Triethanolamine'), 
+(27, 'Cetearyl Alcohol'), 
+(27, 'Behentrimonium Methosulfate'), 
+(27, 'Cichorium Intybus (Chicory) Root Extract'), 
+(27, 'Lecithin'), 
+(27, 'Retinol'), 
+(27, 'Silica'), 
+(27, 'Sodium Lauroyl Lactylate'), 
+(27, 'Cholesterol'), 
+(27, 'Phenoxyethanol'), 
+(27, 'Tocopherol'), 
+(27, 'Alcohol'), 
+(27, 'Hydroxyacetophenone'), 
+(27, 'Citric Acid'), 
+(27, 'Hydrolyzed Hyaluronic Acid'), 
+(27, 'Pentylene Glycol'), 
+(27, 'Xanthan Gum'), 
+(27, 'Phytosphingosine'), 
+(27, 'Butyrospermum Parkii (Shea) Butter'), 
+(27, 'Ethylhexylglycerin'),
+(28, 'Hydrocolloid'),
+(29, 'Zinc Oxide'), (29, 'Ectoin'), (29, 'Alteromonas Ferment Extract'), (29, 'Camellia Sinensis (Green Tea) Leaf Extract'), (29, 'Bisabolol'), (29, 'Glycerin'), (29, 'Tocopherol'),
+(30, 'Zinc Oxide'), (30, 'Titanium Dioxide'), (30, 'Ceramides');
 
 
 -- Create Reviews Table
