@@ -36,6 +36,17 @@ $subtotal = 0;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" >
 
 </head>
+<style>
+    .footer{
+        font-family: 'Cormorant Garamond', serif;
+    }
+    .drop {
+        font-weight: normal;
+    /* other styles */
+    }
+
+
+</style>
 <body>
 
 <div class="rectangle-22">
@@ -65,7 +76,7 @@ $subtotal = 0;
         <li><a href="about.html">About Us</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="Products.php"><button class="drop">Products</button></a>
+            <a href="Products.php"><button class="drop" style="font-weight: none">Products</button></a>
         </li>
         <li><a href="form.html">Skincare Quiz</a></li>
     </ul>
