@@ -13,8 +13,7 @@ CREATE TABLE IF NOT EXISTS products (
     image_url TEXT,
     stock INT NOT NULL DEFAULT 20
 );
-
--- Insert Products
+-- Cleansers
 INSERT INTO products (name, price, category, image_url) VALUES
 ('PanOxyl - Acne Forming', 18.00, 'Cleansers', 'img/PanOxyl.jpg'),
 ('La Roche-Posay - Hydrating Gentle Face Cleanser', 20.00, 'Cleansers', 'img/La Roche Posay Cleanser.jpg'),
@@ -23,8 +22,9 @@ INSERT INTO products (name, price, category, image_url) VALUES
 ('Cetaphil - Gentle Skin Cleanser Face Wash', 12.00, 'Cleansers', 'img/cetaphil cleanser.jpg'),
 ('CeraVe Foaming Facial Cleanser', 15.00, 'Cleansers', 'img/cerave foam cleanser.webp'),
 ('La Roche-Posay Toleriane Purifying Foaming Cleanser', 18.00, 'Cleansers', 'img/Laroche posay toleraine purifying foaming cleanser.jpg'),
-('Neutrogena Oil-Free Acne Wash', 16.00, 'Cleansers', 'img/Neutrogena Oil-Free Acne Wash.webp');
-
+('Neutrogena Oil-Free Acne Wash', 16.00, 'Cleansers', 'img/Neutrogena Oil-Free Acne Wash.webp'),
+('La Roche-Posay Effaclar Medicated Gel Cleanser', 18.00, 'Cleansers', 'https://media.ulta.com/i/ulta/2609330?w=1080&h=1080&fmt=auto'),
+('EltaMD Skin Recovery Amino Acid Foaming Facial Cleanser', 28.00, 'Cleansers', 'https://m.media-amazon.com/images/I/617cYpld9UL._SX522_.jpg');
 
 
 
@@ -33,11 +33,14 @@ INSERT INTO products (name, price, category, image_url) VALUES
 ('Cetaphil - Moisturizing Cream for Dry Skin', 11.00, 'Moisturizers', 'img/cetaphil moisturizer.jpg'),
 ('La Roche-Posay - Toleriane Double Repair Moisturizer', 25.00, 'Moisturizers', 'img/la roche posay moisturizer.webp'),
 ('CeraVe - Moisturizing Cream', 15.00, 'Moisturizers', 'img/cerave moisturizer.jpg'),
-('Olay - Micro Sculpting Cream', 25.00, 'Moisturizers', 'img/olay moisturizer.jpeg'),
+('Olay - Micro Sculpting Cream', 25.00, 'Moisturizers', 'img/Olay cream.jpeg'),
 ('CeraVe Ultra-Light Moisturizing Gel', 20.00, 'Moisturizers', 'img/Ultra-Light Moisturizing Gel.webp'),
 ('Cetaphil Gentle Clear Mattifying Acne Moisturizer', 11.00, 'Moisturizers', 'img/Cetaphil Gentle Clear Mattifying Acne Moisturzer.webp'),
 ('Itk - Prebiotic Gel Moisturizer', 12.00, 'Moisturizers', 'img/ITK gel moisurizer .jpeg'),
-('Sephora Collection Hydrating Cica Cream', 20.00, 'Moisturizers', 'img/Sephora Collection Hydrating Cica cream.webp');
+('Sephora Collection Hydrating Cica Cream', 20.00, 'Moisturizers', 'img/Sephora Collection Hydrating Cica cream.webp'),
+('Murad Clarifying Oil Free Water Gel', 50.00, 'Moisturizers', 'https://cdn.nicehair.dk/products/89332/clarifying-oil-free-water-gel-50-ml-1596691014.jpg');
+
+
 
 -- Toners
 INSERT INTO products (name, price, category, image_url) VALUES
@@ -46,29 +49,36 @@ INSERT INTO products (name, price, category, image_url) VALUES
 ('Thayers - Rose Petal Toner', 11.00, 'Toners', 'img/thayers toner.jpg'),
 ('Mario Badescu Aloe Vera Toner', 16.00, 'Toners', 'img/mario badescu toner.webp'),
 ('Good Molecules Niacinamide Brightening Toner', 14.00, 'Toners', 'img/Good Molecules Niacinamide Brightening Toner.jpg'),
-('SOS Daily Rescue Facial Spray with Hypochlorous Acid', 28.00, 'Toners', 'img/SOS Daily Rescue Facial Spray.webp');
+('SOS Daily Rescue Facial Spray with Hypochlorous Acid', 28.00, 'Toners', 'img/SOS Daily Rescue Facial Spray.webp'),
+('Watermelon Pink Juice Oil-Free Moisturizer - Glow Recipe', 15.00, 'Toners', 'https://m.media-amazon.com/images/I/51tRMi-tQaL._SX679_.jpg'),
+('Paulas Choice Skin Balancing Pore Reducing Toner', 23.20, 'Toners', 'https://m.media-amazon.com/images/I/61PbxvE8UcL._SX522_.jpg'),
+('Paulas Choice Skin Recovery Enriched Calming Toner', 29.00, 'Toners', 'https://m.media-amazon.com/images/I/61ktMd4XNtL._SX522_.jpg');
 
--- Eye Treatments
+
 -- Eye Treatments
 INSERT INTO products (name, price, category, image_url)
 VALUES
 ('CeraVe Eye Repair Cream', 15.00, 'Eye Treatments', 'img/CeraVe Eye Repair Cream.webp'),
 ('Haruharu Wonder Black Rice Eye Cream', 10.00, 'Eye Treatments', 'img/HARUHARUWONDERBlackRiceBakuchiolEyeCream_grande.webp'),
-('Neutrogena Hydro Boost Eye Gel-Cream', 20.00, 'Eye Treatments', 'img/Neutrogena Hydro Boost Eye Gel-Cream.webp'),
+('Neutrogena Hydro Boost Eye Gel-Cream', 20.00, 'Eye Treatments', 'img/Neutrogena Hydro Boost Eye Gel-Cream.webp');
 
 -- Treatments and Serums
+INSERT INTO products (name, price, category, image_url) VALUES
 ('Niacinamide Serum 12% Plus Zinc 2%', 17.00, 'Treatments and Serums', 'img/shopping (1).webp'),
 ('CeraVe Skin Renewing Retinol Serum', 23.00, 'Treatments and Serums', 'img/CeraVe Skin Renewing Retinol Serum.webp'),
 ('Hero Cosmetics Mighty Patch Original', 12.00, 'Treatments and Serums', 'img/Mighty-Patch-by-Hero.webp'),
+('CeraVe Resurfacing Retinol Serum', 20.00, 'Treatments and Serums', 'https://s4.thcdn.com//productimg/1600/1600/13906946-9374975436100654.jpg'),
+('Caudalie Vinopure Pore Minimizing Sali', 50.00, 'Treatments and Serums', 'img/Caudalie Vinopure Pore Minimizing Sali.avif'),
+('Acne Serum - For Dry Skin', 20.00, 'Treatments and Serums', 'https://cdn.shopify.com/s/files/1/2626/0488/products/Untitled-2.jpg?v=1615522495');
 
 -- Sunscreens
+INSERT INTO products (name, price, category, image_url) VALUES
 ('Hero Cosmetics Force Shield SPF 30', 20.00, 'Sunscreens', 'img/Hero Cosmetics Force Shield Superlight Suncreen SPF 30.webp'),
 ('CeraVe Hydrating Mineral Sunscreen SPF 30', 18.00, 'Sunscreens', 'img/CeraVe Hydrating Mineral Suscreen SPF 30.jpg');
 
 
 -- SkinCare Recommendation Table
 CREATE TABLE SkinCareRecommendations (
-
     id INT AUTO_INCREMENT PRIMARY KEY,
     type VARCHAR(50) NOT NULL,
     skin_problem VARCHAR(50) NOT NULL,
@@ -77,21 +87,21 @@ CREATE TABLE SkinCareRecommendations (
 );
 
 -- Recommendations
-INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_image_url) VALUES
 -- Acne
+INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_image_url) VALUES
 ('Dry', 'Acne', 'Moisturizer', 'https://th.bing.com/th/id/OIP.JOgFRUanurAGcghIhE5qhQHaHa?rs=1&pid=ImgDetMain'),
 ('Oily', 'Acne', 'Moisturizer', 'https://m.media-amazon.com/images/I/61tAp+18-bL._SL1500_.jpg'),
 ('Acne', 'Acne', 'Moisturizer', 'https://cdn.nicehair.dk/products/89332/clarifying-oil-free-water-gel-50-ml-1596691014.jpg'),
 ('Dry', 'Acne', 'Toner', 'https://m.media-amazon.com/images/I/61ktMd4XNtL._SX522_.jpg'),
 ('Oily', 'Acne', 'Toner', 'https://m.media-amazon.com/images/I/61PbxvE8UcL._SX522_.jpg'),
 ('Acne', 'Acne', 'Toner', 'https://m.media-amazon.com/images/I/51tRMi-tQaL._SX679_.jpg'),
-('Dry', 'Acne', 'Serum', 'https://cdn.shopify.com/s/files/1/2626/0488/products/Untitled-2.jpg?v=1615522495'),
 ('Oily', 'Acne', 'Serum', 'https://www.bing.com/th?id=OPHS.HoaFHcYsXhnGDA474C474'),
 ('Acne', 'Acne', 'Serum', 'https://s4.thcdn.com//productimg/1600/1600/13906946-9374975436100654.jpg'),
 ('Dry', 'Acne', 'Cleanser', 'https://m.media-amazon.com/images/I/617cYpld9UL._SX522_.jpg'),
 ('Oily', 'Acne', 'Cleanser', 'https://media.ulta.com/i/ulta/2609330?w=1080&h=1080&fmt=auto'),
-('Acne', 'Acne', 'Cleanser', 'https://media.ulta.com/i/ulta/2615399?w=1080&h=1080&fmt=auto'),
+('Acne', 'Acne', 'Cleanser', 'https://media.ulta.com/i/ulta/2615399?w=1080&h=1080&fmt=auto');
 -- Hyperpigmentation
+INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_image_url) VALUES
 ('Dry', 'Hyperpigmentation', 'Moisturizer', 'https://www.sephora.com/productimages/sku/s2418879-main-zoom.jpg?imwidth=930'),
 ('Oily', 'Hyperpigmentation', 'Moisturizer', 'https://i.pinimg.com/736x/e9/8e/46/e98e464a8f831c4c7fd1acee0bc80ced.jpg'),
 ('Acne', 'Hyperpigmentation', 'Moisturizer', 'https://www.bing.com/th?id=OPHS.O%2fpgdYNVVVDVog474C474&o=5&pid=21.1&w=148&h=260&qlt=100&dpr=1.5&bw=6&bc=FFFFFF'),
@@ -103,8 +113,9 @@ INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_im
 ('Acne', 'Hyperpigmentation', 'Serum', 'https://m.media-amazon.com/images/I/51kKAqJ9t5L._SX522_.jpg'),
 ('Dry', 'Hyperpigmentation', 'Cleanser', 'https://m.media-amazon.com/images/I/51FIhRwRxxL._SX679_.jpg'),
 ('Oily', 'Hyperpigmentation', 'Cleanser', 'https://m.media-amazon.com/images/I/61Lz0RR3XJL._SX522_.jpg'),
-('Acne', 'Hyperpigmentation', 'Cleanser', 'https://www.murad.com/cdn/shop/files/690352_AHA_BHA_Cleanser_Site_Murad_Carousel_1_Soldier.png?v=1741135810'),
+('Acne', 'Hyperpigmentation', 'Cleanser', 'https://www.murad.com/cdn/shop/files/690352_AHA_BHA_Cleanser_Site_Murad_Carousel_1_Soldier.png?v=1741135810');
 -- Redness
+INSERT INTO SkinCareRecommendations (type, skin_problem, product, recommended_image_url) VALUES
 ('Dry', 'Redness', 'Moisturizer', 'https://i5.walmartimages.com/asr/0cd31d8c-abac-4182-b103-bc8708e9217c.7346d92fa2d4649d675824a63c9a2640.jpeg'),
 ('Oily', 'Redness', 'Moisturizer', 'https://m.media-amazon.com/images/I/61i8E2c5QvL._SX679_.jpg'),
 ('Acne', 'Redness', 'Moisturizer', 'https://m.media-amazon.com/images/I/61NrboQzGeL._SX522_.jpg'),
@@ -267,7 +278,64 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 (27, 'Ethylhexylglycerin'),
 (28, 'Hydrocolloid'),
 (29, 'Zinc Oxide'), (29, 'Ectoin'), (29, 'Alteromonas Ferment Extract'), (29, 'Camellia Sinensis (Green Tea) Leaf Extract'), (29, 'Bisabolol'), (29, 'Glycerin'), (29, 'Tocopherol'),
-(30, 'Zinc Oxide'), (30, 'Titanium Dioxide'), (30, 'Ceramides');
+(30, 'Zinc Oxide'), (30, 'Titanium Dioxide'), (30, 'Ceramides'),
+(31, 'Water'), (31, 'Dimethicone'), (31, 'Glycerin'),(31, 'Niacinamide'),(31, 'Sodium Hyaluronate'),(31, 'Phenoxyethanol'),(31, 'Chlorphenesin'),(31, 'Dimethiconol'),(31, 'Cetearyl Olivate'),(31, 'Sorbitan Olivate'),
+(32, 'Water'), (32, 'Niacinamide'),
+(32, 'Zinc PCA'),
+(32, 'Pentylene Glycol'),
+(32, 'Propylene Glycol'),
+(32, '1,2-Hexanediol'),
+(32, 'Tamarindus Indica Seed Gum'),
+(32, 'Ethylhexylglycerin'),
+(32, 'Sodium Hyaluronate'),
+(33, 'Water'),
+(33, 'Niacinamide'),
+(33, 'Dimethicone'),
+(33, 'Glycerin'),
+(33, 'Retinol'),
+(33, 'Ceramide NP'),
+(33, 'Ceramide AP'),
+(33, 'Ceramide EOP'),
+(33, 'Cholesterol'),
+(33, 'Phytosphingosine'),
+(34, 'Hydrocolloid'),
+(35, 'Water'),
+(35, 'Niacinamide'),
+(35, 'Capryloyl Salicylic Acid'),
+(35, 'Dimethicone'),
+(35, 'Ceramide NP'),
+(35, 'Ceramide AP'),
+(35, 'Ceramide EOP'),
+(35, 'Cholesterol'),
+(35, 'Retinol'),
+(35, 'Phytosphingosine'),
+
+(36, 'Salicylic Acid'),
+(36, 'Niacinamide'),
+(36, 'Grape Seed Polyphenols'),
+(36, 'Organic Rose Water'),
+(36, 'Butylene Glycol'),
+
+
+(37, 'Hyaluronic Acid'),
+(37, 'Niacinamide'),
+(37, 'Vitamin E'),
+(37, 'Squalane'),
+(37, 'Panthenol'),
+
+(38, 'Zinc Oxide'),
+(38, 'Ectoin'),
+(38, 'Green Tea Extract'),
+(38, 'Bisabolol'),
+(38, 'Glycerin'),
+
+
+(39, 'Zinc Oxide'),
+(39, 'Titanium Dioxide'),
+(39, 'Ceramides'),
+(39, 'Niacinamide'),
+(39, 'Hyaluronic Acid');
+
 
 -- Create Reviews Table
 CREATE TABLE product_reviews (

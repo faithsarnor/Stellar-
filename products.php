@@ -261,18 +261,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
   
-<!--Main Code-->
-    <h1 style="text-align:center; color:#1d2d44;">
-        <?php echo $categoryFilter ? htmlspecialchars($categoryFilter) : "Our Products"; ?>
-    </h1>
-
-
-    </ul>
-    <div class="icons">
-        <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
-        <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
-    </div>
-</div>
 
 <!-- Search Bar -->
 <div class="search-bar-container">
