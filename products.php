@@ -197,6 +197,13 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             background-color: #0056b3;
         }
 
+        a.drop {
+            font-weight: normal !important;
+        }
+        .footer{
+            font-family: 'Cormorant Garamond', serif;
+        }
+
     </style>
 </head>
 <body>
@@ -241,7 +248,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </div>
         </div>          
     </li>
-      <li class="ai">GlamBot</li>
       <li><a href="form.html">&nbsp;&nbsp;Skincare Quiz</a></li>
     </ul>
 
@@ -260,6 +266,14 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <div id="search-results"></div>
     </div>
   </div>
+  
+
+<!--Main Code-->
+    <h1 style="text-align:center; color:#1d2d44;">
+        <?php echo $categoryFilter ? htmlspecialchars($categoryFilter) : " "; ?>
+    </h1>
+
+    </ul>
   
 
 <!-- Search Bar -->

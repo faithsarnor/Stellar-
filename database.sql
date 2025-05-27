@@ -56,13 +56,18 @@ INSERT INTO products (name, price, category, image_url) VALUES
 
 
 -- Eye Treatments
+
 INSERT INTO products (name, price, category, image_url)
 VALUES
+
+INSERT INTO products (name, price, category, image_url) VALUES
+
 ('CeraVe Eye Repair Cream', 15.00, 'Eye Treatments', 'img/CeraVe Eye Repair Cream.webp'),
 ('Haruharu Wonder Black Rice Eye Cream', 10.00, 'Eye Treatments', 'img/HARUHARUWONDERBlackRiceBakuchiolEyeCream_grande.webp'),
 ('Neutrogena Hydro Boost Eye Gel-Cream', 20.00, 'Eye Treatments', 'img/Neutrogena Hydro Boost Eye Gel-Cream.webp');
 
 -- Treatments and Serums
+
 INSERT INTO products (name, price, category, image_url) VALUES
 ('Niacinamide Serum 12% Plus Zinc 2%', 17.00, 'Treatments and Serums', 'img/shopping (1).webp'),
 ('CeraVe Skin Renewing Retinol Serum', 23.00, 'Treatments and Serums', 'img/CeraVe Skin Renewing Retinol Serum.webp'),
@@ -71,10 +76,21 @@ INSERT INTO products (name, price, category, image_url) VALUES
 ('Caudalie Vinopure Pore Minimizing Sali', 50.00, 'Treatments and Serums', 'img/Caudalie Vinopure Pore Minimizing Sali.avif'),
 ('Acne Serum - For Dry Skin', 20.00, 'Treatments and Serums', 'https://cdn.shopify.com/s/files/1/2626/0488/products/Untitled-2.jpg?v=1615522495');
 
+
+INSERT INTO products (name, price, category, image_url) VALUES
+('The Ordinary Niacinamide 10% + Zinc 1% Serum', 20.00, 'Treatments and Serums', 'img/The Ordinary Niacinamide 10% + Zin 1% Serum.webp'),
+('Differin Adapalene Gel 0.1% Acne Treatment', 15.00, 'Treatments and Serums', 'img/Differin Adapalene Gel 0.1% Acne Treatment.webp'),
+('Niacinamide Serum 12% Plus Zinc 2%', 17.00, 'Treatments and Serums', 'img/shopping (1).webp'),
+('CeraVe Skin Renewing Retinol Serum', 23.00, 'Treatments and Serums', 'img/CeraVe Skin Renewing Retinol Serum.webp'),
+('Hero Cosmetics Mighty Patch Original', 12.00, 'Treatments and Serums', 'img/Mighty-Patch-by-Hero.webp');
+
+
 -- Sunscreens
 INSERT INTO products (name, price, category, image_url) VALUES
 ('Hero Cosmetics Force Shield SPF 30', 20.00, 'Sunscreens', 'img/Hero Cosmetics Force Shield Superlight Suncreen SPF 30.webp'),
 ('CeraVe Hydrating Mineral Sunscreen SPF 30', 18.00, 'Sunscreens', 'img/CeraVe Hydrating Mineral Suscreen SPF 30.jpg');
+
+
 
 
 -- SkinCare Recommendation Table
@@ -158,9 +174,24 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 (14, 'Salicylic Acid (0.5%)'), (14, 'Bisabolol'), (14, 'Kojic Acid'), (14, 'Licorice Root Extract'), (14, 'Zinc Gluconate'),
 (15, 'Glycerin'), (15, 'Niacinamide'), (15, 'Sodium Hyaluronate'), (15, 'Phenoxyethanol'), (15,'Potassium Sorbate'), (15, 'Glucose'),
 (16, 'Water'), (16, 'Glycerin'), (16, 'Butyrospermum Parkii (Shea Butter)'), (16, 'Panthenol'), (16, 'Centella Asiatica Extract'),
-(17, 'Colloidal Oatmeal'), (17, 'Hyaluronic Acid'), (17, 'Squalane'), (17, 'Glycerin'), (17, 'Propolis Extract'),
+(17, 'Collodial Oatmeal'), (17, 'Hyaluronic Acid'), (17, 'Squalane'), (17, 'Glycerin'), (17, 'Proplis Extract'), 
 (18, 'Water'), (18, 'Butylene Glycol'), (18, 'Niacinamide'), (18, 'Glycerin'), (18, 'Citric Acid'), (18, 'Pancratium Maritimum Extract'), (18, 'Hydrolyzed Cicer Seed Extract'),
 (19, 'Purified Water'), (19, 'Witch Hazel'), (19, 'Aloe Barbadensis Leaf Juice'), (19, 'Glycerin'), (19, 'Citric Acid'), (19, 'Caprylyl Glycol'), (19, 'Fragrance (Natural Rose)'),
+
+(20, 'Aloe Barbadensis Leaf Juice'), (20, 'Caprylyl Glycol'), (20, 'Citric Acid'), (20, 'Potassium Sorbate'), (20, 'Sodium Chloride'),
+(21, 'Niacinamide'), (21, 'Arbutin'), (21, 'Licorice Root Extract'),
+(22, '7% Glycolic Acid'), (22, 'Aloe Vera'), (22, 'Ginseng'), (22, 'Tasmanian Pepperberry Ingredients'),
+(23, 'Ceramides'), (23, 'Hyaluronic Acid'), (23, 'Niacinamide'), (23, 'MVE Technology'),
+(24, 'Black Rice'), (24, 'Sodium Hyaluronate'), (24, 'Amino Acids'), (24, 'Pentylene Glycol'),
+(25, 'Glycerin'), (25, 'Sorbitan Olivate'), (25, 'Polyacrylamide'), (25, 'Carbomer'), (25, 'Water'),
+(26, 'Niacinamide'), (26, 'Pentylene Glycol'), (26, 'Zinc PCA'), (26, 'Dimethyl Isosorbide'),
+(27, 'Adapalene 0.1% (Retinoid)'),
+(28, 'Hydrocolloid'),
+(29, 'Zinc Oxide (17.53%)'), (29, 'Green Surge Complex'), (29, 'Rice Extract'),
+(30, 'Titanium Dioxide'), (30, 'Zinc Oxide');
+
+
+
 (20, 'Aqua (Water)'), (20, 'Aloe Barbadensis Leaf Juice'), (20, 'Sodium Chloride'), (20, 'Methylparaben'), (20, 'CI 19140 (Yellow 5)'), (20, 'CI 42090 (Blue 1)'),
 (21, 'Water'), (21, 'Glycerin'), (21, 'Niacinamide'), (21, '1,2-Hexanediol'), (21, 'Arbutin'), (21, 'Propanediol'), (21, 'Betaine'), (21, 'Sodium Hyaluronate'), (21, 'Licorice Root Extract'), (21, 'Ethylhexylglycerin'), (21, 'Carbomer'), (21, 'Tromethamine'), (21, 'Trisodium Ethylenediamine Disuccinate'), (21, 'Dextrin'),
 (22, 'Electrolyzed Water'), (22, 'Sodium Chloride'), (22, 'Hypochlorous Acid'),
@@ -337,6 +368,7 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 (39, 'Hyaluronic Acid');
 
 
+
 -- Create Reviews Table
 CREATE TABLE product_reviews (
     review_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -359,9 +391,7 @@ GRANT SELECT, INSERT, DELETE, UPDATE ON my_products.* TO 'root'@'localhost';
 GRANT SELECT ON my_products.products TO 'root'@'localhost';
 GRANT SELECT ON my_products.SkinCareRecommendations TO 'root'@'localhost';
 
--- Add rating and rating count columns to track star ratings
-ALTER TABLE products
-ADD COLUMN rating DECIMAL(2,1) DEFAULT 0.0,
-ADD COLUMN rating_count INT DEFAULT 0;
+
+
 
 

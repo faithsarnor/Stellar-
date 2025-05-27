@@ -49,91 +49,88 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <script src="java1.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
-
         <style>
-        /* Confirmation Box Styling */
-        .confirmation-container {
-            max-width: 600px;
-            margin: 60px auto;
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            font-family: 'Cormorant Garamond', serif;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .confirmation-container h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-            color: #2b2b2b;
-        }
-
-        .confirmation-container p {
-            font-size: 1.1em;
-            color: #555;
-            margin: 10px 0;
-        }
-
-        .confirmation-container strong {
-            color: #0073e6;
-        }
-
-        .return {
-            margin-top: 30px;
-        }
-
-        .return a {
-            display: inline-block;
-            background-color: #0073e6;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .return a:hover {
-            background-color: #005bb5;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
+            /* Confirmation Box Styling */
+            .confirmation-container {
+                max-width: 600px;
+                margin: 60px auto;
+                padding: 40px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                font-family: 'Cormorant Garamond', serif;
+                animation: fadeIn 1s ease-in-out;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .confirmation-container h2 {
+                font-size: 2em;
+                margin-bottom: 15px;
+                color: #2b2b2b;
             }
-        }
+
+            .confirmation-container p {
+                font-size: 1.1em;
+                color: #555;
+                margin: 10px 0;
+            }
+
+            .confirmation-container strong {
+                color: #0073e6;
+            }
+
+            .return {
+                margin-top: 30px;
+            }
+
+            .return a {
+                display: inline-block;
+                background-color: #0073e6;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+
+            .return a:hover {
+                background-color: #005bb5;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(15px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
         </style>
     </head>
-
     <body>
         <!-- --- Slider --- -->
-
         <div class="rectangle-22">
             <div class="slideshow-container" id="slides">
-
-        <div class="font">
-        <div class="rectangle-22">
-            <div class="slideshow-container" id="slides">
-                <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout!')">
-
-                    <span id="pipo">Discounts & Coupons</span>
+                <div class="font">
+                    <div class="rectangle-22">
+                        <div class="slideshow-container" id="slides">
+                            <div class="slide" onclick="showPopup('Get 30% off today with the code SAVE30 at checkout!')">
+                                <span id="pipo">Discounts & Coupons</span>
+                            </div>
+                            <div class="slide"><span>Get 40% off Your First Order</span></div>
+                            <div class="slide"><span>Free Shipping on Orders $110+</span></div>
+                        </div>
+                        <div class="slideshow-nav">
+                            <button id="prev-slide"><</button>
+                            <button id="next-slide">></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="slide"><span>Get 40% off Your First Order</span></div>
-                <div class="slide"><span>Free Shipping on Orders $110+</span></div>
-            </div>
-            <div class="slideshow-nav">
-                <button id="prev-slide"><</button>
-                <button id="next-slide">></button>
             </div>
         </div>
-
 
         <div id="discount-popup" class="popup">
             <div class="popup-content">
@@ -141,9 +138,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <p id="popup-message"></p>
             </div>
         </div>
-
-    </div>
-
 
         <!-- Header -->
         <div class="header">
@@ -153,27 +147,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <li><a href="faq.html">FAQ</a></li>
                 <li class="dropdown">
                     <a href="Products.php">
-                        <button class="drop">Products</button>
+                        <button class="drop" style="font-weight:none";>Products</button>
                     </a>
                     <div class="dropdown">
-          <a href="products.php" class="drop">Products</a> <!-- Products is a link now -->
-          <div class="dropdown-menu">
-            <a href="category.php?category=Cleansers">Cleansers</a>
-            <a href="category.php?category=Moisturizers">Moisturizers</a>
-            <a href="category.php?category=Toners">Toners</a>
-            <a href="category.php?category=Eye Treatments">Eye Treatments</a>
-            <a href="category.php?category=Sunscreens">Sunscreens</a>
-          </div>
-        </div>    
+                        <a href="products.php" class="drop" style="font-weight: none";>Products</a>
+                        <div class="dropdown-menu">
+                            <a href="category.php?category=Cleansers">Cleansers</a>
+                            <a href="category.php?category=Moisturizers">Moisturizers</a>
+                            <a href="category.php?category=Toners">Toners</a>
+                            <a href="category.php?category=Eye Treatments">Eye Treatments</a>
+                            <a href="category.php?category=Sunscreens">Sunscreens</a>
                         </div>
                     </div>
                 </li>
-                <li class="ai">GlamBot</li>
                 <li><a href="form.html">     Skincare Quiz</a></li>
             </ul>
+
             <!-- icons -->
             <div class="icons">
-                <a href="#" class="icon"><i class="fas fa-search"></i></a>
                 <a href="Log/indi.html" class="icon"><i class="fas fa-user"></i></a>
                 <a href="cart.php" class="icon"><i class="fas fa-shopping-bag"></i></a>
             </div>
@@ -189,7 +180,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <!-- Footer -->
         <footer class="footer">
-            <span>FAQ</span>
             <span>Feedback</span>
             <span>Contact US</span>
             <span>Customer Support</span>

@@ -80,7 +80,7 @@ body {
     padding: 14px 16px;
     background-color: inherit;
     margin: 0;
-    font-weight: bold;
+    
     font-family: "Cormorant Garamond", serif;
     cursor: pointer;
     text-decoration: none; 
@@ -119,6 +119,7 @@ body {
 }
 
 .footer {
+    font-family: "Cormorant Garamond";
     background: lightblue;
     color: #1d2d44;
     text-align: center;
@@ -500,6 +501,12 @@ body {
     color: gold;
     transition: color 0.2s;
 }
+
+a.drop {
+    font-weight: normal;
+}
+
+
 
 
 
