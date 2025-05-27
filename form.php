@@ -105,12 +105,10 @@ if (isset($_POST['type']) && isset($_POST['skin']) && isset($_POST['product'])) 
     echo "<p style='text-align:center;'>It looks like you haven't completed the quiz yet.</p>";
 }
 ?>
-<form action="recroutine.php" method="POST">
-  <input type="hidden" name="type" value="<?php echo htmlspecialchars($type); ?>">
-  <input type="hidden" name="skin" value="<?php echo htmlspecialchars($skin_problem); ?>">
-  <input type="hidden" name="product" value="<?php echo htmlspecialchars($product); ?>">
-  <button type="submit" style="margin-top: 20px; padding: 10px 15px; font-size: 1rem; background: black; color: white; border: none; border-radius: 5px;">See Full Routine</button>
-</form>
+<p style="text-align:center; font-size: 1.2rem; margin-top: 30px;">
+  Thanks for completing the quiz! 
+</p>
+
 
 </body>
 </html>
