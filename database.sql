@@ -50,15 +50,12 @@ INSERT INTO products (name, price, category, image_url) VALUES
 ('Mario Badescu Aloe Vera Toner', 16.00, 'Toners', 'img/mario badescu toner.webp'),
 ('Good Molecules Niacinamide Brightening Toner', 14.00, 'Toners', 'img/Good Molecules Niacinamide Brightening Toner.jpg'),
 ('SOS Daily Rescue Facial Spray with Hypochlorous Acid', 28.00, 'Toners', 'img/SOS Daily Rescue Facial Spray.webp'),
-('Watermelon Pink Juice Oil-Free Moisturizer - Glow Recipe', 15.00, 'Toners', 'https://m.media-amazon.com/images/I/51tRMi-tQaL._SX679_.jpg'),
+('Watermelon Pink Juice Oil-Free Moisturizer - Glow Recipe', 15.00, 'Toners', 'img/Watermelon Pink Juice Oil-Free Moisturizer - Glow Recipe | Sephora.webp'),
 ('Paulas Choice Skin Balancing Pore Reducing Toner', 23.20, 'Toners', 'https://m.media-amazon.com/images/I/61PbxvE8UcL._SX522_.jpg'),
 ('Paulas Choice Skin Recovery Enriched Calming Toner', 29.00, 'Toners', 'https://m.media-amazon.com/images/I/61ktMd4XNtL._SX522_.jpg');
 
 
 -- Eye Treatments
-
-INSERT INTO products (name, price, category, image_url)
-VALUES
 
 INSERT INTO products (name, price, category, image_url) VALUES
 
@@ -70,16 +67,15 @@ INSERT INTO products (name, price, category, image_url) VALUES
 
 INSERT INTO products (name, price, category, image_url) VALUES
 ('Niacinamide Serum 12% Plus Zinc 2%', 17.00, 'Treatments and Serums', 'img/shopping (1).webp'),
-('CeraVe Skin Renewing Retinol Serum', 23.00, 'Treatments and Serums', 'img/CeraVe Skin Renewing Retinol Serum.webp'),
 ('Hero Cosmetics Mighty Patch Original', 12.00, 'Treatments and Serums', 'img/Mighty-Patch-by-Hero.webp'),
 ('CeraVe Resurfacing Retinol Serum', 20.00, 'Treatments and Serums', 'https://s4.thcdn.com//productimg/1600/1600/13906946-9374975436100654.jpg'),
 ('Caudalie Vinopure Pore Minimizing Sali', 50.00, 'Treatments and Serums', 'img/Caudalie Vinopure Pore Minimizing Sali.avif'),
-('Acne Serum - For Dry Skin', 20.00, 'Treatments and Serums', 'https://cdn.shopify.com/s/files/1/2626/0488/products/Untitled-2.jpg?v=1615522495');
+('Niacinamide 10% + Zinc 1%', 20.00, 'Treatments and Serums', 'https://cdn.shopify.com/s/files/1/2626/0488/products/Untitled-2.jpg?v=1615522495');
 
 
 INSERT INTO products (name, price, category, image_url) VALUES
-('The Ordinary Niacinamide 10% + Zinc 1% Serum', 20.00, 'Treatments and Serums', 'img/The Ordinary Niacinamide 10% + Zin 1% Serum.webp'),
-('Differin Adapalene Gel 0.1% Acne Treatment', 15.00, 'Treatments and Serums', 'img/Differin Adapalene Gel 0.1% Acne Treatment.webp'),
+('Kiehls Since 1851 Clearly Corrective Dark Spot Solution -0.5 oz', 35.00, 'Treatments and Serums', 'img/kiehls serum.webp'),
+('Neutrogena Rapid Wrinkle Repair Retinol Face Moisturizer Cream with Hyaluronic Acid - Fragrance Free - 1.7 oz', 30.00, 'Treatments and Serums', 'img/neutrogena rapid wrinkle repair.jpeg'),
 ('Niacinamide Serum 12% Plus Zinc 2%', 17.00, 'Treatments and Serums', 'img/shopping (1).webp'),
 ('CeraVe Skin Renewing Retinol Serum', 23.00, 'Treatments and Serums', 'img/CeraVe Skin Renewing Retinol Serum.webp'),
 ('Hero Cosmetics Mighty Patch Original', 12.00, 'Treatments and Serums', 'img/Mighty-Patch-by-Hero.webp');
@@ -177,21 +173,6 @@ INSERT INTO product_ingredients (product_id, ingredient_name) VALUES
 (17, 'Collodial Oatmeal'), (17, 'Hyaluronic Acid'), (17, 'Squalane'), (17, 'Glycerin'), (17, 'Proplis Extract'), 
 (18, 'Water'), (18, 'Butylene Glycol'), (18, 'Niacinamide'), (18, 'Glycerin'), (18, 'Citric Acid'), (18, 'Pancratium Maritimum Extract'), (18, 'Hydrolyzed Cicer Seed Extract'),
 (19, 'Purified Water'), (19, 'Witch Hazel'), (19, 'Aloe Barbadensis Leaf Juice'), (19, 'Glycerin'), (19, 'Citric Acid'), (19, 'Caprylyl Glycol'), (19, 'Fragrance (Natural Rose)'),
-
-(20, 'Aloe Barbadensis Leaf Juice'), (20, 'Caprylyl Glycol'), (20, 'Citric Acid'), (20, 'Potassium Sorbate'), (20, 'Sodium Chloride'),
-(21, 'Niacinamide'), (21, 'Arbutin'), (21, 'Licorice Root Extract'),
-(22, '7% Glycolic Acid'), (22, 'Aloe Vera'), (22, 'Ginseng'), (22, 'Tasmanian Pepperberry Ingredients'),
-(23, 'Ceramides'), (23, 'Hyaluronic Acid'), (23, 'Niacinamide'), (23, 'MVE Technology'),
-(24, 'Black Rice'), (24, 'Sodium Hyaluronate'), (24, 'Amino Acids'), (24, 'Pentylene Glycol'),
-(25, 'Glycerin'), (25, 'Sorbitan Olivate'), (25, 'Polyacrylamide'), (25, 'Carbomer'), (25, 'Water'),
-(26, 'Niacinamide'), (26, 'Pentylene Glycol'), (26, 'Zinc PCA'), (26, 'Dimethyl Isosorbide'),
-(27, 'Adapalene 0.1% (Retinoid)'),
-(28, 'Hydrocolloid'),
-(29, 'Zinc Oxide (17.53%)'), (29, 'Green Surge Complex'), (29, 'Rice Extract'),
-(30, 'Titanium Dioxide'), (30, 'Zinc Oxide');
-
-
-
 (20, 'Aqua (Water)'), (20, 'Aloe Barbadensis Leaf Juice'), (20, 'Sodium Chloride'), (20, 'Methylparaben'), (20, 'CI 19140 (Yellow 5)'), (20, 'CI 42090 (Blue 1)'),
 (21, 'Water'), (21, 'Glycerin'), (21, 'Niacinamide'), (21, '1,2-Hexanediol'), (21, 'Arbutin'), (21, 'Propanediol'), (21, 'Betaine'), (21, 'Sodium Hyaluronate'), (21, 'Licorice Root Extract'), (21, 'Ethylhexylglycerin'), (21, 'Carbomer'), (21, 'Tromethamine'), (21, 'Trisodium Ethylenediamine Disuccinate'), (21, 'Dextrin'),
 (22, 'Electrolyzed Water'), (22, 'Sodium Chloride'), (22, 'Hypochlorous Acid'),
