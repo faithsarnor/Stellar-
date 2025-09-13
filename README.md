@@ -15,22 +15,32 @@ PHP · JavaScript · HTML/CSS (Grid/Flexbox) · MySQL · Docker · GitHub Action
 
 ## Architecture
 
-├── index.php                 # Entry page
-├── products.php              # Product listing
-├── product_details.php       # Product detail view
-├── cart.php                  # Cart UI/logic
-├── checkout.php              # Checkout stub
-├── category.php              # Category filter page
-├── about.html | faq.html     # Static pages
-├── header.php | footer.php   # Reusable layout includes
-├── database.php              # DB connection (env-aware)
-├── database.sql              # MySQL schema
-├── main.css                  # Global styles (Grid/Flexbox)
-├── app.js                    # Front-end JS (rename from java1.js if not yet)
-├── img/                      # Images/assets
-├── glam/                     # Extra assets
-├── Log/                      # Logs (non-sensitive)
-└── docs/                     # README screenshots/docs
+### Top-level files
+| Path | Purpose |
+|---|---|
+| `index.php` | Entry page |
+| `products.php` | Product listing |
+| `product_details.php` | Product detail view |
+| `cart.php` | Cart UI/logic |
+| `checkout.php` | Checkout stub |
+| `category.php` | Category filter page |
+| `about.html`, `faq.html` | Static pages |
+| `header.php`, `footer.php` | Reusable layout includes |
+| `database.php` | DB connection via PDO (reads env vars if present) |
+| `database.sql` | MySQL schema |
+| `main.css` | Global styles (Grid/Flexbox) |
+| `app.js` | Front-end JS (renamed from `java1.js`) |
+
+### Directories
+| Dir | Purpose |
+|---|---|
+| `img/` | Images & assets |
+| `glam/` | Extra assets (project-specific) |
+| `Log/` | Non-sensitive logs |
+| `docs/` | README screenshots/docs |
+
+**Flow:** pages include `header.php`/`footer.php`; DB access is centralized in `database.php`; UI is `main.css` + `app.js`; schema lives in `database.sql`.  
+**Conventions:** use prepared statements; keep secrets in `.env` (gitignored).
 
 
 ## Quickstart
@@ -40,7 +50,3 @@ PHP · JavaScript · HTML/CSS (Grid/Flexbox) · MySQL · Docker · GitHub Action
 4. From the project root, start a PHP dev server:
    php -S localhost:8080
 5. Open http://localhost:8080 in your browser.
-
-Flow: pages include header.php/footer.php; DB access via database.php (PDO); UI via main.css + app.js; schema lives in database.sql.
-
-Conventions: use prepared statements in database.php; keep secrets in .env (gitignored); assets in /img & CSS/JS at root (can move to /assets later).
