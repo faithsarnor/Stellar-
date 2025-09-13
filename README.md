@@ -15,3 +15,11 @@ Focus: responsive UI, cart flow, secure data access, and a reproducible dev setu
 PHP · JavaScript · HTML/CSS (Grid/Flexbox) · MySQL · Docker · GitHub Actions · CodeQL
 
 ## Architecture
+
+## Quickstart
+1. Install PHP 8 and MySQL (e.g., MAMP/XAMPP or Homebrew).
+2. Create a database named `stellar` and import `database.sql`.
+3. Copy `.env.example` to `.env` and set DB creds if needed.
+4. From the project root, start a PHP dev server:
+   php -S localhost:8080
+5. Open http://localhost:8080 in your browser.
