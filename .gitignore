@@ -3,3 +3,9 @@ node_modules/
 .vscode/
 *.swp
 .env
+.env
+.env*
+
+.env
+.env*
+*.swp
