@@ -3,7 +3,6 @@
 Modern e-commerce UI built with **PHP (Apache)**, **JavaScript**, **CSS Grid/Flexbox**, and **MySQL**.  
 Focus: responsive UI, cart flow, secure data access, and a reproducible dev setup.
 
-> For reviewers: This repo includes a Docker Compose dev environment, CI linting, and CodeQL security scanning.
 
 ## Features
 - Responsive product grid & detail pages
